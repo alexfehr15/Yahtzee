@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
-import java.awt.Dimension;
+import java.awt.Insets;
 
 //display main GUI elements
 class Yahtzee extends JPanel
@@ -22,8 +22,16 @@ class Yahtzee extends JPanel
 	private ScoreCard scoreCardPanel;
 	private RoleResults roleResultsPanel;
 	private PlayerScore playerScorePanel;
-	private GridLayout heldLayout;
+	private GridLayout playerScoreLayout;
 	private static ImageIcon emptyImage;
+	private static int numPlayers;
+	private GridBagLayout rollResultsLayout;
+	private static ImageIcon diceImage1;
+	private static ImageIcon diceImage2;
+	private static ImageIcon diceImage3;
+	private static ImageIcon diceImage4;
+	private static ImageIcon diceImage5;
+	private static ImageIcon diceImage6;
 
 	public Yahtzee()
 	{
@@ -39,12 +47,28 @@ class Yahtzee extends JPanel
 		emptyImage = new ImageIcon(this.getClass().
 										getResource("/empty.jpg"));
 
+		//set up die images to be used throughout
+		diceImage1 = new ImageIcon(this.getClass().
+										getResource("/dice_1.jpg"));
+		diceImage2 = new ImageIcon(this.getClass().
+										getResource("/dice_2.jpg"));
+		diceImage3 = new ImageIcon(this.getClass().
+										getResource("/dice_3.jpg"));
+		diceImage4 = new ImageIcon(this.getClass().
+										getResource("/dice_4.jpg"));
+		diceImage5 = new ImageIcon(this.getClass().
+										getResource("/dice_5.jpg"));
+		diceImage6 = new ImageIcon(this.getClass().
+										getResource("/dice_6.jpg"));
+
+		//set number of players
+		numPlayers = 4;
+
 		//set up rollLabel
 		GridBagConstraints c1 = new GridBagConstraints();
 		rollLabel = new JLabel("Roll #", JLabel.CENTER);
 		c1.fill = GridBagConstraints.BOTH;
 		c1.weightx = 0.25;
-		//c1.ipady = 40;
 		c1.gridx = 0;
 		c1.gridy = 0;
 		this.add(rollLabel, c1);
@@ -53,9 +77,6 @@ class Yahtzee extends JPanel
 		GridBagConstraints c2 = new GridBagConstraints();
 		heldPanel = new HeldDice();
 		c2.fill = GridBagConstraints.VERTICAL;
-		c2.weightx = 0.0;
-		//c2.ipady = 40;
-		//c2.ipadx = 140;
 		c2.gridx = 1;
 		c2.gridy = 0;
 		this.add(heldPanel, c2);
@@ -64,7 +85,7 @@ class Yahtzee extends JPanel
 		GridBagConstraints c3 = new GridBagConstraints();
 		scoreCardPanel = new ScoreCard();
 		c3.fill = GridBagConstraints.BOTH;
-		c3.weightx = .75;
+		c3.weightx = 0.75;
 		c3.weighty = 0.5;
 		c3.gridx = 2;
 		c3.gridy = 0;
@@ -75,7 +96,6 @@ class Yahtzee extends JPanel
 		GridBagConstraints c4 = new GridBagConstraints();
 		roleResultsPanel = new RoleResults();
 		c4.fill = GridBagConstraints.BOTH;
-		c4.weightx = 0.0;
 		c4.weighty = 0.5;
 		c4.gridx = 0;
 		c4.gridy = 1;
@@ -86,7 +106,6 @@ class Yahtzee extends JPanel
 		GridBagConstraints c5 = new GridBagConstraints();
 		playerScorePanel = new PlayerScore();
 		c5.fill = GridBagConstraints.BOTH;
-		//c5.weightx = 0.5;
 		c5.ipady = 30;
 		c5.gridx = 0;
 		c5.gridy = 2;
@@ -128,6 +147,68 @@ class Yahtzee extends JPanel
 			//call superclass's constructor and set background to white
 			super();
 			this.setBackground(Color.GREEN);	
+
+			//set layout
+			rollResultsLayout = new GridBagLayout();
+			this.setLayout(rollResultsLayout);
+
+			//set up roll button
+			GridBagConstraints c6 = new GridBagConstraints();
+			JButton rollButton = new JButton("Roll");
+			c6.fill = GridBagConstraints.BOTH;
+			c6.gridx = 1;
+			c6.insets = new Insets(100, 100, 100, 100);
+			c6.gridy = 0;
+			c6.gridwidth = 4;
+			this.add(rollButton, c6);
+
+			//set up dice 1
+			GridBagConstraints c7 = new GridBagConstraints();
+			JLabel label1 = new JLabel("", diceImage1, JLabel.CENTER);
+			c7.fill = GridBagConstraints.BOTH;
+			c7.gridx = 0;
+			c7.gridy = 1;
+			this.add(label1, c7);
+
+			//set up dice 2
+			GridBagConstraints c8 = new GridBagConstraints();
+			JLabel label2 = new JLabel("", diceImage2, JLabel.CENTER);
+			c8.fill = GridBagConstraints.BOTH;
+			c8.gridx = 1;
+			c8.gridy = 1;
+			this.add(label2, c8);
+
+			//set up dice 3
+			GridBagConstraints c9 = new GridBagConstraints();
+			JLabel label3 = new JLabel("", diceImage3, JLabel.CENTER);
+			c9.fill = GridBagConstraints.BOTH;
+			c9.gridx = 2;
+			c9.gridy = 1;
+			this.add(label3, c9);
+
+			//set up dice 4
+			GridBagConstraints c10 = new GridBagConstraints();
+			JLabel label4 = new JLabel("", diceImage4, JLabel.CENTER);
+			c10.fill = GridBagConstraints.BOTH;
+			c10.gridx = 3;
+			c10.gridy = 1;
+			this.add(label4, c10);
+
+			//set up dice 5
+			GridBagConstraints c11 = new GridBagConstraints();
+			JLabel label5 = new JLabel("", diceImage5, JLabel.CENTER);
+			c11.fill = GridBagConstraints.BOTH;
+			c11.gridx = 4;
+			c11.gridy = 1;
+			this.add(label5, c11);
+
+			//set up dice 6 
+			GridBagConstraints c12 = new GridBagConstraints();
+			JLabel label6 = new JLabel("", diceImage6, JLabel.CENTER);
+			c12.fill = GridBagConstraints.BOTH;
+			c12.gridx = 5;
+			c12.gridy = 1;
+			this.add(label6, c12);
 		}
 	}
 
@@ -137,7 +218,19 @@ class Yahtzee extends JPanel
 		{
 			//call superclass's constructor and set background to white
 			super();
-			this.setBackground(Color.YELLOW);	
+			this.setBackground(Color.YELLOW);
+
+			//set layout
+			playerScoreLayout = new GridLayout(0, numPlayers);
+			this.setLayout(playerScoreLayout);
+
+			//set up player score grid	
+			for (int i = 0; i < numPlayers; ++i)
+			{
+				JLabel label = new JLabel("Player " + (i + 1) + ": ");
+				label.setHorizontalAlignment(JLabel.CENTER);
+				this.add(label);
+			}
 		}
 	}
 
