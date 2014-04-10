@@ -32,6 +32,7 @@ class Yahtzee extends JPanel
 	private static ImageIcon diceImage4;
 	private static ImageIcon diceImage5;
 	private static ImageIcon diceImage6;
+	private GridBagLayout scoreCardLayout;
 
 	public Yahtzee()
 	{
@@ -136,7 +137,50 @@ class Yahtzee extends JPanel
 		{
 			//call superclass's constructor and set background to white
 			super();
-			this.setBackground(Color.BLUE);
+			this.setBackground(Color.WHITE);
+
+			//set layout
+			scoreCardLayout = new GridBagLayout();
+			this.setLayout(scoreCardLayout);
+
+			//set up top cell with game name label
+			GridBagConstraints c1 = new GridBagConstraints();
+			JLabel gameTypeLabel = new JLabel("Classic Yahtzee");
+			c1.fill = GridBagConstraints.BOTH;
+			c1.gridx = 0;
+			c1.gridy = 0;
+			c1.gridwidth = 2;
+			this.add(gameTypeLabel, c1);
+
+			//set up next 9 labels
+			GridBagConstraints c2 = new GridBagConstraints();
+			/*String [][] firstNine = { 	{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+										{}
+									}*/
+			c2.fill = GridBagConstraints.BOTH;
+			c2.gridx = 0;
+			c2.gridy = 1;
+			for (int i = 1; i < 10; ++i)
+			{
+				JLabel label = new JLabel("");
+			}
 		}
 	}
 
@@ -152,63 +196,72 @@ class Yahtzee extends JPanel
 			rollResultsLayout = new GridBagLayout();
 			this.setLayout(rollResultsLayout);
 
+			//create insets used for padding below
+			Insets buttonInsets = new Insets(0, 0, 100, 0);
+			Insets diceInsets = new Insets(0, 0, 0, 15);
+
 			//set up roll button
-			GridBagConstraints c6 = new GridBagConstraints();
+			GridBagConstraints c1 = new GridBagConstraints();
 			JButton rollButton = new JButton("Roll");
-			c6.fill = GridBagConstraints.BOTH;
-			c6.gridx = 1;
-			c6.insets = new Insets(100, 100, 100, 100);
-			c6.gridy = 0;
-			c6.gridwidth = 4;
-			this.add(rollButton, c6);
+			c1.fill = GridBagConstraints.BOTH;
+			c1.gridx = 1;
+			c1.insets = buttonInsets;
+			c1.gridy = 0;
+			c1.gridwidth = 4;
+			this.add(rollButton, c1);
 
 			//set up dice 1
-			GridBagConstraints c7 = new GridBagConstraints();
+			GridBagConstraints c2 = new GridBagConstraints();
 			JLabel label1 = new JLabel("", diceImage1, JLabel.CENTER);
-			c7.fill = GridBagConstraints.BOTH;
-			c7.gridx = 0;
-			c7.gridy = 1;
-			this.add(label1, c7);
+			c2.fill = GridBagConstraints.BOTH;
+			c2.gridx = 0;
+			c2.insets = diceInsets;
+			c2.gridy = 1;
+			this.add(label1, c2);
 
 			//set up dice 2
-			GridBagConstraints c8 = new GridBagConstraints();
+			GridBagConstraints c3 = new GridBagConstraints();
 			JLabel label2 = new JLabel("", diceImage2, JLabel.CENTER);
-			c8.fill = GridBagConstraints.BOTH;
-			c8.gridx = 1;
-			c8.gridy = 1;
-			this.add(label2, c8);
+			c3.fill = GridBagConstraints.BOTH;
+			c3.gridx = 1;
+			c3.insets = diceInsets;
+			c3.gridy = 1;
+			this.add(label2, c3);
 
 			//set up dice 3
-			GridBagConstraints c9 = new GridBagConstraints();
+			GridBagConstraints c4 = new GridBagConstraints();
 			JLabel label3 = new JLabel("", diceImage3, JLabel.CENTER);
-			c9.fill = GridBagConstraints.BOTH;
-			c9.gridx = 2;
-			c9.gridy = 1;
-			this.add(label3, c9);
+			c4.fill = GridBagConstraints.BOTH;
+			c4.gridx = 2;
+			c4.insets = diceInsets;
+			c4.gridy = 1;
+			this.add(label3, c4);
 
 			//set up dice 4
-			GridBagConstraints c10 = new GridBagConstraints();
+			GridBagConstraints c5 = new GridBagConstraints();
 			JLabel label4 = new JLabel("", diceImage4, JLabel.CENTER);
-			c10.fill = GridBagConstraints.BOTH;
-			c10.gridx = 3;
-			c10.gridy = 1;
-			this.add(label4, c10);
+			c5.fill = GridBagConstraints.BOTH;
+			c5.gridx = 3;
+			c5.insets = diceInsets;
+			c5.gridy = 1;
+			this.add(label4, c5);
 
 			//set up dice 5
-			GridBagConstraints c11 = new GridBagConstraints();
+			GridBagConstraints c6 = new GridBagConstraints();
 			JLabel label5 = new JLabel("", diceImage5, JLabel.CENTER);
-			c11.fill = GridBagConstraints.BOTH;
-			c11.gridx = 4;
-			c11.gridy = 1;
-			this.add(label5, c11);
+			c6.fill = GridBagConstraints.BOTH;
+			c6.gridx = 4;
+			c6.insets = diceInsets;
+			c6.gridy = 1;
+			this.add(label5, c6);
 
 			//set up dice 6 
-			GridBagConstraints c12 = new GridBagConstraints();
+			GridBagConstraints c7 = new GridBagConstraints();
 			JLabel label6 = new JLabel("", diceImage6, JLabel.CENTER);
-			c12.fill = GridBagConstraints.BOTH;
-			c12.gridx = 5;
-			c12.gridy = 1;
-			this.add(label6, c12);
+			c7.fill = GridBagConstraints.BOTH;
+			c7.gridx = 5;
+			c7.gridy = 1;
+			this.add(label6, c7);
 		}
 	}
 
