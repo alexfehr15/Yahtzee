@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.LinkedHashMap;
+import javax.swing.JLabel;
 
 class Computer implements Player
 {
@@ -23,7 +24,7 @@ class Computer implements Player
 		//initialize map to all blank
 		scoreMap = new LinkedHashMap <String, String >();
 		for (String label : scoreLabels)
-			scoreMap.put(label, "test");
+			scoreMap.put(label, "");
 
 		System.out.println(scoreMap);
 	}
@@ -36,6 +37,16 @@ class Computer implements Player
 	public String getName()
 	{
 		return name;
+	}
+
+	public int getPlayer()
+	{
+		return playerNumber;
+	}
+
+	public void initializeLabels(Map < JLabel, JLabel > yahtzeeMap)
+	{
+
 	}
 
 	//testing

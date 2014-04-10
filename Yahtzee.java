@@ -12,6 +12,10 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Insets;
+import java.util.Map;
+import java.util.LinkedHashMap;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 //display main GUI elements
 class Yahtzee extends JPanel
@@ -24,7 +28,6 @@ class Yahtzee extends JPanel
 	private PlayerScore playerScorePanel;
 	private GridLayout playerScoreLayout;
 	private static ImageIcon emptyImage;
-	private static int numPlayers;
 	private GridBagLayout rollResultsLayout;
 	private static ImageIcon diceImage1;
 	private static ImageIcon diceImage2;
@@ -33,6 +36,8 @@ class Yahtzee extends JPanel
 	private static ImageIcon diceImage5;
 	private static ImageIcon diceImage6;
 	private GridBagLayout scoreCardLayout;
+	private Map< JLabel, JLabel > mainScoreMap;
+	public static final int NUMPLAYERS = 4;
 
 	public Yahtzee()
 	{
@@ -61,9 +66,6 @@ class Yahtzee extends JPanel
 										getResource("/dice_5.jpg"));
 		diceImage6 = new ImageIcon(this.getClass().
 										getResource("/dice_6.jpg"));
-
-		//set number of players
-		numPlayers = 4;
 
 		//set up rollLabel
 		GridBagConstraints c1 = new GridBagConstraints();
@@ -123,7 +125,7 @@ class Yahtzee extends JPanel
 			this.setBackground(Color.RED);
 
 			//fill with empty images to begin with
-			for (int i = 0; i < 6; ++i)
+			for (int i = 0; i < 5; ++i)
 			{
 				JLabel label = new JLabel("", emptyImage, JLabel.LEFT);
 				this.add(label);
@@ -143,43 +145,40 @@ class Yahtzee extends JPanel
 			scoreCardLayout = new GridBagLayout();
 			this.setLayout(scoreCardLayout);
 
+			//set the border
+			this.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
 			//set up top cell with game name label
 			GridBagConstraints c1 = new GridBagConstraints();
 			JLabel gameTypeLabel = new JLabel("Classic Yahtzee");
+			gameTypeLabel.setHorizontalAlignment(JLabel.CENTER);
 			c1.fill = GridBagConstraints.BOTH;
 			c1.gridx = 0;
 			c1.gridy = 0;
 			c1.gridwidth = 2;
 			this.add(gameTypeLabel, c1);
 
-			//set up next 9 labels
+			//set up initial labels for before game starts
 			GridBagConstraints c2 = new GridBagConstraints();
-			/*String [][] firstNine = { 	{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-										{}
-									}*/
+			Human initialScoreView = new Human("", -1);
+			mainScoreMap = new LinkedHashMap < JLabel, JLabel >();
+			initialScoreView.initializeLabels(mainScoreMap);
 			c2.fill = GridBagConstraints.BOTH;
 			c2.gridx = 0;
 			c2.gridy = 1;
-			for (int i = 1; i < 10; ++i)
+			c2.weightx = .5;
+			c2.weighty = .5;
+			for (JLabel key : mainScoreMap.keySet())
 			{
-				JLabel label = new JLabel("");
+				key.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				key.setHorizontalAlignment(JLabel.CENTER);
+				this.add(key, c2);
+				c2.gridx = 1;
+				(mainScoreMap.get(key)).setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				(mainScoreMap.get(key)).setHorizontalAlignment(JLabel.CENTER);
+				this.add(mainScoreMap.get(key), c2);
+				c2.gridx = 0;
+				c2.gridy++;
 			}
 		}
 	}
@@ -267,6 +266,8 @@ class Yahtzee extends JPanel
 
 	class PlayerScore extends JPanel
 	{
+		private JLabel [] labels = new JLabel[4];
+
 		public PlayerScore()
 		{
 			//call superclass's constructor and set background to white
@@ -274,15 +275,15 @@ class Yahtzee extends JPanel
 			this.setBackground(Color.YELLOW);
 
 			//set layout
-			playerScoreLayout = new GridLayout(0, numPlayers);
+			playerScoreLayout = new GridLayout(0, NUMPLAYERS);
 			this.setLayout(playerScoreLayout);
 
 			//set up player score grid	
-			for (int i = 0; i < numPlayers; ++i)
+			for (int i = 0; i < NUMPLAYERS; ++i)
 			{
-				JLabel label = new JLabel("Player " + (i + 1) + ": ");
-				label.setHorizontalAlignment(JLabel.CENTER);
-				this.add(label);
+				labels[i] = new JLabel("Player " + (i + 1) + ": ");
+				labels[i].setHorizontalAlignment(JLabel.CENTER);
+				this.add(labels[i]);
 			}
 		}
 	}
@@ -318,5 +319,33 @@ class Yahtzee extends JPanel
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		frame.setVisible(true);
+
+		//find out how many human and computer players
+		String numHumansStr = JOptionPane.showInputDialog("How many human players (max 4): ");
+		int numHumans = Integer.parseInt(numHumansStr);
+		while (numHumans > 4 || numHumans < 0)
+		{
+			numHumansStr = JOptionPane.showInputDialog("How many human players (max 4): ");
+			numHumans = Integer.parseInt(numHumansStr);
+		}
+		int numComputers = 4 - numHumans;
+
+		//create heterogeneous list of size 4
+		Player[] participants = new Player[NUMPLAYERS];
+
+		//fill participants list first with human players
+		for (int i = 0; i < numHumans; ++i)
+		{
+			String name = JOptionPane.showInputDialog("Enter name for player " + (i+1) + ":");
+			participants[i] = new Human(name + ":", i);
+		}
+
+		//fill rest of participants list with computer players
+		for (int i = numHumans; i < 4; ++i)
+		{
+			participants[i] = new Computer("Computer " + (i - numHumans + 1) + ":", i);
+		}
+
+		//initialize player name labels at bottom
 	}
 }
