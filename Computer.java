@@ -1,14 +1,15 @@
 import java.util.Map;
 import java.util.LinkedHashMap;
 import javax.swing.JLabel;
+import java.util.Random;
 
 class Computer implements Player
 {
 	private String name;
 	private int playerNumber;
 	private Map< String, String > scoreMap;
-	private String [] scoreLabels = {"1", "2", "3", "4", "5", "6",
-									"Bonus", "Total", "3 of a kind",
+	private String [] scoreLabels = {"Player:", "1", "2", "3", "4", "5", "6",
+									"Bonus", "Total", "", "3 of a kind",
 									"4 of a kind", "Full House", 
 									"Small Straight", "Large Straight",
 									"Yahtzee", "Chance", "Total",
@@ -25,13 +26,12 @@ class Computer implements Player
 		scoreMap = new LinkedHashMap <String, String >();
 		for (String label : scoreLabels)
 			scoreMap.put(label, "");
-
-		System.out.println(scoreMap);
+		scoreMap.put("Player:", name);
 	}
 
-	public int takeTurn()
+	public void takeTurn()
 	{
-		return 0;
+		
 	}
 
 	public String getName()
@@ -46,7 +46,15 @@ class Computer implements Player
 
 	public void initializeLabels(Map < JLabel, JLabel > yahtzeeMap)
 	{
+		for (String key : scoreMap.keySet())
+		{
+			yahtzeeMap.put(new JLabel(key), new JLabel(scoreMap.get(key)));
+		}
+	}
 
+	public String getText()
+	{
+		return getName() + scoreMap.get("Grand Total");
 	}
 
 	//testing

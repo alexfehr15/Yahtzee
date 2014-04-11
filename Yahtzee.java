@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 //display main GUI elements
 class Yahtzee extends JPanel
@@ -26,7 +27,7 @@ class Yahtzee extends JPanel
 	private ScoreCard scoreCardPanel;
 	private RoleResults roleResultsPanel;
 	private PlayerScore playerScorePanel;
-	private GridLayout playerScoreLayout;
+	private static GridLayout playerScoreLayout;
 	private static ImageIcon emptyImage;
 	private GridBagLayout rollResultsLayout;
 	private static ImageIcon diceImage1;
@@ -35,9 +36,15 @@ class Yahtzee extends JPanel
 	private static ImageIcon diceImage4;
 	private static ImageIcon diceImage5;
 	private static ImageIcon diceImage6;
+	private static ImageIcon [] dieImages;
+	private static JLabel [] currentDie = new JLabel[5];
 	private GridBagLayout scoreCardLayout;
 	private Map< JLabel, JLabel > mainScoreMap;
-	public static final int NUMPLAYERS = 4;
+	private static final int NUMPLAYERS = 4;
+	private static final int ROLLSPERTURN = 3;
+	private static int numRoles = 0;
+	private static int currentRole = 1;
+	private static final int MAXROLLS = NUMPLAYERS * 13 * ROLLSPERTURN;
 
 	public Yahtzee()
 	{
@@ -66,6 +73,7 @@ class Yahtzee extends JPanel
 										getResource("/dice_5.jpg"));
 		diceImage6 = new ImageIcon(this.getClass().
 										getResource("/dice_6.jpg"));
+		dieImages = {diceImage1, diceImage2, diceImage3, diceImage4, diceImage5, diceImage6};
 
 		//set up rollLabel
 		GridBagConstraints c1 = new GridBagConstraints();
@@ -197,7 +205,7 @@ class Yahtzee extends JPanel
 
 			//create insets used for padding below
 			Insets buttonInsets = new Insets(0, 0, 100, 0);
-			Insets diceInsets = new Insets(0, 0, 0, 15);
+			Insets diceInsets = new Insets(0, 0, 0, 23);
 
 			//set up roll button
 			GridBagConstraints c1 = new GridBagConstraints();
@@ -206,12 +214,13 @@ class Yahtzee extends JPanel
 			c1.gridx = 1;
 			c1.insets = buttonInsets;
 			c1.gridy = 0;
-			c1.gridwidth = 4;
+			c1.gridwidth = 3;
 			this.add(rollButton, c1);
 
 			//set up dice 1
 			GridBagConstraints c2 = new GridBagConstraints();
 			JLabel label1 = new JLabel("", diceImage1, JLabel.CENTER);
+			currentDie[0] = label1;
 			c2.fill = GridBagConstraints.BOTH;
 			c2.gridx = 0;
 			c2.insets = diceInsets;
@@ -221,6 +230,7 @@ class Yahtzee extends JPanel
 			//set up dice 2
 			GridBagConstraints c3 = new GridBagConstraints();
 			JLabel label2 = new JLabel("", diceImage2, JLabel.CENTER);
+			currentDie[1] = label2;
 			c3.fill = GridBagConstraints.BOTH;
 			c3.gridx = 1;
 			c3.insets = diceInsets;
@@ -230,6 +240,7 @@ class Yahtzee extends JPanel
 			//set up dice 3
 			GridBagConstraints c4 = new GridBagConstraints();
 			JLabel label3 = new JLabel("", diceImage3, JLabel.CENTER);
+			currentDie[2] = label3;
 			c4.fill = GridBagConstraints.BOTH;
 			c4.gridx = 2;
 			c4.insets = diceInsets;
@@ -239,6 +250,7 @@ class Yahtzee extends JPanel
 			//set up dice 4
 			GridBagConstraints c5 = new GridBagConstraints();
 			JLabel label4 = new JLabel("", diceImage4, JLabel.CENTER);
+			currentDie[3] = label4;
 			c5.fill = GridBagConstraints.BOTH;
 			c5.gridx = 3;
 			c5.insets = diceInsets;
@@ -248,6 +260,7 @@ class Yahtzee extends JPanel
 			//set up dice 5
 			GridBagConstraints c6 = new GridBagConstraints();
 			JLabel label5 = new JLabel("", diceImage5, JLabel.CENTER);
+			currentDie[4] = label5;
 			c6.fill = GridBagConstraints.BOTH;
 			c6.gridx = 4;
 			c6.insets = diceInsets;
@@ -255,18 +268,18 @@ class Yahtzee extends JPanel
 			this.add(label5, c6);
 
 			//set up dice 6 
-			GridBagConstraints c7 = new GridBagConstraints();
+			/*GridBagConstraints c7 = new GridBagConstraints();
 			JLabel label6 = new JLabel("", diceImage6, JLabel.CENTER);
 			c7.fill = GridBagConstraints.BOTH;
 			c7.gridx = 5;
 			c7.gridy = 1;
-			this.add(label6, c7);
+			this.add(label6, c7);*/
 		}
 	}
 
-	class PlayerScore extends JPanel
+	static class PlayerScore extends JPanel
 	{
-		private JLabel [] labels = new JLabel[4];
+		private static JLabel [] labels = new JLabel[4];
 
 		public PlayerScore()
 		{
@@ -281,11 +294,25 @@ class Yahtzee extends JPanel
 			//set up player score grid	
 			for (int i = 0; i < NUMPLAYERS; ++i)
 			{
-				labels[i] = new JLabel("Player " + (i + 1) + ": ");
+				labels[i] = new JLabel("Player " + (i + 1) + ":");
 				labels[i].setHorizontalAlignment(JLabel.CENTER);
 				this.add(labels[i]);
 			}
 		}
+
+		public static void updateLabels(Player player)
+		{
+			labels[player.getPlayer()].setText(player.getText());
+		}
+	}
+
+	//check to see if the number of rolls has exceeded the maximum
+	public boolean gameOver()
+	{
+		if (numRoles > MAXROLLS)
+			return true;
+		else
+			return false;
 	}
 
 	public static void main(String args[])
@@ -337,15 +364,53 @@ class Yahtzee extends JPanel
 		for (int i = 0; i < numHumans; ++i)
 		{
 			String name = JOptionPane.showInputDialog("Enter name for player " + (i+1) + ":");
-			participants[i] = new Human(name + ":", i);
+			participants[i] = new Human(name + ": ", i);
 		}
 
 		//fill rest of participants list with computer players
 		for (int i = numHumans; i < 4; ++i)
 		{
-			participants[i] = new Computer("Computer " + (i - numHumans + 1) + ":", i);
+			participants[i] = new Computer("Computer " + (i - numHumans + 1) + ": ", i);
 		}
 
-		//initialize player name labels at bottom
+		//update initial player name labels at bottom (score will be blank)
+		for (Player player : participants)
+			PlayerScore.updateLabels(player);
+
+		//index to which participant is currently playing
+		int currentIndex = 0;
+		Random rand = new Random();
+		int randDice = 0;
+		int dieAvailable = 5;
+
+		//begin main game loop
+		while (!yahtzeePanel.gameOver())
+		{
+			//roll the die
+			for (int i = 0; i < dieAvailable; ++i)
+			{
+				randDice = rand.nextInt(6);
+				currentDie[i].setIcon(dieImages[randDice]);
+			}
+			break;
+			//participants[currentIndex].takeTurn();
+
+
+
+			/*n = participants[currentIndex].takeTurn(currentBoard);
+			s = participants[currentIndex].getSymbol();
+			//System.out.println("must have made move");
+			currentBoard.setMove(n, s);
+			++moveCount;
+			currentIndex = (currentIndex + 1) % participants.length;
+			System.out.println("\n\n" + currentBoard);
+
+			if (moveCount == (boardSize * boardSize))
+			{
+				System.out.println("\n\nGame has ended in a draw");
+				draw = true;
+				break;
+			}*/
+		}
 	}
 }

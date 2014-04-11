@@ -1,6 +1,7 @@
 import java.util.Map;
 import java.util.LinkedHashMap;
 import javax.swing.JLabel;
+import java.util.Random;
 
 //map example at figure 19_20
 class Human implements Player
@@ -29,9 +30,9 @@ class Human implements Player
 		scoreMap.put("Player:", name);
 	}
 
-	public int takeTurn()
+	public void takeTurn()
 	{
-		return 0;
+		
 	}
 
 	public String getName()
@@ -50,6 +51,11 @@ class Human implements Player
 		{
 			yahtzeeMap.put(new JLabel(key), new JLabel(scoreMap.get(key)));
 		}
+	}
+
+	public String getText()
+	{
+		return getName() + scoreMap.get("Grand Total");
 	}
 
 	//testing
