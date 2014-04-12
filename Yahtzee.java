@@ -17,15 +17,19 @@ import java.util.LinkedHashMap;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import java.util.Random;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 
 //display main GUI elements
 class Yahtzee extends JPanel
 {
 	private GridBagLayout mainLayout;
-	private JLabel rollLabel;
+	private static JLabel rollLabel;
 	private HeldDice heldPanel; 
 	private ScoreCard scoreCardPanel;
-	private RoleResults roleResultsPanel;
+	private RollResults RollResultsPanel;
 	private PlayerScore playerScorePanel;
 	private static GridLayout playerScoreLayout;
 	private static ImageIcon emptyImage;
@@ -36,15 +40,21 @@ class Yahtzee extends JPanel
 	private static ImageIcon diceImage4;
 	private static ImageIcon diceImage5;
 	private static ImageIcon diceImage6;
-	private static ImageIcon [] dieImages;
+	private static ImageIcon [] dieImages = new ImageIcon[6];
+	private static JLabel [] heldDieImages = new JLabel[5];
 	private static JLabel [] currentDie = new JLabel[5];
 	private GridBagLayout scoreCardLayout;
 	private Map< JLabel, JLabel > mainScoreMap;
 	private static final int NUMPLAYERS = 4;
 	private static final int ROLLSPERTURN = 3;
-	private static int numRoles = 0;
-	private static int currentRole = 1;
+	private static int numRolls = 0;
+	private static int currentRoll = 1;
 	private static final int MAXROLLS = NUMPLAYERS * 13 * ROLLSPERTURN;
+	private static int currentIndex = 0;
+	private static Random rand = new Random();
+	private static int randDice = 0;
+	private static int dieAvailable = 5;
+	private static int heldDie = 0;
 
 	public Yahtzee()
 	{
@@ -73,7 +83,12 @@ class Yahtzee extends JPanel
 										getResource("/dice_5.jpg"));
 		diceImage6 = new ImageIcon(this.getClass().
 										getResource("/dice_6.jpg"));
-		dieImages = {diceImage1, diceImage2, diceImage3, diceImage4, diceImage5, diceImage6};
+		dieImages[0] = diceImage1;
+		dieImages[1] = diceImage2;
+		dieImages[2] = diceImage3;
+		dieImages[3] = diceImage4;
+		dieImages[4] = diceImage5;
+		dieImages[5] = diceImage6;
 
 		//set up rollLabel
 		GridBagConstraints c1 = new GridBagConstraints();
@@ -103,15 +118,15 @@ class Yahtzee extends JPanel
 		c3.gridheight = 3;
 		this.add(scoreCardPanel, c3);
 
-		//set up roleResultsPanel
+		//set up RollResultsPanel
 		GridBagConstraints c4 = new GridBagConstraints();
-		roleResultsPanel = new RoleResults();
+		RollResultsPanel = new RollResults();
 		c4.fill = GridBagConstraints.BOTH;
 		c4.weighty = 0.5;
 		c4.gridx = 0;
 		c4.gridy = 1;
 		c4.gridwidth = 2;
-		this.add(roleResultsPanel, c4);
+		this.add(RollResultsPanel, c4);
 
 		//set up playerScorePanel
 		GridBagConstraints c5 = new GridBagConstraints();
@@ -124,7 +139,12 @@ class Yahtzee extends JPanel
 		this.add(playerScorePanel, c5);
 	}
 
-	class HeldDice extends JPanel
+	public static void setRollLabel(int c)
+	{
+		rollLabel.setText("Roll " + c);
+	}
+
+	class HeldDice extends JPanel implements MouseListener
 	{
 		public HeldDice()
 		{
@@ -136,9 +156,47 @@ class Yahtzee extends JPanel
 			for (int i = 0; i < 5; ++i)
 			{
 				JLabel label = new JLabel("", emptyImage, JLabel.LEFT);
+				heldDieImages[i] = label;
+				label.addMouseListener(this);
 				this.add(label);
 			}
 		}
+
+		//handle when a dice is clicked in roll results area
+		public void mouseClicked(MouseEvent e)
+		{
+			//move dice image back down to first empty spot
+			for (int i = 0; i < 5; ++i)
+				if (currentDie[i].getIcon() == emptyImage)
+				{
+					currentDie[i].setIcon(((JLabel) e.getSource()).getIcon());
+					( (JLabel) e.getSource()).setIcon(emptyImage);
+					++dieAvailable;
+					--heldDie;
+					break;
+				}
+		}
+
+		public void mousePressed(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseReleased(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseEntered(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseExited(MouseEvent e)
+		{
+			//todo
+		}
+
 	}
 
 	class ScoreCard extends JPanel
@@ -191,9 +249,16 @@ class Yahtzee extends JPanel
 		}
 	}
 
-	class RoleResults extends JPanel
+	class RollResults extends JPanel implements ActionListener, MouseListener
 	{
-		public RoleResults()
+		private JButton rollButton;
+		private JLabel label1;
+		private JLabel label2;
+		private JLabel label3;
+		private JLabel label4;
+		private JLabel label5;
+
+		public RollResults()
 		{
 			//call superclass's constructor and set background to white
 			super();
@@ -209,7 +274,8 @@ class Yahtzee extends JPanel
 
 			//set up roll button
 			GridBagConstraints c1 = new GridBagConstraints();
-			JButton rollButton = new JButton("Roll");
+			rollButton = new JButton("Roll");
+			rollButton.addActionListener(this);
 			c1.fill = GridBagConstraints.BOTH;
 			c1.gridx = 1;
 			c1.insets = buttonInsets;
@@ -219,7 +285,8 @@ class Yahtzee extends JPanel
 
 			//set up dice 1
 			GridBagConstraints c2 = new GridBagConstraints();
-			JLabel label1 = new JLabel("", diceImage1, JLabel.CENTER);
+			label1 = new JLabel("", diceImage1, JLabel.CENTER);
+			label1.addMouseListener(this);
 			currentDie[0] = label1;
 			c2.fill = GridBagConstraints.BOTH;
 			c2.gridx = 0;
@@ -229,7 +296,8 @@ class Yahtzee extends JPanel
 
 			//set up dice 2
 			GridBagConstraints c3 = new GridBagConstraints();
-			JLabel label2 = new JLabel("", diceImage2, JLabel.CENTER);
+			label2 = new JLabel("", diceImage2, JLabel.CENTER);
+			label2.addMouseListener(this);
 			currentDie[1] = label2;
 			c3.fill = GridBagConstraints.BOTH;
 			c3.gridx = 1;
@@ -239,7 +307,8 @@ class Yahtzee extends JPanel
 
 			//set up dice 3
 			GridBagConstraints c4 = new GridBagConstraints();
-			JLabel label3 = new JLabel("", diceImage3, JLabel.CENTER);
+			label3 = new JLabel("", diceImage3, JLabel.CENTER);
+			label3.addMouseListener(this);
 			currentDie[2] = label3;
 			c4.fill = GridBagConstraints.BOTH;
 			c4.gridx = 2;
@@ -249,7 +318,8 @@ class Yahtzee extends JPanel
 
 			//set up dice 4
 			GridBagConstraints c5 = new GridBagConstraints();
-			JLabel label4 = new JLabel("", diceImage4, JLabel.CENTER);
+			label4 = new JLabel("", diceImage4, JLabel.CENTER);
+			label4.addMouseListener(this);
 			currentDie[3] = label4;
 			c5.fill = GridBagConstraints.BOTH;
 			c5.gridx = 3;
@@ -259,7 +329,8 @@ class Yahtzee extends JPanel
 
 			//set up dice 5
 			GridBagConstraints c6 = new GridBagConstraints();
-			JLabel label5 = new JLabel("", diceImage5, JLabel.CENTER);
+			label5 = new JLabel("", diceImage5, JLabel.CENTER);
+			label5.addMouseListener(this);
 			currentDie[4] = label5;
 			c6.fill = GridBagConstraints.BOTH;
 			c6.gridx = 4;
@@ -274,6 +345,73 @@ class Yahtzee extends JPanel
 			c7.gridx = 5;
 			c7.gridy = 1;
 			this.add(label6, c7);*/
+		}
+
+		//handle when a dice is clicked in roll results area
+		public void mouseClicked(MouseEvent e)
+		{
+			//testing
+			System.out.println("Pressed a button");
+
+			//set held dice image to be whatever was clicked, increase counter
+			heldDieImages[heldDie++].setIcon(((JLabel) e.getSource()).getIcon());
+			((JLabel) e.getSource()).setIcon(emptyImage);
+
+			//decrease dieAvailable
+			--dieAvailable;
+		}
+
+		public void mousePressed(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseReleased(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseEntered(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseExited(MouseEvent e)
+		{
+			//todo
+		}
+
+		//catch the different events and handle accordingly
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() == rollButton)
+			{
+				//move die remaining over to the left
+				for (int i = 4; i > dieAvailable - 1; --i)
+					currentDie[i].setIcon(emptyImage);
+
+				//roll the die
+				for (int i = 0; i < dieAvailable; ++i)
+				{
+					randDice = rand.nextInt(6);
+					currentDie[i].setIcon(dieImages[randDice]);
+				}
+
+				//increase some counters
+				Yahtzee.setRollLabel(currentRoll);
+				++numRolls;
+				++currentRoll;
+
+				//check if just did last roll
+				if (currentRoll == 4)
+				{
+					//user can no longer roll
+					rollButton.setEnabled(false);
+
+					//set currentRoll back to 1
+					currentRoll = 1;
+				}
+			}
 		}
 	}
 
@@ -309,7 +447,7 @@ class Yahtzee extends JPanel
 	//check to see if the number of rolls has exceeded the maximum
 	public boolean gameOver()
 	{
-		if (numRoles > MAXROLLS)
+		if (numRolls > MAXROLLS)
 			return true;
 		else
 			return false;
@@ -377,14 +515,12 @@ class Yahtzee extends JPanel
 		for (Player player : participants)
 			PlayerScore.updateLabels(player);
 
-		//index to which participant is currently playing
-		int currentIndex = 0;
-		Random rand = new Random();
-		int randDice = 0;
-		int dieAvailable = 5;
+		//*************************************************************
+		//if no humans, need to just start going through game loop here
+		//*************************************************************
 
 		//begin main game loop
-		while (!yahtzeePanel.gameOver())
+		/*while (!yahtzeeJPanel.gameOver())
 		{
 			//roll the die
 			for (int i = 0; i < dieAvailable; ++i)
@@ -394,23 +530,6 @@ class Yahtzee extends JPanel
 			}
 			break;
 			//participants[currentIndex].takeTurn();
-
-
-
-			/*n = participants[currentIndex].takeTurn(currentBoard);
-			s = participants[currentIndex].getSymbol();
-			//System.out.println("must have made move");
-			currentBoard.setMove(n, s);
-			++moveCount;
-			currentIndex = (currentIndex + 1) % participants.length;
-			System.out.println("\n\n" + currentBoard);
-
-			if (moveCount == (boardSize * boardSize))
-			{
-				System.out.println("\n\nGame has ended in a draw");
-				draw = true;
-				break;
-			}*/
-		}
+		}*/
 	}
 }
