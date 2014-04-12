@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 //interface used to create heterogeneous list of Player pointers to Human and Computer objects
 interface Player
 {
-	public void takeTurn();
+	public void takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap);
 
 	public String getName();
 

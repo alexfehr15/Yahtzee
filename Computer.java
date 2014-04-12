@@ -9,10 +9,10 @@ class Computer implements Player
 	private int playerNumber;
 	private Map< String, String > scoreMap;
 	private String [] scoreLabels = {"Player:", "1", "2", "3", "4", "5", "6",
-									"Bonus", "Total", "", "3 of a kind",
+									"Bonus", "Upper Total", "", "3 of a kind",
 									"4 of a kind", "Full House", 
 									"Small Straight", "Large Straight",
-									"Yahtzee", "Chance", "Total",
+									"Yahtzee", "Chance", "Lower Total",
 									"Grand Total"};
 
 	//constructor with name and playerNumber parameters
@@ -29,7 +29,7 @@ class Computer implements Player
 		scoreMap.put("Player:", name);
 	}
 
-	public void takeTurn()
+	public void takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
 	{
 		
 	}

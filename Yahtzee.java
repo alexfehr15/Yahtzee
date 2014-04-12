@@ -41,7 +41,7 @@ class Yahtzee extends JPanel
 	private static ImageIcon diceImage5;
 	private static ImageIcon diceImage6;
 	private static ImageIcon [] dieImages = new ImageIcon[6];
-	private static JLabel [] heldDieImages = new JLabel[5];
+	private static JLabel [] heldDie = new JLabel[5];
 	private static JLabel [] currentDie = new JLabel[5];
 	private GridBagLayout scoreCardLayout;
 	private Map< JLabel, JLabel > mainScoreMap;
@@ -54,7 +54,9 @@ class Yahtzee extends JPanel
 	private static Random rand = new Random();
 	private static int randDice = 0;
 	private static int dieAvailable = 5;
-	private static int heldDie = 0;
+	private static int heldDieAvailable = 0;
+	private static int [] scoreDie = new int[5];
+	private static Player[] participants = new Player[NUMPLAYERS];
 
 	public Yahtzee()
 	{
@@ -139,6 +141,24 @@ class Yahtzee extends JPanel
 		this.add(playerScorePanel, c5);
 	}
 
+	public static int getDiceNum(ImageIcon icon)
+	{
+		if (icon == diceImage1)
+			return 1;
+		else if (icon == diceImage2)
+			return 2;
+		else if (icon == diceImage3)
+			return 3;
+		else if (icon == diceImage4)
+			return 4;
+		else if (icon == diceImage5)
+			return 5;
+		else if (icon == diceImage6)
+			return 6;
+		else
+			return -1;
+	}
+
 	public static void setRollLabel(int c)
 	{
 		rollLabel.setText("Roll " + c);
@@ -156,7 +176,7 @@ class Yahtzee extends JPanel
 			for (int i = 0; i < 5; ++i)
 			{
 				JLabel label = new JLabel("", emptyImage, JLabel.LEFT);
-				heldDieImages[i] = label;
+				heldDie[i] = label;
 				label.addMouseListener(this);
 				this.add(label);
 			}
@@ -172,7 +192,7 @@ class Yahtzee extends JPanel
 					currentDie[i].setIcon(((JLabel) e.getSource()).getIcon());
 					( (JLabel) e.getSource()).setIcon(emptyImage);
 					++dieAvailable;
-					--heldDie;
+					--heldDieAvailable;
 					break;
 				}
 		}
@@ -199,7 +219,7 @@ class Yahtzee extends JPanel
 
 	}
 
-	class ScoreCard extends JPanel
+	class ScoreCard extends JPanel implements MouseListener
 	{
 		public ScoreCard()
 		{
@@ -242,10 +262,62 @@ class Yahtzee extends JPanel
 				c2.gridx = 1;
 				(mainScoreMap.get(key)).setBorder(BorderFactory.createLineBorder(Color.BLACK));
 				(mainScoreMap.get(key)).setHorizontalAlignment(JLabel.CENTER);
+
+				//add mouseListener when appropriate
+				if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+				{
+					(mainScoreMap.get(key)).setName(key.getText());
+					(mainScoreMap.get(key)).addMouseListener(this);
+				}
+
 				this.add(mainScoreMap.get(key), c2);
 				c2.gridx = 0;
 				c2.gridy++;
 			}
+		}
+
+		//handle when a cell is clicked in the scoreCard
+		public void mouseClicked(MouseEvent e)
+		{
+			//get current die from board
+			int placeCounter = 0;
+			for (int i = 0; i < 5; ++i)
+			{
+				if (heldDie[i].getIcon() != emptyImage)
+					scoreDie[placeCounter++] = getDiceNum((ImageIcon) heldDie[i].getIcon());
+			}
+			for (int i = 0; i < 5; ++i)
+			{
+				if (currentDie[i].getIcon() != emptyImage)
+					scoreDie[placeCounter++] = getDiceNum((ImageIcon) currentDie[i].getIcon());
+			}
+
+			System.out.println(((JLabel) e.getSource()).getName());
+
+			//call human function for participants
+			participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap);
+			
+			//clean up some other stuff
+		}
+
+		public void mousePressed(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseReleased(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseEntered(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseExited(MouseEvent e)
+		{
+			//todo
 		}
 	}
 
@@ -354,7 +426,7 @@ class Yahtzee extends JPanel
 			System.out.println("Pressed a button");
 
 			//set held dice image to be whatever was clicked, increase counter
-			heldDieImages[heldDie++].setIcon(((JLabel) e.getSource()).getIcon());
+			heldDie[heldDieAvailable++].setIcon(((JLabel) e.getSource()).getIcon());
 			((JLabel) e.getSource()).setIcon(emptyImage);
 
 			//decrease dieAvailable
@@ -496,7 +568,7 @@ class Yahtzee extends JPanel
 		int numComputers = 4 - numHumans;
 
 		//create heterogeneous list of size 4
-		Player[] participants = new Player[NUMPLAYERS];
+		//Player[] participants = new Player[NUMPLAYERS];
 
 		//fill participants list first with human players
 		for (int i = 0; i < numHumans; ++i)
@@ -518,6 +590,8 @@ class Yahtzee extends JPanel
 		//*************************************************************
 		//if no humans, need to just start going through game loop here
 		//*************************************************************
+
+		//if humans, then set name on score card and tell them to roll
 
 		//begin main game loop
 		/*while (!yahtzeeJPanel.gameOver())
