@@ -70,12 +70,28 @@ class Computer implements Player
 				rollTwo[i] = r.nextInt(6) + 1;
 			}
 
+		//testing
+		System.out.println("\nRoll Three before secondRoll():");
+		System.out.println(aim);
+		for (int i : rollTwo)
+			System.out.println(i);
+
 		//continue with the second roll
 		aim = secondRoll(aim, emptySlots);
+
+		//testing
+		System.out.println("\nRoll Three:");
+		System.out.println(aim);
+		for (int i : rollThree)
+			System.out.println(i);
 
 		//testing (reset rollTwo)************************
 		for (int i = 0; i < 5; ++i)
 			rollTwo[i] = 0;
+
+		//testing (reset rollThree)************************
+		for (int i = 0; i < 5; ++i)
+			rollThree[i] = 0;
 	}
 
 	//evaluate what die to keep and place into rollThree
@@ -85,40 +101,28 @@ class Computer implements Player
 		{
 			case "1":
 				return two1();
-				break;
 			case "2":
 				return two2();
-				break;
 			case "3":
 				return two3();
-				break;
 			case "4":
 				return two4();
-				break;
 			case "5":
 				return two5();
-				break;
 			case "6":
 				return two6();
-				break;
 			case "3 of a kind":
 				return two3Kind(empty);
-				break;
 			case "4 of a kind":
 				return two4Kind(empty);
-				break;
 			case "Full House":
 				return twoFullHouse(empty);
-				break;
 			case "Small Straight":
 				return twoSmallStraight(empty);
-				break;
 			case "Large Straight":
 				return twoLargeStraight(empty);
-				break;
 			default:
 				return twoOther(empty);
-				break;
 		}
 	}
 
@@ -179,31 +183,37 @@ class Computer implements Player
 	public String two3Kind(int emptySlots)
 	{
 		int indexOn = 0;
+		return "3 of a kind";
 	}
 
 	public String two4Kind(int emptySlots)
 	{
 		int indexOn = 0;
+		return "4 of a kind";
 	}
 
 	public String twoFullHouse(int emptySlots)
 	{
 		int indexOn = 0;
+		return "Full House";
 	}
 
 	public String twoSmallStraight(int emptySlots)
 	{
 		int indexOn = 0;
+		return "Small Straight";
 	}
 
 	public String twoLargeStraight(int emptySlots)
 	{
 		int indexOn = 0;
+		return "Large Straight";
 	}
 
 	public String twoOther(int emptySlots)
 	{
 		int indexOn = 0;
+		return "Other";
 	}
 
 	//returns a string of what will be aiming for, also fills part of rollTwo
