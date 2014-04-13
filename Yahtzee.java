@@ -45,7 +45,7 @@ class Yahtzee extends JPanel
 	private static JLabel [] currentDie = new JLabel[5];
 	private GridBagLayout scoreCardLayout;
 	private static Map< JLabel, JLabel > mainScoreMap;
-	private static final int NUMPLAYERS = 4;
+	private static final int NUMPLAYERS = 2;
 	private static final int ROLLSPERTURN = 3;
 	private static int numRolls = 0;
 	private static int currentRoll = 1;
@@ -222,6 +222,9 @@ class Yahtzee extends JPanel
 
 	class ScoreCard extends JPanel implements MouseListener
 	{
+		private int [] cDie = {1, 2};
+		private String temp = "simulate";
+
 		public ScoreCard()
 		{
 			//call superclass's constructor and set background to white
@@ -322,17 +325,35 @@ class Yahtzee extends JPanel
 			heldDieAvailable = 0;
 			dieAvailable = 5;
 
-			//probably should first check here if the game is over or not***
+			//check if game is finished...doesn't work at the moment
+			if (gameOver())
+			{
+				//declare winner or whatever
 
+				//testing
+				System.out.println("Game is finished");
+			}
 			//if computer player, call takeTurn, otherwise human rolls
-			if (participants[currentIndex] instanceof Human)
+			else if (participants[currentIndex] instanceof Human)
 			{
 				//set up scoreCard for them
 				participants[currentIndex].updateLabels(mainScoreMap);
 			}
 			else
 			{
-				//call takeTurn for computer
+				while (participants[currentIndex] instanceof Computer)
+				{
+					//update score card to show computer player
+					participants[currentIndex].updateLabels(mainScoreMap);
+
+					//call take turn to simulate and give a score to computer
+					int [] cDie = {1, 2};
+					String temp = "simulate";
+					participants[currentIndex].takeTurn(cDie, temp, mainScoreMap);
+
+					//increase current index
+					currentIndex = (currentIndex + 1) % NUMPLAYERS;
+				}
 			}
 		}
 
