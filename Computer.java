@@ -52,9 +52,14 @@ class Computer implements Player
 		}
 	}
 
+	public void updateLabels(Map < JLabel, JLabel > yahtzeeMap)
+	{
+		//todo
+	}
+
 	public String getText()
 	{
-		return getName() + scoreMap.get("Grand Total");
+		return getName() + ": " + scoreMap.get("Grand Total");
 	}
 
 	//testing

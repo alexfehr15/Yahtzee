@@ -44,7 +44,7 @@ class Yahtzee extends JPanel
 	private static JLabel [] heldDie = new JLabel[5];
 	private static JLabel [] currentDie = new JLabel[5];
 	private GridBagLayout scoreCardLayout;
-	private Map< JLabel, JLabel > mainScoreMap;
+	private static Map< JLabel, JLabel > mainScoreMap;
 	private static final int NUMPLAYERS = 4;
 	private static final int ROLLSPERTURN = 3;
 	private static int numRolls = 0;
@@ -57,6 +57,7 @@ class Yahtzee extends JPanel
 	private static int heldDieAvailable = 0;
 	private static int [] scoreDie = new int[5];
 	private static Player[] participants = new Player[NUMPLAYERS];
+	private JButton rollButton;
 
 	public Yahtzee()
 	{
@@ -190,7 +191,7 @@ class Yahtzee extends JPanel
 				if (currentDie[i].getIcon() == emptyImage)
 				{
 					currentDie[i].setIcon(((JLabel) e.getSource()).getIcon());
-					( (JLabel) e.getSource()).setIcon(emptyImage);
+					((JLabel) e.getSource()).setIcon(emptyImage);
 					++dieAvailable;
 					--heldDieAvailable;
 					break;
@@ -297,7 +298,42 @@ class Yahtzee extends JPanel
 			//call human function for participants
 			participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap);
 			
-			//clean up some other stuff
+			//set currentIndex to the next player
+			currentIndex = (currentIndex + 1) % NUMPLAYERS;
+			currentRoll = 1;
+
+			//set roll label back to what it should be
+			Yahtzee.setRollLabel(currentRoll);
+
+			//make roll button once again enabled
+			rollButton.setEnabled(true);
+
+			//update initial player name labels at bottom
+			for (Player player : participants)
+				PlayerScore.updateLabels(player);
+
+			//reset held die back to empty
+			for (JLabel i : heldDie)
+				i.setIcon(emptyImage);
+			for (int i = 0; i < currentDie.length; ++i)
+				currentDie[i].setIcon(dieImages[i]);
+
+			//reset heldDieAvailable and dieAvailable
+			heldDieAvailable = 0;
+			dieAvailable = 5;
+
+			//probably should first check here if the game is over or not***
+
+			//if computer player, call takeTurn, otherwise human rolls
+			if (participants[currentIndex] instanceof Human)
+			{
+				//set up scoreCard for them
+				participants[currentIndex].updateLabels(mainScoreMap);
+			}
+			else
+			{
+				//call takeTurn for computer
+			}
 		}
 
 		public void mousePressed(MouseEvent e)
@@ -323,7 +359,7 @@ class Yahtzee extends JPanel
 
 	class RollResults extends JPanel implements ActionListener, MouseListener
 	{
-		private JButton rollButton;
+		//private JButton rollButton;
 		private JLabel label1;
 		private JLabel label2;
 		private JLabel label3;
@@ -426,10 +462,16 @@ class Yahtzee extends JPanel
 			System.out.println("Pressed a button");
 
 			//set held dice image to be whatever was clicked, increase counter
-			heldDie[heldDieAvailable++].setIcon(((JLabel) e.getSource()).getIcon());
-			((JLabel) e.getSource()).setIcon(emptyImage);
+			for (int i = 0; i < 5; ++i)
+				if (heldDie[i].getIcon() == emptyImage)
+				{
+					heldDie[i].setIcon(((JLabel) e.getSource()).getIcon());
+					((JLabel) e.getSource()).setIcon(emptyImage);
+					break;
+				}
 
-			//decrease dieAvailable
+			//decrease dieAvailable and increase heldDieAvailable
+			++heldDieAvailable;
 			--dieAvailable;
 		}
 
@@ -574,13 +616,13 @@ class Yahtzee extends JPanel
 		for (int i = 0; i < numHumans; ++i)
 		{
 			String name = JOptionPane.showInputDialog("Enter name for player " + (i+1) + ":");
-			participants[i] = new Human(name + ": ", i);
+			participants[i] = new Human(name, i);
 		}
 
 		//fill rest of participants list with computer players
 		for (int i = numHumans; i < 4; ++i)
 		{
-			participants[i] = new Computer("Computer " + (i - numHumans + 1) + ": ", i);
+			participants[i] = new Computer("Computer " + (i - numHumans + 1), i);
 		}
 
 		//update initial player name labels at bottom (score will be blank)
@@ -592,6 +634,15 @@ class Yahtzee extends JPanel
 		//*************************************************************
 
 		//if humans, then set name on score card and tell them to roll
+		if (numHumans != 0)
+		{
+			//initialize things to current player
+			participants[currentIndex].updateLabels(mainScoreMap);
+		}
+		else
+		{
+			//start computers going until end of game
+		}
 
 		//begin main game loop
 		/*while (!yahtzeeJPanel.gameOver())

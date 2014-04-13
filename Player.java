@@ -13,5 +13,7 @@ interface Player
 
 	public void initializeLabels(Map < JLabel, JLabel > yahtzeeMap);
 
+	public void updateLabels(Map < JLabel, JLabel > yahtzeeMap);
+
 	public String getText();
 }

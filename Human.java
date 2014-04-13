@@ -98,6 +98,7 @@ class Human implements Player
 		return playerNumber;
 	}
 
+	//only called once at very beginning of game
 	public void initializeLabels(Map < JLabel, JLabel > yahtzeeMap)
 	{
 		for (String key : scoreMap.keySet())
@@ -106,9 +107,19 @@ class Human implements Player
 		}
 	}
 
+	//called every time a new player is up
+	public void updateLabels(Map < JLabel, JLabel > yahtzeeMap)
+	{
+		for (JLabel key : yahtzeeMap.keySet())
+		{
+			String text = key.getText();
+			yahtzeeMap.get(key).setText(scoreMap.get(text));
+		}
+	}
+
 	public String getText()
 	{
-		return getName() + scoreMap.get("Grand Total");
+		return getName() + ": " + scoreMap.get("Grand Total");
 	}
 
 	public void one(int [] die, String name)
