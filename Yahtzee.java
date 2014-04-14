@@ -49,6 +49,7 @@ class Yahtzee extends JPanel
 	private static final int ROLLSPERTURN = 3;
 	private static int numRolls = 0;
 	private static int currentRoll = 1;
+	private static int finishedPlayers = 0;
 	private static final int MAXROLLS = NUMPLAYERS * 13 * ROLLSPERTURN;
 	private static int currentIndex = 0;
 	private static Random rand = new Random();
@@ -299,8 +300,9 @@ class Yahtzee extends JPanel
 			System.out.println(((JLabel) e.getSource()).getName());
 
 			//call human function for participants
-			participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap);
-			
+			if (participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap))
+				++finishedPlayers;
+
 			//set currentIndex to the next player
 			currentIndex = (currentIndex + 1) % NUMPLAYERS;
 			currentRoll = 1;
@@ -329,6 +331,7 @@ class Yahtzee extends JPanel
 			if (gameOver())
 			{
 				//declare winner or whatever
+				participants[currentIndex].updateLabels(mainScoreMap);
 
 				//testing
 				System.out.println("Game is finished");
@@ -349,11 +352,19 @@ class Yahtzee extends JPanel
 					//call take turn to simulate and give a score to computer
 					int [] cDie = {1, 2};
 					String temp = "simulate";
-					participants[currentIndex].takeTurn(cDie, temp, mainScoreMap);
+					if (participants[currentIndex].takeTurn(cDie, temp, mainScoreMap))
+						++finishedPlayers;
+
+					//update player name labels at bottom
+					for (Player player : participants)
+						PlayerScore.updateLabels(player);
 
 					//increase current index
 					currentIndex = (currentIndex + 1) % NUMPLAYERS;
 				}
+
+				//must be human turn again so update labels to them
+				participants[currentIndex].updateLabels(mainScoreMap);
 			}
 		}
 
@@ -582,7 +593,7 @@ class Yahtzee extends JPanel
 	//check to see if the number of rolls has exceeded the maximum
 	public boolean gameOver()
 	{
-		if (numRolls > MAXROLLS)
+		if (finishedPlayers == NUMPLAYERS)
 			return true;
 		else
 			return false;
@@ -621,16 +632,16 @@ class Yahtzee extends JPanel
 		frame.setVisible(true);
 
 		//find out how many human and computer players
-		String numHumansStr = JOptionPane.showInputDialog("How many human players (max 4): ");
+		String numHumansStr = JOptionPane.showInputDialog("How many human players (max " + NUMPLAYERS + "): ");
 		int numHumans = Integer.parseInt(numHumansStr);
-		while (numHumans > 4 || numHumans < 0)
+		while (numHumans > NUMPLAYERS || numHumans < 0)
 		{
-			numHumansStr = JOptionPane.showInputDialog("How many human players (max 4): ");
+			numHumansStr = JOptionPane.showInputDialog("How many human players (max " + NUMPLAYERS + "): ");
 			numHumans = Integer.parseInt(numHumansStr);
 		}
-		int numComputers = 4 - numHumans;
+		int numComputers = NUMPLAYERS - numHumans;
 
-		//create heterogeneous list of size 4
+		//create heterogeneous list of size NUMPLAYERS
 		//Player[] participants = new Player[NUMPLAYERS];
 
 		//fill participants list first with human players
@@ -641,7 +652,7 @@ class Yahtzee extends JPanel
 		}
 
 		//fill rest of participants list with computer players
-		for (int i = numHumans; i < 4; ++i)
+		for (int i = numHumans; i < NUMPLAYERS; ++i)
 		{
 			participants[i] = new Computer("Computer " + (i - numHumans + 1), i);
 		}
@@ -664,18 +675,5 @@ class Yahtzee extends JPanel
 		{
 			//start computers going until end of game
 		}
-
-		//begin main game loop
-		/*while (!yahtzeeJPanel.gameOver())
-		{
-			//roll the die
-			for (int i = 0; i < dieAvailable; ++i)
-			{
-				randDice = rand.nextInt(6);
-				currentDie[i].setIcon(dieImages[randDice]);
-			}
-			break;
-			//participants[currentIndex].takeTurn();
-		}*/
 	}
 }

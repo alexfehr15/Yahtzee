@@ -33,7 +33,7 @@ class Human implements Player
 		scoreMap.put("Grand Total", "0");
 	}
 
-	public void takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
+	public boolean takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
 	{
 		//testing
 		/*for (int i : die)
@@ -85,7 +85,15 @@ class Human implements Player
 		scoreMap.put("Grand Total", Integer.toString(grandTotal));
 
 		//testing
-		//System.out.println(scoreMap);
+		System.out.println(scoreMap);
+
+		//return true if all areas of score map have been filled in
+		for (String key : scoreMap.keySet())
+		{
+			if (scoreMap.get(key) == "" && key != "" && key != "Bonus")
+				return false;
+		}
+		return true;
 	}
 
 	public String getName()

@@ -48,7 +48,7 @@ class Computer implements Player
 		scoreMap.put("Grand Total", "0");
 	}
 
-	public void takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
+	public boolean takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
 	{
 		//simulate first roll of the die
 		for (int i = 0; i < 5; ++i)
@@ -118,12 +118,244 @@ class Computer implements Player
 		//testing (reset rollThree)************************
 		for (int i = 0; i < 5; ++i)
 			rollThree[i] = 0;
+
+		//compute totals (upper, lower, and grand)
+		int upperTotal = 0;
+		int lowerTotal = 0;
+		int grandTotal = 0;
+		for (String key : scoreMap.keySet())
+		{
+			if (scoreMap.get(key) != "" && (key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6"))
+				upperTotal += Integer.parseInt(scoreMap.get(key));
+			else if (scoreMap.get(key) != "" && (key == "3 of a kind" || key == "4 of a kind" || key == "Full House" || key == "Small Straight" || key == "Large Straight" || key == "Yahtzee" || key == "Chance"))
+				lowerTotal += Integer.parseInt(scoreMap.get(key));
+		}
+		grandTotal = upperTotal + lowerTotal;
+		scoreMap.put("Upper Total", Integer.toString(upperTotal));
+		scoreMap.put("Lower Total", Integer.toString(lowerTotal));
+		scoreMap.put("Grand Total", Integer.toString(grandTotal));
+
+		//testing
+		System.out.println(scoreMap);
+
+		//return true if all areas of score map have been filled in
+		for (String key : scoreMap.keySet())
+		{
+			if (scoreMap.get(key) == "" && key != "" && key != "Bonus")
+				return false;
+		}
+		return true;
 	}
 
 	//evaluate what to put as score when all roles are finished
-	public void finalizeScore(String option)
+	public void finalizeScore(String name)
 	{
-	
+		//check if have yahtzee and it is available
+		if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") == "")
+			scoreMap.put(name, Integer.toString(50));
+		//check whatever other options it could be
+		else if (name == "1")
+			one(rollThree, name);
+		else if (name == "2")
+			two(rollThree, name);
+		else if (name == "3")
+			three(rollThree, name);
+		else if (name == "4")
+			four(rollThree, name);
+		else if (name == "5")
+			five(rollThree, name);
+		else if (name == "6")
+			six(rollThree, name);
+		else if (name == "3 of a kind")
+			threeOfAKind(rollThree, name);
+		else if (name == "4 of a kind")
+			fourOfAKind(rollThree, name);
+		else if (name == "Full House")
+			fullHouse(rollThree, name);
+		else if (name == "Small Straight")
+			smallStraight(rollThree, name);
+		else if (name == "Large Straight")
+			largeStraight(rollThree, name);
+		else if (name == "Other")
+			other(rollThree, name);
+	}
+
+	public boolean yahtzeeBool(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		for (int i : die)
+			++counter[i - 1];
+		for (int i : counter)
+			if (i == 5)
+				return true;
+		return false;
+	}
+
+	public void one(int [] die, String name)
+	{
+		int counter = 0;
+		for (int i : die)
+			if (i == 1)
+				++counter;
+		scoreMap.put(name, Integer.toString(counter));
+	}
+
+	public void two(int [] die, String name)
+	{
+		int counter = 0;
+		for (int i : die)
+			if (i == 2)
+				++counter;
+		scoreMap.put(name, Integer.toString(2 * counter));
+	}
+
+	public void three(int [] die, String name)
+	{
+		int counter = 0;
+		for (int i : die)
+			if (i == 3)
+				++counter;
+		scoreMap.put(name, Integer.toString(3 * counter));
+	}
+
+	public void four(int [] die, String name)
+	{
+		int counter = 0;
+		for (int i : die)
+			if (i == 4)
+				++counter;
+		scoreMap.put(name, Integer.toString(4 * counter));
+	}
+
+	public void five(int [] die, String name)
+	{
+		int counter = 0;
+		for (int i : die)
+			if (i == 5)
+				++counter;
+		scoreMap.put(name, Integer.toString(5 * counter));
+	}
+
+	public void six(int [] die, String name)
+	{
+		int counter = 0;
+		for (int i : die)
+			if (i == 6)
+				++counter;
+		scoreMap.put(name, Integer.toString(6 * counter));
+	}
+
+	public void threeOfAKind(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		boolean zero = true;
+		for (int i : die)
+			++counter[i - 1];
+		for (int i : counter)
+			if (i > 2)
+				zero = false;
+		if (!zero)
+			for (int i : die)
+				answer += i;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void fourOfAKind(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		boolean zero = true;
+		for (int i : die)
+			++counter[i - 1];
+		for (int i : counter)
+			if (i > 3)
+				zero = false;
+		if (!zero)
+			for (int i : die)
+				answer += i;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void fullHouse(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		int zero = 0;
+		for (int i : die)
+			++counter[i - 1];
+		for (int i : counter)
+		{
+			if (i == 3)
+			{
+				++zero;
+				for (int j : counter)
+					if (j == 2)
+						++zero;
+				break;
+			}
+		}
+		if (zero == 2)
+			answer = 25;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void smallStraight(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		for (int i : die)
+			++counter[i - 1];
+		if (counter[0] == 1 && counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1)
+			answer = 30;
+		else if (counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1)
+			answer = 30;
+		else if (counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
+			answer = 30;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void largeStraight(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		for (int i : die)
+			++counter[i - 1];
+		if (counter[0] == 1 && counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1)
+			answer = 40;
+		else if (counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
+			answer = 40;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void yahtzee(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		for (int i : die)
+			++counter[i - 1];
+		for (int i : counter)
+			if (i == 5)
+				answer = 50;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void chance(int [] die, String name)
+	{
+		int answer = 0;
+		for (int i : die)
+			answer += i;
+		scoreMap.put(name, Integer.toString(answer));
+	}
+
+	public void other(int [] die, String name)
+	{
+		for (String key : scoreMap.keySet())
+		{
+			if (key != "Bonus" && key != "" && scoreMap.get(key) == "")
+				scoreMap.put(key, "0");
+		}
 	}
 
 	//evaluate what die to keep and place into rollThree
