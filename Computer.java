@@ -8,8 +8,8 @@ class Computer implements Player
 	private String name;
 	private int playerNumber;
 	private Map< String, String > scoreMap;
-
 	private static int rand;
+	private static Integer straightType = new Integer(-1);
 	private static Random r = new Random();
 	private static int [] rollOne = new int[5];
 	private static int [] rollTwo = new int[5];
@@ -20,6 +20,11 @@ class Computer implements Player
 									"Small Straight", "Large Straight",
 									"Yahtzee", "Chance", "Lower Total",
 									"Grand Total"};
+
+	public void setStraightType(int s)
+	{
+		straightType = s;
+	}
 
 	//constructor with name and playerNumber parameters
 	public Computer(String n, int p)
@@ -71,7 +76,9 @@ class Computer implements Player
 			}
 
 		//testing
-		System.out.println("\nRoll Three before secondRoll():");
+		System.out.println("\nRoll Two before secondRoll():");
+		System.out.println("Empty slots: " + emptySlots);
+		System.out.println("straightType: " + straightType);
 		System.out.println(aim);
 		for (int i : rollTwo)
 			System.out.println(i);
@@ -183,24 +190,88 @@ class Computer implements Player
 	public String two3Kind(int emptySlots)
 	{
 		int indexOn = 0;
+		int targetNum = rollTwo[0];
+		for (int i = 0; i < 5; ++i)
+			if (rollTwo[i] == targetNum)
+				rollThree[indexOn++] = targetNum;
 		return "3 of a kind";
 	}
 
 	public String two4Kind(int emptySlots)
 	{
 		int indexOn = 0;
+		int targetNum = rollTwo[0];
+		for (int i = 0; i < 5; ++i)
+			if (rollTwo[i] == targetNum)
+				rollThree[indexOn++] = targetNum;
 		return "4 of a kind";
 	}
 
 	public String twoFullHouse(int emptySlots)
 	{
 		int indexOn = 0;
+		int targetOne = rollTwo[0];
+		int targetTwo = 0;
+		for (int i = 0; i < 5 - emptySlots; ++i)
+			if (rollTwo[i] != targetOne)
+			{
+				targetTwo = rollTwo[i];
+				break;
+			}
+		for (int i = 0; i < 5; ++i)
+			if (rollTwo[i] == targetOne || rollTwo[i] == targetTwo)
+				rollThree[indexOn++] = rollTwo[i];
 		return "Full House";
 	}
 
 	public String twoSmallStraight(int emptySlots)
 	{
 		int indexOn = 0;
+		Integer five = new Integer(5);
+		for (int i = 0; i < 5 - emptySlots; ++i)
+			rollThree[indexOn++] = rollTwo[i];
+		for (int i = 5 - emptySlots; i < 5; ++i)
+		{
+			//testing
+			System.out.println("test: " + rollTwo[i]);
+			System.out.println("Straight type inside: " + straightType);
+
+			//testing
+			if (straightType.equals(five))
+				System.out.println("Hey********");
+
+			if (straightType == 0)
+				;//do nothing
+			else if (straightType == 1)
+				;//do nothing
+			else if (straightType == 2)
+				if (rollTwo[i] == 5)
+					rollThree[indexOn++] = rollTwo[i];
+			else if (straightType == 3)
+				if (rollTwo[i] == 1 || rollTwo[i] == 6)
+					rollThree[indexOn++] = rollTwo[i];
+			else if (straightType == 4)
+				if (rollTwo[i] == 2)
+					rollThree[indexOn++] = rollTwo[i];
+			else if (straightType.equals(five))
+			{
+				System.out.println("Got in************");
+				if (rollTwo[i] == 4)
+				{
+					rollThree[indexOn++] = rollTwo[i];
+					System.out.println("Testing*********");
+				}
+			}
+			else if (straightType == 6)
+				if (rollTwo[i] == 1 || rollTwo[i] == 5)
+					rollThree[indexOn++] = rollTwo[i];
+			else if (straightType == 7)
+				if (rollTwo[i] == 2 || rollTwo[i] == 6)
+					rollThree[indexOn++] = rollTwo[i];
+			else if (straightType == 8)
+				if (rollTwo[i] == 3)
+					rollThree[indexOn++] = rollTwo[i];
+		}
 		return "Small Straight";
 	}
 
@@ -242,83 +313,92 @@ class Computer implements Player
 		{
 			if (counter[0] > 0 && counter[1] > 0 && counter[2] > 0 && counter[3] > 0 && counter[4] > 0)
 			{
+				straightType = 0;
 				for (int i = 0; i < 5; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[1] > 0 && counter[2] > 0 && counter[3] > 0 && counter[4] > 0 && counter[5] > 0)
 			{
+				straightType = 1;
 				for (int i = 1; i < 6; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[0] > 0 && counter[1] > 0 && counter[2] > 0 && counter[3] > 0)
 			{
+				straightType = 2;
 				for (int i = 0; i < 4; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[1] > 0 && counter[2] > 0 && counter[3] > 0 && counter[4] > 0)
 			{
+				straightType = 3;
 				for (int i = 1; i < 5; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[2] > 0 && counter[3] > 0 && counter[4] > 0 && counter[5] > 0)
 			{
+				straightType = 4;
 				for (int i = 2; i < 6; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[0] > 0 && counter[1] > 0 && counter[2] > 0) 
 			{
+				straightType = 5;
 				for (int i = 0; i < 3; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[1] > 0 && counter[2] > 0 && counter[3] > 0)
 			{
+				straightType = 6;
 				for (int i = 1; i < 4; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[2] > 0 && counter[3] > 0 && counter[4] > 0)
 			{
+				straightType = 7;
 				for (int i = 2; i < 5; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 			else if (counter[3] > 0 && counter[4] > 0 && counter[5] > 0)
 			{
+				straightType = 8;
 				for (int i = 3; i < 6; ++i)
 					rollTwo[indexOn++] = i + 1;
 				if (scoreMap.get("Large Straight") == "")
-					return "Large Straight";
-				else
+				/*	return "Large Straight";
+				else*/
 					return "Small Straight";
 			}
 		}
