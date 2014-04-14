@@ -36,9 +36,9 @@ class Human implements Player
 	public void takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
 	{
 		//testing
-		for (int i : die)
+		/*for (int i : die)
 			System.out.println(i);
-		System.out.println('\n');
+		System.out.println('\n');*/
 
 		//find out which score item is desired by user
 		if (name == "1")
@@ -85,7 +85,7 @@ class Human implements Player
 		scoreMap.put("Grand Total", Integer.toString(grandTotal));
 
 		//testing
-		System.out.println(scoreMap);
+		//System.out.println(scoreMap);
 	}
 
 	public String getName()
@@ -277,11 +277,5 @@ class Human implements Player
 		for (int i : die)
 			answer += i;
 		scoreMap.put(name, Integer.toString(answer));
-	}
-
-	//testing
-	public static void main(String [] args)
-	{
-		Human test = new Human("Alex", 1);
 	}
 }
