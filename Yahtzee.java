@@ -300,7 +300,7 @@ class Yahtzee extends JPanel
 			System.out.println(((JLabel) e.getSource()).getName());
 
 			//call human function for participants
-			if (participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap))
+			if (participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap) && participants[currentIndex].getDone() == 1)
 				++finishedPlayers;
 
 			//set currentIndex to the next player
@@ -320,8 +320,10 @@ class Yahtzee extends JPanel
 			//reset held die back to empty
 			for (JLabel i : heldDie)
 				i.setIcon(emptyImage);
+
+			//reset roll area die back to empty
 			for (int i = 0; i < currentDie.length; ++i)
-				currentDie[i].setIcon(dieImages[i]);
+				currentDie[i].setIcon(emptyImage);
 
 			//reset heldDieAvailable and dieAvailable
 			heldDieAvailable = 0;
@@ -352,7 +354,7 @@ class Yahtzee extends JPanel
 					//call take turn to simulate and give a score to computer
 					int [] cDie = {1, 2};
 					String temp = "simulate";
-					if (participants[currentIndex].takeTurn(cDie, temp, mainScoreMap))
+					if (participants[currentIndex].takeTurn(cDie, temp, mainScoreMap) && participants[currentIndex].getDone() == 1)
 						++finishedPlayers;
 
 					//update player name labels at bottom
@@ -425,7 +427,7 @@ class Yahtzee extends JPanel
 
 			//set up dice 1
 			GridBagConstraints c2 = new GridBagConstraints();
-			label1 = new JLabel("", diceImage1, JLabel.CENTER);
+			label1 = new JLabel("", emptyImage, JLabel.CENTER);
 			label1.addMouseListener(this);
 			currentDie[0] = label1;
 			c2.fill = GridBagConstraints.BOTH;
@@ -436,7 +438,7 @@ class Yahtzee extends JPanel
 
 			//set up dice 2
 			GridBagConstraints c3 = new GridBagConstraints();
-			label2 = new JLabel("", diceImage2, JLabel.CENTER);
+			label2 = new JLabel("", emptyImage, JLabel.CENTER);
 			label2.addMouseListener(this);
 			currentDie[1] = label2;
 			c3.fill = GridBagConstraints.BOTH;
@@ -447,7 +449,7 @@ class Yahtzee extends JPanel
 
 			//set up dice 3
 			GridBagConstraints c4 = new GridBagConstraints();
-			label3 = new JLabel("", diceImage3, JLabel.CENTER);
+			label3 = new JLabel("", emptyImage, JLabel.CENTER);
 			label3.addMouseListener(this);
 			currentDie[2] = label3;
 			c4.fill = GridBagConstraints.BOTH;
@@ -458,7 +460,7 @@ class Yahtzee extends JPanel
 
 			//set up dice 4
 			GridBagConstraints c5 = new GridBagConstraints();
-			label4 = new JLabel("", diceImage4, JLabel.CENTER);
+			label4 = new JLabel("", emptyImage, JLabel.CENTER);
 			label4.addMouseListener(this);
 			currentDie[3] = label4;
 			c5.fill = GridBagConstraints.BOTH;
@@ -469,7 +471,7 @@ class Yahtzee extends JPanel
 
 			//set up dice 5
 			GridBagConstraints c6 = new GridBagConstraints();
-			label5 = new JLabel("", diceImage5, JLabel.CENTER);
+			label5 = new JLabel("", emptyImage, JLabel.CENTER);
 			label5.addMouseListener(this);
 			currentDie[4] = label5;
 			c6.fill = GridBagConstraints.BOTH;
@@ -477,14 +479,6 @@ class Yahtzee extends JPanel
 			c6.insets = diceInsets;
 			c6.gridy = 1;
 			this.add(label5, c6);
-
-			//set up dice 6 
-			/*GridBagConstraints c7 = new GridBagConstraints();
-			JLabel label6 = new JLabel("", diceImage6, JLabel.CENTER);
-			c7.fill = GridBagConstraints.BOTH;
-			c7.gridx = 5;
-			c7.gridy = 1;
-			this.add(label6, c7);*/
 		}
 
 		//handle when a dice is clicked in roll results area
@@ -591,7 +585,7 @@ class Yahtzee extends JPanel
 	}
 
 	//check to see if the number of rolls has exceeded the maximum
-	public boolean gameOver()
+	public static boolean gameOver()
 	{
 		if (finishedPlayers == NUMPLAYERS)
 			return true;
@@ -674,6 +668,22 @@ class Yahtzee extends JPanel
 		else
 		{
 			//start computers going until end of game
+			int [] sim = {1, 2};
+			String simulate = "simulate";
+			while (!gameOver())
+			{
+				if (participants[currentIndex].takeTurn(sim, simulate, mainScoreMap) && participants[currentIndex].getDone() == 1)
+					++finishedPlayers;
+				currentIndex = (currentIndex + 1) % NUMPLAYERS;
+			}
+
+			//testing
+			System.out.println("Game is over");
+
+			//update all labels when finished
+			participants[currentIndex].updateLabels(mainScoreMap);
+			for (Player player : participants)
+				PlayerScore.updateLabels(player);
 		}
 	}
 }

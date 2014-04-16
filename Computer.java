@@ -5,6 +5,7 @@ import java.util.Random;
 
 class Computer implements Player
 {
+	private int done = 0;
 	private String name;
 	private int playerNumber;
 	private Map< String, String > scoreMap;
@@ -43,9 +44,15 @@ class Computer implements Player
 		for (String label : scoreLabels)
 			scoreMap.put(label, "");
 		scoreMap.put("Player:", name);
+		scoreMap.put("Bonus", "-");
 		scoreMap.put("Upper Total", "0");
 		scoreMap.put("Lower Total", "0");
 		scoreMap.put("Grand Total", "0");
+	}
+
+	public int getDone()
+	{
+		return done;
 	}
 
 	public boolean takeTurn(int [] die, String name, Map < JLabel, JLabel > yahtzeeMap)
@@ -135,6 +142,16 @@ class Computer implements Player
 		scoreMap.put("Lower Total", Integer.toString(lowerTotal));
 		scoreMap.put("Grand Total", Integer.toString(grandTotal));
 
+		//if upper section completely filled in, compute whether got bonus
+		if (scoreMap.get("1") != "" && scoreMap.get("2") != "" && scoreMap.get("3") != "" && scoreMap.get("4") != "" && scoreMap.get("5") != "" && scoreMap.get("6") != "" && scoreMap.get("Bonus") == "-" && upperTotal >= 63)
+		{
+			scoreMap.put("Bonus", "35");
+			upperTotal += 35;
+			grandTotal = lowerTotal + upperTotal;
+			scoreMap.put("Upper Total", Integer.toString(upperTotal));
+			scoreMap.put("Grand Total", Integer.toString(grandTotal));
+		}
+
 		//testing
 		System.out.println(scoreMap);
 
@@ -142,8 +159,12 @@ class Computer implements Player
 		for (String key : scoreMap.keySet())
 		{
 			if (scoreMap.get(key) == "" && key != "" && key != "Bonus")
+			{
+				System.out.println("\n*****Not Over b/c " + key + " *****");
 				return false;
+			}
 		}
+		++done;
 		return true;
 	}
 
@@ -152,7 +173,7 @@ class Computer implements Player
 	{
 		//check if have yahtzee and it is available
 		if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") == "")
-			scoreMap.put(name, Integer.toString(50));
+			scoreMap.put("Yahtzee", Integer.toString(50));
 		//check whatever other options it could be
 		else if (name == "1")
 			one(rollThree, name);
