@@ -48,7 +48,7 @@ class Yahtzee extends JPanel
 	private static final int NUMPLAYERS = 2;
 	private static final int ROLLSPERTURN = 3;
 	private static int numRolls = 0;
-	private static int currentRoll = 1;
+	private static int currentRoll = 0;
 	private static int finishedPlayers = 0;
 	private static final int MAXROLLS = NUMPLAYERS * 13 * ROLLSPERTURN;
 	private static int currentIndex = 0;
@@ -141,6 +141,15 @@ class Yahtzee extends JPanel
 		c5.gridy = 2;
 		c5.gridwidth = 2;
 		this.add(playerScorePanel, c5);
+	}
+
+	//restart entire app when game is over or when user selects from file menu
+	public static void restartApp()
+	{
+		for (Player player : participants)
+		{
+			;
+		}
 	}
 
 	public static int getDiceNum(ImageIcon icon)
@@ -284,89 +293,93 @@ class Yahtzee extends JPanel
 		//handle when a cell is clicked in the scoreCard
 		public void mouseClicked(MouseEvent e)
 		{
-			//get current die from board
-			int placeCounter = 0;
-			for (int i = 0; i < 5; ++i)
+			//if on role zero, do nothing
+			if (currentRoll != 0)
 			{
-				if (heldDie[i].getIcon() != emptyImage)
-					scoreDie[placeCounter++] = getDiceNum((ImageIcon) heldDie[i].getIcon());
-			}
-			for (int i = 0; i < 5; ++i)
-			{
-				if (currentDie[i].getIcon() != emptyImage)
-					scoreDie[placeCounter++] = getDiceNum((ImageIcon) currentDie[i].getIcon());
-			}
-
-			System.out.println(((JLabel) e.getSource()).getName());
-
-			//call human function for participants
-			if (participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap) && participants[currentIndex].getDone() == 1)
-				++finishedPlayers;
-
-			//set currentIndex to the next player
-			currentIndex = (currentIndex + 1) % NUMPLAYERS;
-			currentRoll = 1;
-
-			//set roll label back to what it should be
-			Yahtzee.setRollLabel(currentRoll);
-
-			//make roll button once again enabled
-			rollButton.setEnabled(true);
-
-			//update initial player name labels at bottom
-			for (Player player : participants)
-				PlayerScore.updateLabels(player);
-
-			//reset held die back to empty
-			for (JLabel i : heldDie)
-				i.setIcon(emptyImage);
-
-			//reset roll area die back to empty
-			for (int i = 0; i < currentDie.length; ++i)
-				currentDie[i].setIcon(emptyImage);
-
-			//reset heldDieAvailable and dieAvailable
-			heldDieAvailable = 0;
-			dieAvailable = 5;
-
-			//check if game is finished...doesn't work at the moment
-			if (gameOver())
-			{
-				//declare winner or whatever
-				participants[currentIndex].updateLabels(mainScoreMap);
-
-				//testing
-				System.out.println("Game is finished");
-			}
-			//if computer player, call takeTurn, otherwise human rolls
-			else if (participants[currentIndex] instanceof Human)
-			{
-				//set up scoreCard for them
-				participants[currentIndex].updateLabels(mainScoreMap);
-			}
-			else
-			{
-				while (participants[currentIndex] instanceof Computer)
+				//get current die from board
+				int placeCounter = 0;
+				for (int i = 0; i < 5; ++i)
 				{
-					//update score card to show computer player
-					participants[currentIndex].updateLabels(mainScoreMap);
-
-					//call take turn to simulate and give a score to computer
-					int [] cDie = {1, 2};
-					String temp = "simulate";
-					if (participants[currentIndex].takeTurn(cDie, temp, mainScoreMap) && participants[currentIndex].getDone() == 1)
-						++finishedPlayers;
-
-					//update player name labels at bottom
-					for (Player player : participants)
-						PlayerScore.updateLabels(player);
-
-					//increase current index
-					currentIndex = (currentIndex + 1) % NUMPLAYERS;
+					if (heldDie[i].getIcon() != emptyImage)
+						scoreDie[placeCounter++] = getDiceNum((ImageIcon) heldDie[i].getIcon());
+				}
+				for (int i = 0; i < 5; ++i)
+				{
+					if (currentDie[i].getIcon() != emptyImage)
+						scoreDie[placeCounter++] = getDiceNum((ImageIcon) currentDie[i].getIcon());
 				}
 
-				//must be human turn again so update labels to them
-				participants[currentIndex].updateLabels(mainScoreMap);
+				System.out.println(((JLabel) e.getSource()).getName());
+
+				//call human function for participants
+				if (participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap) && participants[currentIndex].getDone() == 1)
+					++finishedPlayers;
+
+				//set currentIndex to the next player
+				currentIndex = (currentIndex + 1) % NUMPLAYERS;
+				currentRoll = 0;
+
+				//set roll label back to what it should be
+				Yahtzee.setRollLabel(currentRoll);
+
+				//make roll button once again enabled
+				rollButton.setEnabled(true);
+
+				//update initial player name labels at bottom
+				for (Player player : participants)
+					PlayerScore.updateLabels(player);
+
+				//reset held die back to empty
+				for (JLabel i : heldDie)
+					i.setIcon(emptyImage);
+
+				//reset roll area die back to empty
+				for (int i = 0; i < currentDie.length; ++i)
+					currentDie[i].setIcon(emptyImage);
+
+				//reset heldDieAvailable and dieAvailable
+				heldDieAvailable = 0;
+				dieAvailable = 5;
+
+				//check if game is finished...doesn't work at the moment
+				if (gameOver())
+				{
+					//declare winner or whatever (show first player)
+					participants[0].updateLabels(mainScoreMap);
+
+					//testing
+					System.out.println("Game is finished");
+				}
+				//if computer player, call takeTurn, otherwise human rolls
+				else if (participants[currentIndex] instanceof Human)
+				{
+					//set up scoreCard for them
+					participants[currentIndex].updateLabels(mainScoreMap);
+				}
+				else
+				{
+					while (participants[currentIndex] instanceof Computer)
+					{
+						//update score card to show computer player
+						participants[currentIndex].updateLabels(mainScoreMap);
+
+						//call take turn to simulate and give a score to computer
+						int [] cDie = {1, 2};
+						String temp = "simulate";
+						if (participants[currentIndex].takeTurn(cDie, temp, mainScoreMap) && participants[currentIndex].getDone() == 1)
+							++finishedPlayers;
+
+						//update player name labels at bottom
+						for (Player player : participants)
+							PlayerScore.updateLabels(player);
+
+						//increase current index
+						currentIndex = (currentIndex + 1) % NUMPLAYERS;
+					}
+
+					//must be human turn again so update labels to them
+					participants[currentIndex].updateLabels(mainScoreMap);
+				}
 			}
 		}
 
@@ -538,18 +551,18 @@ class Yahtzee extends JPanel
 				}
 
 				//increase some counters
-				Yahtzee.setRollLabel(currentRoll);
 				++numRolls;
 				++currentRoll;
+				Yahtzee.setRollLabel(currentRoll);
 
 				//check if just did last roll
-				if (currentRoll == 4)
+				if (currentRoll == 3)
 				{
 					//user can no longer roll
 					rollButton.setEnabled(false);
 
-					//set currentRoll back to 1
-					currentRoll = 1;
+					//set currentRoll back to 0
+					//currentRoll = 0;
 				}
 			}
 		}
