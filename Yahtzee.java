@@ -59,6 +59,7 @@ class Yahtzee extends JPanel
 	private static int [] scoreDie = new int[5];
 	private static Player[] participants = new Player[NUMPLAYERS];
 	private static JButton rollButton;
+	private static int numHumans;
 
 	public Yahtzee()
 	{
@@ -157,8 +158,39 @@ class Yahtzee extends JPanel
 		participants[currentIndex].updateLabels(mainScoreMap);
 		rollButton.setText("Roll");
 
+		//reset certain variables
+		finishedPlayers = 0;
+
+		//set all of scoreCard to be enabled
+		for (JLabel key : mainScoreMap.keySet())
+		{
+			//add mouseListener when appropriate
+			if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+					mainScoreMap.get(key).setEnabled(false);
+		}
+
 		//need to check if only computers*****************
-		//also need to reset some other things in computer/human classes
+		if (numHumans == 0)
+		{
+			//start computers going until end of game
+			int [] sim = {1, 2};
+			String simulate = "simulate";
+			while (!gameOver())
+			{
+				if (participants[currentIndex].takeTurn(sim, simulate, mainScoreMap) && participants[currentIndex].getDone() == 1)
+					++finishedPlayers;
+				currentIndex = (currentIndex + 1) % NUMPLAYERS;
+			}
+
+			//testing
+			System.out.println("Game is over");
+
+			//update all labels when finished
+			participants[currentIndex].updateLabels(mainScoreMap);
+			rollButton.setText("New Game");
+			for (Player player : participants)
+				PlayerScore.updateLabels(player);
+		}
 	}
 
 	public static int getDiceNum(ImageIcon icon)
@@ -289,6 +321,9 @@ class Yahtzee extends JPanel
 				//add mouseListener when appropriate
 				if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
 				{
+					//just added
+					(mainScoreMap.get(key)).setEnabled(false);
+
 					(mainScoreMap.get(key)).setName(key.getText());
 					(mainScoreMap.get(key)).addMouseListener(this);
 				}
@@ -303,7 +338,7 @@ class Yahtzee extends JPanel
 		public void mouseClicked(MouseEvent e)
 		{
 			//if on role zero, do nothing
-			if (currentRoll != 0)
+			if (currentRoll != 0 && !( (JLabel) (e.getSource())).isEnabled())
 			{
 				//get current die from board
 				int placeCounter = 0;
@@ -367,6 +402,17 @@ class Yahtzee extends JPanel
 				{
 					//set up scoreCard for them
 					participants[currentIndex].updateLabels(mainScoreMap);
+
+					//set already filled in slots to not be enabled
+					for (JLabel key : mainScoreMap.keySet())
+					{
+						//add mouseListener when appropriate
+						if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+							if (mainScoreMap.get(key).getText() != "")
+								mainScoreMap.get(key).setEnabled(true);
+							else
+								mainScoreMap.get(key).setEnabled(false);
+					}
 				}
 				else
 				{
@@ -661,7 +707,7 @@ class Yahtzee extends JPanel
 
 		//find out how many human and computer players
 		String numHumansStr = JOptionPane.showInputDialog("How many human players (max " + NUMPLAYERS + "): ");
-		int numHumans = Integer.parseInt(numHumansStr);
+		numHumans = Integer.parseInt(numHumansStr);
 		while (numHumans > NUMPLAYERS || numHumans < 0)
 		{
 			numHumansStr = JOptionPane.showInputDialog("How many human players (max " + NUMPLAYERS + "): ");

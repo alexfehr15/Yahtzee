@@ -827,6 +827,9 @@ class Computer implements Player
 		scoreMap.put("Upper Total", "0");
 		scoreMap.put("Lower Total", "0");
 		scoreMap.put("Grand Total", "0");
+
+		//reset other variables
+		done = 0;
 	}
 
 	public void updateLabels(Map < JLabel, JLabel > yahtzeeMap)

@@ -8,6 +8,7 @@ class Human implements Player
 {
 	private String name;
 	private int done = 0;
+	private int extra = 0;
 	private int playerNumber;
 	private Map< String, String > scoreMap;
 	private String [] scoreLabels = {"Player:", "1", "2", "3", "4", "5", "6",
@@ -35,6 +36,18 @@ class Human implements Player
 		scoreMap.put("Grand Total", "0");
 	}
 
+	public boolean yahtzeeBool(int [] die, String name)
+	{
+		int [] counter = new int[6];
+		int answer = 0;
+		for (int i : die)
+			++counter[i - 1];
+		for (int i : counter)
+			if (i == 5)
+				return true;
+		return false;
+	}
+
 	public int getDone()
 	{
 		return done;
@@ -46,6 +59,10 @@ class Human implements Player
 		/*for (int i : die)
 			System.out.println(i);
 		System.out.println('\n');*/
+
+		//see if have bonus for extra yahtzee
+		if (yahtzeeBool(die, name) && scoreMap.get("Yahtzee") != "")
+			++extra;
 
 		//find out which score item is desired by user
 		if (name == "1")
@@ -86,6 +103,7 @@ class Human implements Player
 			else if (scoreMap.get(key) != "" && (key == "3 of a kind" || key == "4 of a kind" || key == "Full House" || key == "Small Straight" || key == "Large Straight" || key == "Yahtzee" || key == "Chance"))
 				lowerTotal += Integer.parseInt(scoreMap.get(key));
 		}
+		lowerTotal += extra * 100;
 		grandTotal = upperTotal + lowerTotal;
 		scoreMap.put("Upper Total", Integer.toString(upperTotal));
 		scoreMap.put("Lower Total", Integer.toString(lowerTotal));
@@ -256,7 +274,10 @@ class Human implements Player
 		}
 		if (zero == 2)
 			answer = 25;
-		scoreMap.put(name, Integer.toString(answer));
+		if (yahtzeeBool(die, name) && scoreMap.get("Yahtzee") != "")
+			scoreMap.put(name, "25");
+		else
+			scoreMap.put(name, Integer.toString(answer));
 	}
 
 	public void smallStraight(int [] die, String name)
@@ -271,7 +292,10 @@ class Human implements Player
 			answer = 30;
 		else if (counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
 			answer = 30;
-		scoreMap.put(name, Integer.toString(answer));
+		if (yahtzeeBool(die, name) && scoreMap.get("Yahtzee") != "")
+			scoreMap.put(name, "30");
+		else
+			scoreMap.put(name, Integer.toString(answer));
 	}
 
 	public void largeStraight(int [] die, String name)
@@ -284,7 +308,10 @@ class Human implements Player
 			answer = 40;
 		else if (counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
 			answer = 40;
-		scoreMap.put(name, Integer.toString(answer));
+		if (yahtzeeBool(die, name) && scoreMap.get("Yahtzee") != "")
+			scoreMap.put(name, "40");
+		else
+			scoreMap.put(name, Integer.toString(answer));
 	}
 
 	public void yahtzee(int [] die, String name)
@@ -321,5 +348,9 @@ class Human implements Player
 		scoreMap.put("Upper Total", "0");
 		scoreMap.put("Lower Total", "0");
 		scoreMap.put("Grand Total", "0");
+
+		//reset other variables
+		done = 0;
+		extra = 0;
 	}
 }
