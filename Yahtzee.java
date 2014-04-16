@@ -58,7 +58,7 @@ class Yahtzee extends JPanel
 	private static int heldDieAvailable = 0;
 	private static int [] scoreDie = new int[5];
 	private static Player[] participants = new Player[NUMPLAYERS];
-	private JButton rollButton;
+	private static JButton rollButton;
 
 	public Yahtzee()
 	{
@@ -148,8 +148,17 @@ class Yahtzee extends JPanel
 	{
 		for (Player player : participants)
 		{
-			;
+			player.reset(mainScoreMap);
+			PlayerScore.updateLabels(player);
 		}
+
+		//reset currentIndex
+		currentIndex = 0;
+		participants[currentIndex].updateLabels(mainScoreMap);
+		rollButton.setText("Roll");
+
+		//need to check if only computers*****************
+		//also need to reset some other things in computer/human classes
 	}
 
 	public static int getDiceNum(ImageIcon icon)
@@ -347,6 +356,9 @@ class Yahtzee extends JPanel
 					//declare winner or whatever (show first player)
 					participants[0].updateLabels(mainScoreMap);
 
+					//change text of rollButton to "New Game"
+					rollButton.setText("New Game");
+
 					//testing
 					System.out.println("Game is finished");
 				}
@@ -539,30 +551,39 @@ class Yahtzee extends JPanel
 		{
 			if (e.getSource() == rollButton)
 			{
-				//move die remaining over to the left
-				for (int i = 4; i > dieAvailable - 1; --i)
-					currentDie[i].setIcon(emptyImage);
-
-				//roll the die
-				for (int i = 0; i < dieAvailable; ++i)
+				if ( ((JButton) e.getSource()).getText() == "Roll")
 				{
-					randDice = rand.nextInt(6);
-					currentDie[i].setIcon(dieImages[randDice]);
+					//move die remaining over to the left
+					for (int i = 4; i > dieAvailable - 1; --i)
+						currentDie[i].setIcon(emptyImage);
+
+					//roll the die
+					for (int i = 0; i < dieAvailable; ++i)
+					{
+						randDice = rand.nextInt(6);
+						currentDie[i].setIcon(dieImages[randDice]);
+					}
+
+					//increase some counters
+					++numRolls;
+					++currentRoll;
+					Yahtzee.setRollLabel(currentRoll);
+
+					//check if just did last roll
+					if (currentRoll == 3)
+					{
+						//user can no longer roll
+						rollButton.setEnabled(false);
+
+						//set currentRoll back to 0
+						//currentRoll = 0;
+					}
 				}
-
-				//increase some counters
-				++numRolls;
-				++currentRoll;
-				Yahtzee.setRollLabel(currentRoll);
-
-				//check if just did last roll
-				if (currentRoll == 3)
+				else
 				{
-					//user can no longer roll
-					rollButton.setEnabled(false);
-
-					//set currentRoll back to 0
-					//currentRoll = 0;
+					//start a new game
+					Yahtzee.restartApp();
+					System.out.println("Need to start new game");
 				}
 			}
 		}
@@ -695,6 +716,7 @@ class Yahtzee extends JPanel
 
 			//update all labels when finished
 			participants[currentIndex].updateLabels(mainScoreMap);
+			rollButton.setText("New Game");
 			for (Player player : participants)
 				PlayerScore.updateLabels(player);
 		}

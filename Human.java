@@ -306,4 +306,20 @@ class Human implements Player
 			answer += i;
 		scoreMap.put(name, Integer.toString(answer));
 	}
+
+	public void reset(Map < JLabel, JLabel > yahtzeeMap)
+	{
+		//reset all to blank
+		for (String key : scoreMap.keySet())
+		{
+			scoreMap.put(key, "");
+		}
+
+		//add some others that should be there
+		scoreMap.put("Player:", name);
+		scoreMap.put("Bonus", "-");
+		scoreMap.put("Upper Total", "0");
+		scoreMap.put("Lower Total", "0");
+		scoreMap.put("Grand Total", "0");
+	}
 }

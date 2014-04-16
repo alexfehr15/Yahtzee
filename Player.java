@@ -18,4 +18,6 @@ interface Player
 	public String getText();
 
 	public int getDone();
+
+	public void reset(Map < JLabel, JLabel > yahtzeeMap);
 }
