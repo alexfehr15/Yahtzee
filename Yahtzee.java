@@ -437,6 +437,18 @@ class Yahtzee extends JPanel
 
 					//must be human turn again so update labels to them
 					participants[currentIndex].updateLabels(mainScoreMap);
+
+					//***just added this***
+					//set already filled in slots to not be enabled
+					for (JLabel key : mainScoreMap.keySet())
+					{
+						//add mouseListener when appropriate
+						if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+							if (mainScoreMap.get(key).getText() != "")
+								mainScoreMap.get(key).setEnabled(true);
+							else
+								mainScoreMap.get(key).setEnabled(false);
+					}
 				}
 			}
 		}
