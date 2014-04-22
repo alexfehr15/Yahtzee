@@ -1,15 +1,162 @@
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
+5
+{Player:=Alex, 1=, 2=, 3=, 4=, 5=15, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=15}
+finishedPlayers is 0
+
+Roll One:
+6
+3
+1
+1
+5
+
+Roll Two:
+1
+1
+1
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 3
+straightType: -1
+1
+1
+1
+6
+4
+1
+
+Roll Three:
+1
+1
+1
+1
+0
+0
+
+Roll Three after randoms:
+1
+1
+1
+1
+3
+5
+{Player:=Computer 1, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=3}
+
+*****Not Over b/c 2 *****
+
+Roll One:
+5
+1
+4
+1
+1
+
+Roll Two:
+1
+1
+1
+1
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 2
+straightType: -1
+1
+1
+1
+1
+5
+3
+
+Roll Three:
+1
+1
+1
+1
+0
+0
+
+Roll Three after randoms:
+1
+1
+1
+1
+3
+6
+{Player:=Computer 2, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=3}
+
+*****Not Over b/c 2 *****
 
 Roll One:
 1
-6
+1
+3
+1
 5
+
+Roll Two:
+1
+1
+1
+1
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 2
+straightType: -1
+1
+1
+1
+1
+4
+3
+
+Roll Three:
+1
+1
+1
+1
+0
+0
+
+Roll Three after randoms:
+1
+1
+1
+1
+3
+5
+{Player:=Computer 3, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=3}
+
+*****Not Over b/c 2 *****
+finishedPlayers is 0
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
+4
+{Player:=Alex, 1=, 2=, 3=, 4=20, 5=15, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=35}
+finishedPlayers is 0
+
+Roll One:
 6
+6
+4
+4
 1
 
 Roll Two:
 Full House
-1
-1
+4
+4
 6
 6
 0
@@ -18,81 +165,81 @@ Roll Two before secondRoll():
 Empty slots: 1
 straightType: -1
 Full House
-1
-1
-6
-6
 4
+4
+6
+6
+5
 
 Roll Three:
 Full House
-1
-1
+4
+4
 6
 6
 0
 
 Roll Three after randoms:
 Full House
-1
-1
-6
-6
 4
-{Player:=Computer 1, 1=2, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=2, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=2}
+4
+6
+6
+1
+{Player:=Computer 1, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=21, Lower Total=21, Grand Total=24}
 
 *****Not Over b/c 2 *****
 
 Roll One:
-3
-3
 1
-5
-3
+2
+1
+2
+6
 
 Roll Two:
-3
-3
-3
-3
-0
+Full House
+1
+1
+2
+2
 0
 
 Roll Two before secondRoll():
-Empty slots: 2
+Empty slots: 1
 straightType: -1
+Full House
+1
+1
+2
+2
 3
-3
-3
-3
-4
-6
 
 Roll Three:
-3
-3
-3
-3
-0
+Full House
+1
+1
+2
+2
 0
 
 Roll Three after randoms:
-3
-3
-3
-3
+Full House
 1
 1
-{Player:=Computer 2, 1=, 2=, 3=9, 4=, 5=, 6=, Bonus=-, Upper Total=9, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=9}
+2
+2
+6
+{Player:=Computer 2, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=12, Lower Total=12, Grand Total=15}
 
-*****Not Over b/c 1 *****
+*****Not Over b/c 2 *****
 
 Roll One:
-1
-3
-2
-2
 5
+3
+5
+1
+2
 
 Roll Two:
 Large Straight
@@ -109,15 +256,15 @@ Large Straight
 1
 2
 3
-6
-4
+5
+3
 
 Roll Three:
 Large Straight
 1
 2
 3
-4
+5
 0
 
 Roll Three after randoms:
@@ -125,678 +272,27 @@ Large Straight
 1
 2
 3
-4
 5
-{Player:=Computer 1, 1=2, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=2, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=42}
+6
+{Player:=Computer 3, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=17, Lower Total=17, Grand Total=20}
 
 *****Not Over b/c 2 *****
-
-Roll One:
-2
-5
-4
-4
-3
-
-Roll Two:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
-Large Straight
-2
-3
-4
-5
-3
-
-Roll Three:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Three after randoms:
-Large Straight
-2
-3
-4
-5
-6
-{Player:=Computer 2, 1=, 2=, 3=9, 4=, 5=, 6=, Bonus=-, Upper Total=9, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=49}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-5
-2
-4
-5
-3
-
-Roll Two:
+finishedPlayers is 0
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
 Small Straight
-2
-3
-4
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
-Small Straight
-2
-3
-4
-5
-6
-
-Roll Three:
-Small Straight
-2
-3
-4
-5
-6
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-5
-6
-{Player:=Computer 1, 1=2, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=2, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=72}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-6
-2
-3
-4
-
-Roll Two:
-Small Straight
-2
-3
-4
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-Small Straight
-2
-3
-4
-4
-3
-
-Roll Three:
-Small Straight
-2
-3
-4
-0
-0
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-5
-2
-{Player:=Computer 2, 1=, 2=, 3=9, 4=, 5=, 6=, Bonus=-, Upper Total=9, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=79}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-3
-4
-6
-4
-1
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-4
-4
-4
-4
-4
-3
-
-Roll Three:
-4
-4
-4
-4
-4
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-4
-6
-{Player:=Computer 1, 1=2, 2=, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=88}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-5
-5
-5
-3
-
-Roll Two:
-5
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-5
-5
-5
-5
-5
-4
-
-Roll Three:
-5
-5
-5
-5
-5
-0
-
-Roll Three after randoms:
-5
-5
-5
-5
-5
-3
-{Player:=Computer 2, 1=, 2=, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=29, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=99}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-1
-2
-2
-4
-6
-
-Roll Two:
-2
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-2
-2
-2
-3
-4
-1
-
-Roll Three:
-2
-2
-2
-0
-0
-0
-
-Roll Three after randoms:
-2
-2
-2
-2
-1
-3
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=24, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=94}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-1
-1
-5
-4
-5
-
-Roll Two:
-Full House
-1
-1
-5
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 6
-Full House
-1
-1
-5
-5
-1
-
-Roll Three:
-Full House
-1
-1
-5
-5
-1
-
-Roll Three after randoms:
-Full House
-1
-1
-5
-5
-1
-{Player:=Computer 2, 1=, 2=, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=29, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=95, Grand Total=124}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-3
-4
-5
-5
-1
-
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-5
-5
-5
-5
-4
-1
-
-Roll Three:
-5
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-5
-3
-2
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=, Bonus=-, Upper Total=39, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=109}
-
-*****Not Over b/c 3 *****
+{Player:=Alex, 1=, 2=, 3=, 4=20, 5=15, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=, Lower Total=30, Grand Total=65}
+finishedPlayers is 0
 
 Roll One:
 5
-4
-1
-5
-5
-
-Roll Two:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-4 of a kind
-5
-5
-5
-1
-3
-
-Roll Three:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-5
-5
-5
 6
-1
-{Player:=Computer 2, 1=1, 2=, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=30, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=95, Grand Total=125}
-
-*****Not Over b/c 2 *****
-
-Roll One:
+6
 1
 2
-3
-6
-4
-
-Roll Two:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 6
-4 of a kind
-1
-4
-5
-1
-4
-
-Roll Three:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-6
-6
-3
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=, Bonus=-, Upper Total=39, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=17, Lower Total=87, Grand Total=126}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-6
-3
-4
-3
-2
-
-Roll Two:
-4 of a kind
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-4 of a kind
-3
-3
-2
-6
-4
-
-Roll Three:
-4 of a kind
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-3
-3
-1
-6
-2
-{Player:=Computer 2, 1=1, 2=, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=30, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=15, Lower Total=110, Grand Total=140}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-5
-6
-3
-6
-
-Roll Two:
-Full House
-3
-3
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 6
-Full House
-3
-3
-6
-6
-5
-
-Roll Three:
-Full House
-3
-3
-6
-6
-0
-
-Roll Three after randoms:
-Full House
-3
-3
-6
-6
-2
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=, Bonus=-, Upper Total=39, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=17, Lower Total=87, Grand Total=126}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-1
-2
-5
-5
-5
-
-Roll Two:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-4 of a kind
-5
-5
-5
-6
-3
-
-Roll Three:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-5
-5
-5
-1
-2
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=32, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=15, Lower Total=110, Grand Total=142}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-5
-1
-6
-6
-1
-
-Roll Two:
-Full House
-1
-1
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 6
-Full House
-1
-1
-6
-6
-3
-
-Roll Three:
-Full House
-1
-1
-6
-6
-0
-
-Roll Three after randoms:
-Full House
-1
-1
-6
-6
-5
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=, Bonus=-, Upper Total=39, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=17, Lower Total=87, Grand Total=126}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-2
-1
-1
-1
-2
-
-Roll Two:
-4 of a kind
-1
-1
-1
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-4 of a kind
-1
-1
-1
-4
-6
-
-Roll Three:
-4 of a kind
-1
-1
-1
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-1
-5
-3
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=32, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=15, Lower Total=110, Grand Total=142}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-3
-6
-1
-6
 
 Roll Two:
 6
@@ -808,475 +304,38 @@ Roll Two:
 
 Roll Two before secondRoll():
 Empty slots: 3
-straightType: 6
-6
-6
-6
-1
-5
-1
-
-Roll Three:
-6
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-1
-3
-2
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=12, Bonus=-, Upper Total=51, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=17, Lower Total=87, Grand Total=138}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-4
-1
-3
-5
-1
-
-Roll Two:
-3 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-1
-1
-3
-1
-6
-
-Roll Three:
-3 of a kind
-1
-1
-1
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-1
-1
-1
-1
-1
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=32, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=15, Lower Total=160, Grand Total=192}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-1
-5
-2
-3
-
-Roll Two:
-3 of a kind
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-2
-2
-5
-1
-3
-
-Roll Three:
-3 of a kind
-2
-2
-0
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-2
-2
-1
-3
-2
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=12, Bonus=-, Upper Total=51, =, 3 of a kind=10, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=17, Lower Total=97, Grand Total=148}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-5
-2
-2
-1
-5
-
-Roll Two:
-3 of a kind
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-2
-2
-3
-2
-5
-
-Roll Three:
-3 of a kind
-2
-2
-2
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-2
-2
-2
-6
-2
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=20, 6=, Bonus=-, Upper Total=32, =, 3 of a kind=14, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=15, Lower Total=174, Grand Total=206}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-1
-1
-2
-4
-
-Roll Two:
-Full House
-1
-1
-4
-4
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 6
-Full House
-1
-1
-4
-4
-4
-
-Roll Three:
-Full House
-1
-1
-4
-4
-4
-
-Roll Three after randoms:
-Full House
-1
-1
-4
-4
-4
-{Player:=Computer 1, 1=2, 2=6, 3=, 4=16, 5=15, 6=12, Bonus=-, Upper Total=51, =, 3 of a kind=10, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=17, Lower Total=122, Grand Total=173}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-2
-1
-2
-3
-6
-
-Roll Two:
-6
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 6
-6
-6
-6
-4
-2
-5
-
-Roll Three:
-6
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-2
-2
-4
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=20, 6=12, Bonus=-, Upper Total=44, =, 3 of a kind=14, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=15, Lower Total=174, Grand Total=218}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-1
-6
-3
-2
-2
-
-Roll Two:
-3
-3
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 6
-3
-3
-3
-5
-5
-4
-
-Roll Three:
-3
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-3
-3
-3
-5
-1
-6
-{Player:=Computer 1, 1=2, 2=6, 3=6, 4=16, 5=15, 6=12, Bonus=-, Upper Total=57, =, 3 of a kind=10, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=17, Lower Total=122, Grand Total=179}
-
-Roll One:
-6
-3
-3
-2
-2
-
-Roll Two:
-4
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 6
-4
-2
-1
-2
-5
-2
-
-Roll Three:
-4
-0
-0
-0
-0
-0
-
-Roll Three after randoms:
-4
-6
-4
-4
-2
-4
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=12, 5=20, 6=12, Bonus=-, Upper Total=56, =, 3 of a kind=14, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=15, Lower Total=174, Grand Total=230}
-Game is over
-
-Roll One:
-1
-2
-3
-3
-4
-
-Roll Two:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 2
-Large Straight
-1
-2
-3
-4
-3
-
-Roll Three:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-4
-5
-{Player:=Computer 1, 1=, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=40}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-2
-5
-6
-2
-5
-
-Roll Two:
-Full House
-2
-2
-5
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 2
-Full House
-2
-2
-5
-5
-4
-
-Roll Three:
-Full House
-2
-2
-5
-5
-0
-
-Roll Three after randoms:
-Full House
-2
-2
-5
-5
-6
-{Player:=Computer 2, 1=0, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=0}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-6
-2
-1
-3
-
-Roll Two:
-Small Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
 straightType: 5
-Small Straight
+6
+6
+6
+3
+6
 1
-2
-3
-5
-3
 
 Roll Three:
-Small Straight
-1
-2
-3
+6
+6
+6
+6
 0
 0
 
 Roll Three after randoms:
-Small Straight
-1
+6
+6
+6
+6
+4
 2
-3
-2
-1
-{Player:=Computer 1, 1=2, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=2, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=42}
+{Player:=Computer 1, 1=3, 2=, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=21, Lower Total=21, Grand Total=42}
 
 *****Not Over b/c 2 *****
 
 Roll One:
+2
 3
-6
 4
-3
+4
 2
 
 Roll Two:
@@ -1294,8 +353,8 @@ Large Straight
 2
 3
 4
+4
 5
-3
 
 Roll Three:
 Large Straight
@@ -1311,184 +370,149 @@ Large Straight
 3
 4
 5
-4
-{Player:=Computer 2, 1=0, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=18, Lower Total=18, Grand Total=18}
+3
+{Player:=Computer 2, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=12, Lower Total=42, Grand Total=45}
 
 *****Not Over b/c 2 *****
 
 Roll One:
-5
-6
-3
-6
-3
-
-Roll Two:
-Full House
-3
-3
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 6
-Full House
-3
-3
-6
-6
-5
-
-Roll Three:
-Full House
-3
-3
-6
-6
-0
-
-Roll Three after randoms:
-Full House
-3
-3
-6
-6
-3
-{Player:=Computer 1, 1=2, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=2, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=65, Grand Total=67}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
 2
+1
 4
+5
 6
-4
 
 Roll Two:
+Large Straight
 4
-4
-4
-4
+5
+6
 0
 0
 
 Roll Two before secondRoll():
 Empty slots: 2
-straightType: 6
+straightType: 8
+Large Straight
 4
-4
-4
-4
-4
-1
-
-Roll Three:
-4
-4
-4
-4
-4
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-4
-1
-{Player:=Computer 2, 1=0, 2=, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=16, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=18, Lower Total=18, Grand Total=34}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-6
-4
-3
-3
-
-Roll Two:
-3
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3
-3
-3
+5
 6
 2
 4
 
 Roll Three:
-3
-3
-3
+Large Straight
+4
+5
+6
+2
 0
+
+Roll Three after randoms:
+Large Straight
+4
+5
+6
+2
+1
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=5, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=17, Lower Total=17, Grand Total=22}
+
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
+Chance
+{Player:=Alex, 1=, 2=, 3=, 4=20, 5=15, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=85}
+finishedPlayers is 0
+
+Roll One:
+1
+3
+5
+4
+3
+
+Roll Two:
+Large Straight
+3
+4
+5
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 2
+straightType: 7
+Large Straight
+3
+4
+5
+4
+1
+
+Roll Three:
+Large Straight
+3
+4
+5
 0
 0
 
 Roll Three after randoms:
+Large Straight
 3
-3
-3
+4
 5
-1
 2
-{Player:=Computer 1, 1=2, 2=, 3=6, 4=, 5=, 6=, Bonus=-, Upper Total=8, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=65, Grand Total=73}
+5
+{Player:=Computer 1, 1=3, 2=, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=21, Lower Total=51, Grand Total=72}
 
 *****Not Over b/c 2 *****
 
 Roll One:
-2
-5
+1
+4
 3
 5
-4
+3
 
 Roll Two:
 Large Straight
-2
 3
 4
 5
 0
+0
 
 Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
+Empty slots: 2
+straightType: 7
 Large Straight
-2
 3
 4
 5
-5
+4
+6
 
 Roll Three:
 Large Straight
-2
 3
 4
 5
+6
 0
 
 Roll Three after randoms:
 Large Straight
-2
 3
 4
 5
-4
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=18, Lower Total=18, Grand Total=36}
+6
+3
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=12, Lower Total=42, Grand Total=45}
 
 *****Not Over b/c 3 *****
 
@@ -1496,49 +520,284 @@ Roll One:
 2
 6
 2
-1
-3
+6
+4
 
 Roll Two:
-Small Straight
-1
+Full House
 2
+2
+6
+6
+0
+
+Roll Two before secondRoll():
+Empty slots: 1
+straightType: 7
+Full House
+2
+2
+6
+6
+2
+
+Roll Three:
+Full House
+2
+2
+6
+6
+2
+
+Roll Three after randoms:
+Full House
+2
+2
+6
+6
+2
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=5, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=, Chance=17, Lower Total=42, Grand Total=47}
+
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
 3
+{Player:=Alex, 1=, 2=, 3=9, 4=20, 5=15, 6=, Bonus=-, Upper Total=44, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=94}
+finishedPlayers is 0
+
+Roll One:
+5
+6
+2
+6
+6
+
+Roll Two:
+4 of a kind
+6
+6
+6
 0
 0
 
 Roll Two before secondRoll():
 Empty slots: 2
-straightType: 5
-Small Straight
-1
-2
-3
+straightType: 7
+4 of a kind
+6
+6
+6
 5
 3
 
 Roll Three:
-Small Straight
-1
-2
-3
+4 of a kind
+6
+6
+6
 0
 0
 
 Roll Three after randoms:
-Small Straight
-1
+4 of a kind
+6
+6
+6
 2
-3
 2
-4
-{Player:=Computer 1, 1=2, 2=, 3=6, 4=, 5=, 6=, Bonus=-, Upper Total=8, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=95, Grand Total=103}
+{Player:=Computer 1, 1=3, 2=, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=22, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=21, Lower Total=73, Grand Total=94}
 
 *****Not Over b/c 2 *****
 
 Roll One:
 6
+5
+6
+6
+6
+
+Roll Two:
+6
+6
+6
+6
+6
+0
+
+Roll Two before secondRoll():
+Empty slots: 1
+straightType: 7
+6
+6
+6
+6
+6
+5
+
+Roll Three:
+6
+6
+6
+6
+6
+0
+
+Roll Three after randoms:
+6
+6
+6
+6
+6
+6
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=50, Chance=12, Lower Total=92, Grand Total=95}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+2
+6
+3
+6
+5
+
+Roll Two:
+6
+6
+6
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 3
+straightType: 7
+6
+6
+6
+5
+3
+5
+
+Roll Three:
+6
+6
+6
+0
+0
+0
+
+Roll Three after randoms:
+6
+6
+6
+3
 1
+6
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=23, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=, Chance=17, Lower Total=42, Grand Total=65}
+
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+Pressed a button
+Pressed a button
+Pressed a button
+6
+{Player:=Alex, 1=, 2=, 3=9, 4=20, 5=15, 6=18, Bonus=-, Upper Total=62, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=112}
+finishedPlayers is 0
+
+Roll One:
+1
+4
+3
+4
+1
+
+Roll Two:
+Full House
+1
+1
+4
+4
+0
+
+Roll Two before secondRoll():
+Empty slots: 1
+straightType: 7
+Full House
+1
+1
+4
+4
+6
+
+Roll Three:
+Full House
+1
+1
+4
+4
+0
+
+Roll Three after randoms:
+Full House
+1
+1
+4
+4
+3
+{Player:=Computer 1, 1=3, 2=0, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=22, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=21, Lower Total=73, Grand Total=94}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+4
+6
+4
+6
+4
+
+Roll Two:
+4
+4
+4
+4
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 2
+straightType: 7
+4
+4
+4
+4
+5
+5
+
+Roll Three:
+4
+4
+4
+4
+0
+0
+
+Roll Three after randoms:
+4
+4
+4
+4
+6
+1
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=12, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=50, Chance=12, Lower Total=92, Grand Total=107}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+1
+3
 3
 6
 2
@@ -1558,7 +817,7 @@ Large Straight
 1
 2
 3
-1
+5
 5
 
 Roll Three:
@@ -1567,7 +826,7 @@ Large Straight
 2
 3
 5
-0
+5
 
 Roll Three after randoms:
 Large Straight
@@ -1575,3091 +834,23 @@ Large Straight
 2
 3
 5
-4
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=18, Lower Total=58, Grand Total=76}
+5
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=23, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=, Yahtzee=, Chance=17, Lower Total=42, Grand Total=65}
 
 *****Not Over b/c 3 *****
-
-Roll One:
-1
-2
-4
-5
-3
-
-Roll Two:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 5
-4 of a kind
-1
-6
-4
-3
-2
-
-Roll Three:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-3
-4
-1
-{Player:=Computer 1, 1=2, 2=, 3=6, 4=, 5=, 6=, Bonus=-, Upper Total=8, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=105, Grand Total=113}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-6
-4
-1
-5
-
-Roll Two:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Small Straight
-4
-5
-6
-6
-1
-
-Roll Three:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Three after randoms:
-Small Straight
-4
-5
-6
-4
-1
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=18, Lower Total=58, Grand Total=76}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-5
-3
-5
-4
-4
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 8
-4
-4
-4
-3
-2
-2
-
-Roll Three:
-4
-4
-4
-0
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-2
-5
-2
-{Player:=Computer 1, 1=2, 2=, 3=6, 4=8, 5=, 6=, Bonus=-, Upper Total=16, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=105, Grand Total=121}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-2
-6
-4
-4
-
-Roll Two:
-Small Straight
-2
-3
-4
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-Small Straight
-2
-3
-4
-2
-3
-
-Roll Three:
-Small Straight
-2
-3
-4
-0
-0
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-4
-4
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=58, Grand Total=76}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-3
-4
-6
-5
-5
-
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-5
-5
-5
-4
-5
-5
-
-Roll Three:
-5
-5
-5
-5
-5
-0
-
-Roll Three after randoms:
-5
-5
-5
-5
-5
-4
-{Player:=Computer 1, 1=2, 2=, 3=6, 4=8, 5=20, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=105, Grand Total=141}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-6
-4
-4
-1
-
-Roll Two:
-3 of a kind
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-4
-4
-2
-6
-3
-
-Roll Three:
-3 of a kind
-4
-4
-0
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-4
-4
-2
-6
-6
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=58, Grand Total=76}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-6
-1
-1
-6
-2
-
-Roll Two:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-4 of a kind
-1
-1
-6
-5
-5
-
-Roll Three:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-4
-4
-5
-{Player:=Computer 1, 1=2, 2=0, 3=6, 4=8, 5=20, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=105, Grand Total=141}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-1
-4
-4
-6
-3
-
-Roll Two:
-3 of a kind
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-4
-4
-6
-4
-3
-
-Roll Three:
-3 of a kind
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-4
-4
-4
-1
-2
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=, 6=, Bonus=-, Upper Total=18, =, 3 of a kind=15, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=73, Grand Total=91}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-5
-5
-1
-6
-5
-
-Roll Two:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-4 of a kind
-5
-5
-5
-3
-2
-
-Roll Three:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-5
-5
-5
-4
-2
-{Player:=Computer 1, 1=2, 2=0, 3=6, 4=8, 5=20, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=105, Grand Total=141}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-2
-1
-6
-5
-2
-
-Roll Two:
-5
-5
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 6
-5
-5
-6
-1
-5
-4
-
-Roll Three:
-5
-5
-5
-0
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-4
-4
-3
-{Player:=Computer 2, 1=0, 2=2, 3=, 4=16, 5=10, 6=, Bonus=-, Upper Total=28, =, 3 of a kind=15, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=73, Grand Total=101}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-2
-3
-3
-5
-1
-
-Roll Two:
-3 of a kind
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-3
-3
-6
-6
-3
-
-Roll Three:
-3 of a kind
-3
-3
-3
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-3
-3
-3
-4
-1
-{Player:=Computer 1, 1=2, 2=0, 3=6, 4=8, 5=20, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=14, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=119, Grand Total=155}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-4
-1
-3
-4
-6
-
-Roll Two:
-3
-3
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 6
-3
-3
-6
-5
-3
-1
-
-Roll Three:
-3
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-3
-3
-3
-2
-6
-4
-{Player:=Computer 2, 1=0, 2=2, 3=6, 4=16, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=15, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=73, Grand Total=107}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-2
-6
-6
-3
-6
-
-Roll Two:
-6
-6
-6
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-6
-6
-6
-6
-5
-3
-
-Roll Three:
-6
-6
-6
-6
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-6
-4
-4
-{Player:=Computer 1, 1=2, 2=0, 3=6, 4=8, 5=20, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=14, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=10, Lower Total=119, Grand Total=173}
-
-*****Not Over b/c Yahtzee *****
-
-Roll One:
-5
-3
-4
-1
-3
-
-Roll Two:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Small Straight
-3
-4
-5
-5
-3
-
-Roll Three:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Three after randoms:
-Small Straight
-3
-4
-5
-2
-4
-{Player:=Computer 2, 1=0, 2=2, 3=6, 4=16, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=15, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=103, Grand Total=137}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-2
-3
-4
-3
-6
-
-Roll Two:
-Other
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 7
-Other
-6
-5
-2
-4
-1
-
-Roll Three:
-Other
-6
-0
-0
-0
-0
-
-Roll Three after randoms:
-Other
-6
-6
-1
-2
-6
-{Player:=Computer 1, 1=2, 2=0, 3=6, 4=8, 5=20, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=14, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=10, Lower Total=119, Grand Total=173}
-
-Roll One:
-1
-1
-4
-6
-4
-
-Roll Two:
-6
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 7
-6
-6
-4
-6
-5
-5
-
-Roll Three:
-6
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-2
-3
-5
-{Player:=Computer 2, 1=0, 2=2, 3=6, 4=16, 5=10, 6=12, Bonus=-, Upper Total=46, =, 3 of a kind=15, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=18, Lower Total=103, Grand Total=149}
-Game is over
-Need to start new game
-
-Roll One:
-5
-2
-2
-5
-2
-
-Roll Two:
-2
-2
-2
-2
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-2
-2
-2
-2
-5
-5
-
-Roll Three:
-2
-2
-2
-2
-0
-0
-
-Roll Three after randoms:
-2
-2
-2
-2
-4
-4
-{Player:=Computer 1, 1=, 2=6, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=6, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=6}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-1
-1
-1
-6
-5
-
-Roll Two:
-1
-1
-1
-1
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-1
-1
-1
-1
-4
-1
-
-Roll Three:
-1
-1
-1
-1
-1
-0
-
-Roll Three after randoms:
-1
-1
-1
-1
-1
-6
-{Player:=Computer 2, 1=4, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=4, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=4}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-6
-6
-5
-1
-4
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
-6
-2
-4
-
-Roll Three:
-Large Straight
-4
-5
-6
-2
-0
-
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-2
-3
-{Player:=Computer 1, 1=, 2=6, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=6, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=46}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-2
-3
-3
-2
-2
-
-Roll Two:
-2
-2
-2
-2
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-2
-2
-2
-2
-5
-3
-
-Roll Three:
-2
-2
-2
-2
-0
-0
-
-Roll Three after randoms:
-2
-2
-2
-2
-2
-3
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=12, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=12}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-3
-5
-4
-4
-3
-
-Roll Two:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Small Straight
-3
-4
-5
-5
-5
-
-Roll Three:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Three after randoms:
-Small Straight
-3
-4
-5
-1
-3
-{Player:=Computer 1, 1=1, 2=6, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=7, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=47}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-1
-2
-4
-4
-6
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4
-4
-4
-4
-3
-3
-
-Roll Three:
-4
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-6
-2
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=, 6=, Bonus=-, Upper Total=24, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=24}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-4
-2
-1
-5
-6
-
-Roll Two:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Small Straight
-4
-5
-6
-1
-2
-
-Roll Three:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Three after randoms:
-Small Straight
-4
-5
-6
-1
-3
-{Player:=Computer 1, 1=1, 2=6, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=7, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=77}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-5
-1
-6
-6
-4
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
-6
-5
-5
-
-Roll Three:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-3
-1
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=, 6=, Bonus=-, Upper Total=24, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=19, Lower Total=19, Grand Total=43}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-1
-6
-3
-3
-3
-
-Roll Two:
-3
-3
-3
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-3
-3
-3
-3
-3
-6
-
-Roll Three:
-3
-3
-3
-3
-3
-0
-
-Roll Three after randoms:
-3
-3
-3
-3
-3
-6
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=19, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=89}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-1
-5
-1
-3
-2
-
-Roll Two:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-Large Straight
-1
-2
-3
-4
-2
-
-Roll Three:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-4
-6
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=, 6=, Bonus=-, Upper Total=24, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=19, Lower Total=19, Grand Total=43}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-6
-4
-5
-4
-6
-
-Roll Two:
-Full House
-4
-4
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 5
-Full House
-4
-4
-6
-6
-1
-
-Roll Three:
-Full House
-4
-4
-6
-6
-0
-
-Roll Three after randoms:
-Full House
-4
-4
-6
-6
-5
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=19, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=25, Lower Total=95, Grand Total=114}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-2
-5
-3
-5
-
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 5
-5
-5
-5
-1
-1
-1
-
-Roll Three:
-5
-5
-5
-0
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-1
-1
-4
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=19, Lower Total=19, Grand Total=53}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-1
-3
-5
-4
-2
-
-Roll Two:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 5
-4 of a kind
-1
-4
-3
-2
-5
-
-Roll Three:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-6
-3
-1
-3
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=19, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=25, Lower Total=95, Grand Total=114}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-3
-4
-2
-5
-5
-
-Roll Two:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
-Large Straight
-2
-3
-4
-5
-5
-
-Roll Three:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Three after randoms:
-Large Straight
-2
-3
-4
-5
-4
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=0, Chance=19, Lower Total=19, Grand Total=53}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-5
-3
-1
-4
-4
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 3
-4
-4
-4
-5
-6
-4
-
-Roll Three:
-4
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-3
-1
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=12, 5=, 6=, Bonus=-, Upper Total=31, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=25, Lower Total=95, Grand Total=126}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-4
-3
-5
-5
-3
-
-Roll Two:
-Large Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Large Straight
-3
-4
-5
-2
-6
-
-Roll Three:
-Large Straight
-3
-4
-5
-2
-6
-
-Roll Three after randoms:
-Large Straight
-3
-4
-5
-2
-6
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=40, Yahtzee=0, Chance=19, Lower Total=59, Grand Total=93}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-4
-4
-6
-2
-3
-
-Roll Two:
-3 of a kind
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-3 of a kind
-4
-4
-4
-5
-5
-
-Roll Three:
-3 of a kind
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-4
-4
-4
-6
-1
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=12, 5=, 6=, Bonus=-, Upper Total=31, =, 3 of a kind=19, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=25, Lower Total=114, Grand Total=145}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-4
-3
-4
-5
-5
-
-Roll Two:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Small Straight
-3
-4
-5
-6
-1
-
-Roll Three:
-Small Straight
-3
-4
-5
-6
-0
-
-Roll Three after randoms:
-Small Straight
-3
-4
-5
-6
-6
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=19, Lower Total=89, Grand Total=123}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-6
-2
-4
-3
-4
-
-Roll Two:
-6
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 7
-6
-6
-4
-2
-3
-2
-
-Roll Three:
-6
-6
-0
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-3
-1
-5
-3
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=12, 5=, 6=6, Bonus=-, Upper Total=37, =, 3 of a kind=19, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=25, Lower Total=114, Grand Total=151}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-1
-6
-1
-6
-2
-
-Roll Two:
-Full House
-1
-1
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 7
-Full House
-1
-1
-6
-6
-1
-
-Roll Three:
-Full House
-1
-1
-6
-6
-1
-
-Roll Three after randoms:
-Full House
-1
-1
-6
-6
-1
-{Player:=Computer 2, 1=4, 2=8, 3=, 4=12, 5=10, 6=, Bonus=-, Upper Total=34, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=19, Lower Total=114, Grand Total=148}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-4
-6
-1
-2
-1
-
-Roll Two:
-5
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 7
-5
-6
-3
-1
-3
-2
-
-Roll Three:
-5
-0
-0
-0
-0
-0
-
-Roll Three after randoms:
-5
-6
-2
-6
-4
-5
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=12, 5=5, 6=6, Bonus=-, Upper Total=42, =, 3 of a kind=19, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=25, Lower Total=114, Grand Total=156}
-
-*****Not Over b/c Full House *****
-
-Roll One:
-4
-2
-1
-3
-3
-
-Roll Two:
-3
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-3
-3
-3
-2
-2
-4
-
-Roll Three:
-3
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-3
-3
-3
-2
-2
-1
-{Player:=Computer 2, 1=4, 2=8, 3=6, 4=12, 5=10, 6=, Bonus=-, Upper Total=40, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=19, Lower Total=114, Grand Total=154}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-4
-6
-3
-3
-2
-
-Roll Two:
-Other
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 7
-Other
-6
-4
-1
-4
-2
-
-Roll Three:
-Other
-6
-0
-0
-0
-0
-
-Roll Three after randoms:
-Other
-6
-3
-3
-6
-6
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=12, 5=5, 6=6, Bonus=-, Upper Total=42, =, 3 of a kind=19, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=25, Lower Total=114, Grand Total=156}
-
-*****Not Over b/c Full House *****
-
-Roll One:
-5
-3
-1
-2
-2
-
-Roll Two:
-3 of a kind
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-3 of a kind
-2
-2
-6
-5
-3
-
-Roll Three:
-3 of a kind
-2
-2
-0
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-2
-2
-3
-4
-3
-{Player:=Computer 2, 1=4, 2=8, 3=6, 4=12, 5=10, 6=, Bonus=-, Upper Total=40, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=19, Lower Total=114, Grand Total=154}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-2
-4
-2
-6
-4
-
-Roll Two:
-Full House
-2
-2
-4
-4
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 7
-Full House
-2
-2
-4
-4
-4
-
-Roll Three:
-Full House
-2
-2
-4
-4
-4
-
-Roll Three after randoms:
-Full House
-2
-2
-4
-4
-4
-{Player:=Computer 1, 1=1, 2=6, 3=12, 4=12, 5=5, 6=6, Bonus=-, Upper Total=42, =, 3 of a kind=19, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=25, Lower Total=139, Grand Total=181}
-
-Roll One:
-3
-6
-6
-2
-2
-
-Roll Two:
-6
-6
-6
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-6
-6
-6
-5
-4
-4
-
-Roll Three:
-6
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-5
-3
-1
-{Player:=Computer 2, 1=4, 2=8, 3=6, 4=12, 5=10, 6=12, Bonus=-, Upper Total=52, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=19, Lower Total=114, Grand Total=166}
-Game is over
-Need to start new game
-
-Roll One:
-5
-3
-3
-3
-6
-
-Roll Two:
-3
-3
-3
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-3
-3
-3
-3
-3
-4
-
-Roll Three:
-3
-3
-3
-3
-3
-0
-
-Roll Three after randoms:
-3
-3
-3
-3
-3
-2
-{Player:=Computer 1, 1=, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=12, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=12}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-4
-1
-6
-4
-3
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4
-4
-4
-2
-6
-4
-
-Roll Three:
-4
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-4
-4
-{Player:=Computer 2, 1=, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=50, Chance=, Lower Total=50, Grand Total=50}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-2
-6
-1
-1
-2
-
-Roll Two:
-Full House
-1
-1
-2
-2
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 7
-Full House
-1
-1
-2
-2
-6
-
-Roll Three:
-Full House
-1
-1
-2
-2
-0
-
-Roll Three after randoms:
-Full House
-1
-1
-2
-2
-4
-{Player:=Computer 1, 1=2, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=14}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-1
-4
-2
-6
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
-6
-5
-3
-
-Roll Three:
-Large Straight
-4
-5
-6
-3
-0
-
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-3
-1
-{Player:=Computer 2, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=50, Chance=, Lower Total=50, Grand Total=51}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-2
-6
-1
-4
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
-6
-5
-2
-
-Roll Three:
-Large Straight
-4
-5
-6
-2
-0
-
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-2
-3
-{Player:=Computer 1, 1=2, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=54}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-2
-6
-6
-2
-3
-
-Roll Two:
-Full House
-2
-2
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 8
-Full House
-2
-2
-6
-6
-5
-
-Roll Three:
-Full House
-2
-2
-6
-6
-0
-
-Roll Three after randoms:
-Full House
-2
-2
-6
-6
-6
-{Player:=Computer 2, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=, Lower Total=75, Grand Total=76}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-6
-2
-3
-6
-4
-
-Roll Two:
-Small Straight
-2
-3
-4
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-Small Straight
-2
-3
-4
-2
-1
-
-Roll Three:
-Small Straight
-2
-3
-4
-1
-0
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-1
-1
-{Player:=Computer 1, 1=2, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=11, Lower Total=51, Grand Total=65}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-1
-6
-4
-3
-3
-
-Roll Two:
-3
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3
-3
-3
-4
-5
-4
-
-Roll Three:
-3
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-3
-3
-3
-4
-3
-1
-{Player:=Computer 2, 1=1, 2=, 3=9, 4=, 5=, 6=, Bonus=-, Upper Total=10, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=, Lower Total=75, Grand Total=85}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-4
-6
-6
-3
-
-Roll Two:
-Full House
-3
-3
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 6
-Full House
-3
-3
-6
-6
-5
-
-Roll Three:
-Full House
-3
-3
-6
-6
-0
-
-Roll Three after randoms:
-Full House
-3
-3
-6
-6
-1
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=11, Lower Total=51, Grand Total=65}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-2
-1
-4
-6
-
-Roll Two:
-6
-6
-6
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-6
-6
-6
-3
-2
-3
-
-Roll Three:
-6
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-2
-4
-2
-{Player:=Computer 2, 1=1, 2=, 3=9, 4=, 5=, 6=12, Bonus=-, Upper Total=22, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=, Lower Total=75, Grand Total=97}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-1
-1
-3
-6
-
-Roll Two:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-4 of a kind
-1
-1
-3
-1
-3
-
-Roll Three:
-4 of a kind
-1
-1
-1
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-1
-6
-1
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=10, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=11, Lower Total=61, Grand Total=75}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-3
-1
-2
-2
-6
-
-Roll Two:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-Large Straight
-1
-2
-3
-1
-1
-
-Roll Three:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-3
-4
-{Player:=Computer 2, 1=1, 2=, 3=9, 4=, 5=, 6=12, Bonus=-, Upper Total=22, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=110}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-2
-5
-4
-6
-
-Roll Two:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Small Straight
-4
-5
-6
-4
-2
-
-Roll Three:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Three after randoms:
-Small Straight
-4
-5
-6
-4
-2
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=10, Full House=, Small Straight=, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=61, Grand Total=75}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-3
-2
-5
-3
-3
-
-Roll Two:
-4 of a kind
-3
-3
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-4 of a kind
-3
-3
-3
-6
-1
-
-Roll Three:
-4 of a kind
-3
-3
-3
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-3
-3
-3
-1
-2
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=, 6=12, Bonus=-, Upper Total=24, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=112}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-3
-4
-6
-6
-
-Roll Two:
-Small Straight
-2
-3
-4
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 6
-Small Straight
-2
-3
-4
-5
-6
-
-Roll Three:
-Small Straight
-2
-3
-4
-5
-0
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-5
-1
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=, 4 of a kind=10, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=91, Grand Total=105}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-5
-3
-3
-6
-
-Roll Two:
-4 of a kind
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-4 of a kind
-3
-3
-1
-1
-2
-
-Roll Three:
-4 of a kind
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-3
-3
-5
-1
-3
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=, 6=12, Bonus=-, Upper Total=24, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=112}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-1
-1
-5
-3
-
-Roll Two:
-3 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 6
-3 of a kind
-1
-1
-5
-5
-1
-
-Roll Three:
-3 of a kind
-1
-1
-1
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-1
-1
-1
-4
-2
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=9, 4 of a kind=10, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=100, Grand Total=114}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-4
-5
-6
-4
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
-6
-5
-3
-
-Roll Three:
-Large Straight
-4
-5
-6
-3
-0
-
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-3
-6
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=, 6=12, Bonus=-, Upper Total=24, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=112}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-5
-3
-5
-3
-3
-
-Roll Two:
-Full House
-3
-3
-3
-5
-5
-
-Roll Two before secondRoll():
-Empty slots: 0
-straightType: 8
-Full House
-3
-3
-3
-5
-5
-
-Roll Three:
-Full House
-3
-3
-3
-5
-5
-
-Roll Three after randoms:
-Full House
-3
-3
-3
-5
-5
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=14, =, 3 of a kind=9, 4 of a kind=10, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=125, Grand Total=139}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-5
-1
-2
-1
-1
-
-Roll Two:
-5
-5
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 8
-5
-5
-6
-1
-2
-4
-
-Roll Three:
-5
-5
-0
-0
-0
-0
-
-Roll Three after randoms:
-5
-5
-4
-2
-5
-6
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=, 5=10, 6=12, Bonus=-, Upper Total=34, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=122}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-3
-2
-6
-1
-
-Roll Two:
-6
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 8
-6
-6
-4
-6
-4
-2
-
-Roll Three:
-6
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-3
-6
-4
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=, 5=, 6=18, Bonus=-, Upper Total=32, =, 3 of a kind=9, 4 of a kind=10, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=125, Grand Total=157}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-1
-2
-6
-5
-2
-
-Roll Two:
-4
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 8
-4
-3
-4
-1
-1
-1
-
-Roll Three:
-4
-4
-0
-0
-0
-0
-
-Roll Three after randoms:
-4
-4
-5
-2
-3
-3
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=4, 5=10, 6=12, Bonus=-, Upper Total=38, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=126}
-
-*****Not Over b/c Small Straight *****
-
-Roll One:
-6
-2
-6
-1
-3
-
-Roll Two:
-4
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 8
-4
-1
-3
-3
-4
-1
-
-Roll Three:
-4
-4
-0
-0
-0
-0
-
-Roll Three after randoms:
-4
-4
-2
-1
-6
-3
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=4, 5=, 6=18, Bonus=-, Upper Total=36, =, 3 of a kind=9, 4 of a kind=10, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=125, Grand Total=161}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-5
-2
-5
-3
-6
-
-Roll Two:
-Other
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 8
-Other
-6
-2
-1
-3
-5
-
-Roll Three:
-Other
-6
-0
-0
-0
-0
-
-Roll Three after randoms:
-Other
-6
-3
-2
-3
-5
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=4, 5=10, 6=12, Bonus=-, Upper Total=38, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=0, Yahtzee=50, Chance=13, Lower Total=88, Grand Total=126}
-
-*****Not Over b/c Small Straight *****
-
-Roll One:
-4
-4
-3
-2
-2
-
-Roll Two:
-5
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 8
-5
-6
-2
+finishedPlayers is 0
+Pressed a button
+Pressed a button
 2
-3
-6
-
-Roll Three:
-5
-0
-0
-0
-0
-0
+{Player:=Alex, 1=, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=-, Upper Total=66, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=116}
+finishedPlayers is 0
 
-Roll Three after randoms:
-5
-5
-5
-1
-3
-5
-{Player:=Computer 1, 1=2, 2=0, 3=12, 4=4, 5=15, 6=18, Bonus=-, Upper Total=51, =, 3 of a kind=9, 4 of a kind=10, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=125, Grand Total=176}
-
 Roll One:
-4
-1
-6
-4
-5
-
-Roll Two:
-Small Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Small Straight
-4
-5
-6
-4
-4
-
-Roll Three:
-Small Straight
-4
-5
 6
-0
-0
-
-Roll Three after randoms:
-Small Straight
 4
-5
-6
-3
-3
-{Player:=Computer 2, 1=1, 2=2, 3=9, 4=4, 5=10, 6=12, Bonus=-, Upper Total=38, =, 3 of a kind=0, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=0, Yahtzee=50, Chance=13, Lower Total=118, Grand Total=156}
-Game is over
-Need to start new game
-
-Roll One:
-5
-2
-1
-1
-3
-
-Roll Two:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-Large Straight
-1
-2
-3
-5
-6
-
-Roll Three:
-Large Straight
-1
-2
-3
-5
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
 3
 5
-6
-{Player:=Computer 1, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=1}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-3
-3
-3
-2
-
-Roll Two:
-3
-3
-3
-3
-3
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 5
-3
-3
-3
-3
-3
-6
-
-Roll Three:
-3
-3
-3
-3
-3
-0
-
-Roll Three after randoms:
-3
-3
-3
-3
-3
-2
-{Player:=Computer 2, 1=, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=12, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=12}
-
-*****Not Over b/c 1 *****
-
-Roll One:
 4
-3
-3
-5
-6
 
 Roll Two:
 Large Straight
@@ -4677,7 +868,7 @@ Large Straight
 4
 5
 6
-3
+4
 
 Roll Three:
 Large Straight
@@ -4693,607 +884,35 @@ Large Straight
 4
 5
 6
-1
-{Player:=Computer 1, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=19, Lower Total=19, Grand Total=20}
+4
+{Player:=Computer 1, 1=3, 2=0, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=22, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=21, Lower Total=73, Grand Total=94}
 
-*****Not Over b/c 2 *****
+*****Not Over b/c 3 *****
 
 Roll One:
-4
-5
-1
-5
+2
+2
+2
+2
 4
 
 Roll Two:
-Full House
-4
-4
-5
-5
+4 of a kind
+2
+2
+2
+2
 0
 
 Roll Two before secondRoll():
 Empty slots: 1
 straightType: 4
-Full House
-4
-4
-5
-5
-3
-
-Roll Three:
-Full House
-4
-4
-5
-5
-0
-
-Roll Three after randoms:
-Full House
-4
-4
-5
-5
-2
-{Player:=Computer 2, 1=0, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=12, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=12}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-5
-2
-2
-6
-
-Roll Two:
-2
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 4
-2
-2
-2
-3
-2
-2
-
-Roll Three:
-2
-2
-2
-2
-2
-0
-
-Roll Three after randoms:
-2
-2
-2
-2
-2
-2
-{Player:=Computer 1, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=50, Chance=19, Lower Total=69, Grand Total=70}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-6
-6
-6
-5
-6
-
-Roll Two:
-6
-6
-6
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 4
-6
-6
-6
-6
-6
-5
-
-Roll Three:
-6
-6
-6
-6
-6
-0
-
-Roll Three after randoms:
-6
-6
-6
-6
-6
-4
-{Player:=Computer 2, 1=0, 2=, 3=12, 4=, 5=, 6=24, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=36}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-1
-3
-1
-5
-
-Roll Two:
-Full House
-1
-1
-3
-3
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 4
-Full House
-1
-1
-3
-3
-1
-
-Roll Three:
-Full House
-1
-1
-3
-3
-1
-
-Roll Three after randoms:
-Full House
-1
-1
-3
-3
-1
-{Player:=Computer 1, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=19, Lower Total=94, Grand Total=95}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-6
-1
-2
-2
-3
-
-Roll Two:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-Large Straight
-1
-2
-3
-3
-1
-
-Roll Three:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-3
-5
-{Player:=Computer 2, 1=0, 2=, 3=12, 4=, 5=, 6=24, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=14, Lower Total=14, Grand Total=50}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-2
-3
-3
-5
-
-Roll Two:
-3
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 5
-3
-3
-3
-2
-4
-3
-
-Roll Three:
-3
-3
-3
-3
-0
-0
-
-Roll Three after randoms:
-3
-3
-3
-3
-6
-3
-{Player:=Computer 1, 1=1, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=13, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=19, Lower Total=94, Grand Total=107}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-6
-6
-6
-4
-1
-
-Roll Two:
-4 of a kind
-6
-6
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-4 of a kind
-6
-6
-6
-4
-4
-
-Roll Three:
-4 of a kind
-6
-6
-6
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-6
-6
-6
-1
-5
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=, 5=, 6=24, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=14, Lower Total=14, Grand Total=50}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-2
-2
-5
-4
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
-6
-1
-1
-
-Roll Three:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-2
-4
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=19, Lower Total=94, Grand Total=109}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-4
-2
-5
-3
-
-Roll Two:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
-Large Straight
-2
-3
-4
-5
-5
-
-Roll Three:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Three after randoms:
-Large Straight
-2
-3
-4
-5
-3
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=, 5=, 6=24, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=14, Lower Total=14, Grand Total=50}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-5
-3
-5
-1
-
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 3
-5
-5
-5
-6
-3
-1
-
-Roll Three:
-5
-5
-5
-0
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-2
-5
-5
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=, 5=20, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=50, Chance=19, Lower Total=94, Grand Total=129}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-1
-3
-4
-6
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 3
-4
-4
-4
-2
-3
-1
-
-Roll Three:
-4
-4
-4
-0
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-6
-1
-6
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=, 6=24, Bonus=-, Upper Total=44, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=14, Lower Total=14, Grand Total=58}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-4
-5
-3
-2
-3
-
-Roll Two:
-Large Straight
-2
-3
-4
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
-Large Straight
-2
-3
-4
-5
-6
-
-Roll Three:
-Large Straight
-2
-3
-4
-5
-6
-
-Roll Three after randoms:
-Large Straight
-2
-3
-4
-5
-6
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=, 5=20, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=50, Chance=19, Lower Total=134, Grand Total=169}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-1
-2
-3
-1
-
-Roll Two:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 2
-Large Straight
-1
-2
-3
-4
-5
-
-Roll Three:
-Large Straight
-1
-2
-3
-4
-5
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-4
-5
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=, 6=24, Bonus=-, Upper Total=44, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=14, Lower Total=54, Grand Total=98}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-2
-2
-5
-2
-1
-
-Roll Two:
-4 of a kind
-2
-2
-2
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 2
 4 of a kind
 2
 2
 2
 2
-2
+4
 
 Roll Three:
 4 of a kind
@@ -5301,7 +920,7 @@ Roll Three:
 2
 2
 2
-2
+0
 
 Roll Three after randoms:
 4 of a kind
@@ -5312,280 +931,16 @@ Roll Three after randoms:
 2
 
 extra is now: 1
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=, 5=20, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=19, Lower Total=264, Grand Total=299}
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=12, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=232, Grand Total=247}
 
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-5
-5
-5
-3
-
-Roll Two:
-5
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 2
-5
-5
-5
-5
-6
-3
-
-Roll Three:
-5
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-5
-5
-2
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=20, 6=24, Bonus=35, Upper Total=99, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=14, Lower Total=54, Grand Total=153}
-
-*****Not Over b/c 3 of a kind *****
-
-Roll One:
-1
-3
-6
-4
-5
-
-Roll Two:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 2
-4 of a kind
-1
-3
-3
-6
-2
-
-Roll Three:
-4 of a kind
-1
-0
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-2
-5
-5
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=, 5=20, 6=, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=19, Lower Total=264, Grand Total=299}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-1
-1
-3
-2
-
-Roll Two:
-Small Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-Small Straight
-1
-2
-3
-5
-1
-
-Roll Three:
-Small Straight
-1
-2
-3
-0
-0
-
-Roll Three after randoms:
-Small Straight
-1
-2
-3
-2
-3
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=20, 6=24, Bonus=35, Upper Total=64, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=40, Yahtzee=0, Chance=14, Lower Total=54, Grand Total=118}
-
-*****Not Over b/c 3 of a kind *****
-
-Roll One:
-6
-6
-5
-4
-4
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 5
-4
-4
-4
-3
-5
-3
-
-Roll Three:
-4
-4
-4
-0
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-5
-5
-3
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=8, 5=20, 6=, Bonus=-, Upper Total=43, =, 3 of a kind=, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=19, Lower Total=264, Grand Total=307}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-4
-6
-1
-1
-2
-
-Roll Two:
-3 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 5
-3 of a kind
-1
-1
-6
-4
-6
-
-Roll Three:
-3 of a kind
-1
-1
-0
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-1
-1
-3
-3
-6
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=20, 6=24, Bonus=35, Upper Total=64, =, 3 of a kind=, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=14, Lower Total=54, Grand Total=118}
-
-*****Not Over b/c 3 of a kind *****
+*****Not Over b/c 3 *****
 
 Roll One:
 6
 5
-5
-1
-5
-
-Roll Two:
-3 of a kind
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-3 of a kind
-5
-5
-5
-6
-5
-
-Roll Three:
-3 of a kind
-5
-5
-5
-5
-0
-
-Roll Three after randoms:
-3 of a kind
-5
-5
-5
-5
 2
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=8, 5=20, 6=, Bonus=-, Upper Total=43, =, 3 of a kind=22, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=19, Lower Total=286, Grand Total=329}
-
-*****Not Over b/c 6 *****
-
-Roll One:
-1
-6
-6
 3
-4
+6
 
 Roll Two:
 3 of a kind
@@ -5597,1399 +952,47 @@ Roll Two:
 
 Roll Two before secondRoll():
 Empty slots: 3
-straightType: 5
-3 of a kind
-6
-6
-5
-6
-6
-
-Roll Three:
+straightType: 4
 3 of a kind
 6
 6
 6
-6
-0
+1
+2
 
-Roll Three after randoms:
+Roll Three:
 3 of a kind
 6
 6
 6
-6
-2
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=20, 6=24, Bonus=35, Upper Total=64, =, 3 of a kind=26, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=14, Lower Total=80, Grand Total=144}
-
-*****Not Over b/c Small Straight *****
-
-Roll One:
-6
-2
-4
-4
-2
-
-Roll Two:
-6
-6
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 5
-6
-6
-3
-6
-3
-6
-
-Roll Three:
-6
-6
-6
-6
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-6
-6
-2
-{Player:=Computer 1, 1=1, 2=2, 3=12, 4=8, 5=20, 6=24, Bonus=35, Upper Total=102, =, 3 of a kind=22, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=19, Lower Total=286, Grand Total=388}
-
-Roll One:
-3
-5
-5
-5
-2
-
-Roll Two:
-Other
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 5
-Other
-6
-3
-2
-5
-6
-
-Roll Three:
-Other
-6
-6
-0
-0
-0
-
-Roll Three after randoms:
-Other
-6
-6
-5
-4
-2
-{Player:=Computer 2, 1=0, 2=0, 3=12, 4=8, 5=20, 6=24, Bonus=35, Upper Total=64, =, 3 of a kind=26, 4 of a kind=0, Full House=0, Small Straight=0, Large Straight=40, Yahtzee=0, Chance=14, Lower Total=80, Grand Total=144}
-Game is over
-Need to start new game
-
-Roll One:
-5
-3
-3
-1
-4
-
-Roll Two:
-Large Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Large Straight
-3
-4
-5
-5
-5
-
-Roll Three:
-Large Straight
-3
-4
-5
-0
-0
-
-Roll Three after randoms:
-Large Straight
-3
-4
-5
-5
-4
-{Player:=Computer 1, 1=0, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=0}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-3
-6
-1
-6
-
-Roll Two:
-Full House
-3
-3
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 7
-Full House
-3
-3
-6
-6
-3
-
-Roll Three:
-Full House
-3
-3
-6
-6
-3
-
-Roll Three after randoms:
-Full House
-3
-3
-6
-6
-3
-{Player:=Computer 2, 1=, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=25, Grand Total=25}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-3
-4
-5
-6
-2
-
-Roll Two:
-Large Straight
-2
-3
-4
-5
-6
-
-Roll Two before secondRoll():
-Empty slots: 0
-straightType: 1
-Large Straight
-2
-3
-4
-5
-6
-
-Roll Three:
-Large Straight
-2
-3
-4
-5
-6
-
-Roll Three after randoms:
-Large Straight
-2
-3
-4
-5
-6
-{Player:=Computer 1, 1=0, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=40}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-2
-1
-1
-5
-5
-
-Roll Two:
-1
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 1
-1
-1
-1
-5
-1
-4
-
-Roll Three:
-1
-1
-1
-1
-0
-0
-
-Roll Three after randoms:
-1
-1
-1
-1
-2
-6
-{Player:=Computer 2, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=25, Grand Total=28}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-4
-2
-6
-6
-
-Roll Two:
-Full House
-4
-4
-6
-6
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 1
-Full House
-4
-4
-6
-6
-6
-
-Roll Three:
-Full House
-4
-4
-6
-6
-6
-
-Roll Three after randoms:
-Full House
-4
-4
-6
-6
-6
-{Player:=Computer 1, 1=0, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=65, Grand Total=65}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-2
-1
-3
-4
-6
-
-Roll Two:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 2
-Large Straight
-1
-2
-3
-4
-1
-
-Roll Three:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-4
-5
-{Player:=Computer 2, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=65, Grand Total=68}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-6
-3
-2
-5
-4
-
-Roll Two:
-Small Straight
-2
-3
-4
-5
-6
-
-Roll Two before secondRoll():
-Empty slots: 0
-straightType: 1
-Small Straight
-2
-3
-4
-5
-6
-
-Roll Three:
-Small Straight
-2
-3
-4
-5
-6
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-5
-6
-{Player:=Computer 1, 1=0, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=0, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=95, Grand Total=95}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-1
-1
-6
-6
-4
-
-Roll Two:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 1
-4 of a kind
-1
-1
-2
-4
-3
-
-Roll Three:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-5
-3
-2
-{Player:=Computer 2, 1=3, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=3, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=12, Lower Total=77, Grand Total=80}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-1
-2
-5
-3
-
-Roll Two:
-3
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 1
-3
-3
-3
-6
-1
-2
-
-Roll Three:
-3
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-3
-3
-3
-6
-3
-6
-{Player:=Computer 1, 1=0, 2=, 3=9, 4=, 5=, 6=, Bonus=-, Upper Total=9, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=95, Grand Total=104}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-3
-5
-6
-3
-3
-
-Roll Two:
-3
-3
-3
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 1
-3
-3
-3
-3
-3
-4
-
-Roll Three:
-3
-3
-3
-3
-3
-0
-
-Roll Three after randoms:
-3
-3
-3
-3
-3
-1
-{Player:=Computer 2, 1=3, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=12, Lower Total=77, Grand Total=92}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-2
-6
-3
-6
-6
-
-Roll Two:
-6
-6
-6
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 1
-6
-6
-6
-6
-3
-6
-
-Roll Three:
-6
-6
-6
-6
-6
-0
-
-Roll Three after randoms:
-6
-6
-6
-6
-6
-5
-{Player:=Computer 1, 1=0, 2=, 3=9, 4=, 5=, 6=24, Bonus=-, Upper Total=33, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=95, Grand Total=128}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-3
-5
-3
-4
-
-Roll Two:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Small Straight
-3
-4
-5
-4
-6
-
-Roll Three:
-Small Straight
-3
-4
-5
-6
-0
-
-Roll Three after randoms:
-Small Straight
-3
-4
-5
-6
-3
-{Player:=Computer 2, 1=3, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=107, Grand Total=122}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-5
-1
-2
-1
-
-Roll Two:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4 of a kind
-1
-1
-4
-4
-4
-
-Roll Three:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-2
-1
-6
-{Player:=Computer 1, 1=0, 2=, 3=9, 4=, 5=, 6=24, Bonus=-, Upper Total=33, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=11, Lower Total=106, Grand Total=139}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-1
-1
-2
-4
-2
-
-Roll Two:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4 of a kind
-1
-1
-1
-2
-2
-
-Roll Three:
-4 of a kind
-1
-1
-1
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-1
-1
-2
-{Player:=Computer 2, 1=3, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=113, Grand Total=128}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-4
-1
-6
-1
-3
-
-Roll Two:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4 of a kind
-1
-1
-2
-6
-2
-
-Roll Three:
-4 of a kind
-1
-1
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-1
-1
-2
-1
-4
-{Player:=Computer 1, 1=0, 2=2, 3=9, 4=, 5=, 6=24, Bonus=-, Upper Total=35, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=11, Lower Total=106, Grand Total=141}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-6
-1
-4
-1
-5
-
-Roll Two:
-3 of a kind
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-3 of a kind
-1
-1
-4
-2
-5
-
-Roll Three:
-3 of a kind
-1
-1
-0
 0
 0
 
 Roll Three after randoms:
 3 of a kind
-1
-1
-1
-2
-1
-{Player:=Computer 2, 1=3, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=15, =, 3 of a kind=6, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=119, Grand Total=134}
+6
+6
+6
+6
+5
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=23, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=, Yahtzee=, Chance=17, Lower Total=71, Grand Total=94}
 
-*****Not Over b/c 2 *****
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+Pressed a button
+Pressed a button
+Pressed a button
+Pressed a button
+1
+{Player:=Alex, 1=1, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=35, Upper Total=102, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=152}
+finishedPlayers is 0
 
 Roll One:
 5
-6
 4
 5
-2
-
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-5
-5
-5
-4
-6
-3
-
-Roll Three:
-5
-5
-5
-0
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
 3
 2
-6
-{Player:=Computer 1, 1=0, 2=2, 3=9, 4=, 5=10, 6=24, Bonus=-, Upper Total=45, =, 3 of a kind=, 4 of a kind=, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=11, Lower Total=106, Grand Total=151}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-5
-2
-3
-3
-1
-
-Roll Two:
-2
-2
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 7
-2
-2
-5
-6
-4
-1
-
-Roll Three:
-2
-2
-0
-0
-0
-0
-
-Roll Three after randoms:
-2
-2
-6
-4
-1
-5
-{Player:=Computer 2, 1=3, 2=2, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=17, =, 3 of a kind=6, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=119, Grand Total=136}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-3
-4
-5
-5
-
-Roll Two:
-4 of a kind
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4 of a kind
-5
-5
-5
-2
-2
-
-Roll Three:
-4 of a kind
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-5
-5
-5
-3
-5
-{Player:=Computer 1, 1=0, 2=2, 3=9, 4=, 5=10, 6=24, Bonus=-, Upper Total=45, =, 3 of a kind=, 4 of a kind=23, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=11, Lower Total=129, Grand Total=174}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-2
-5
-4
-1
-
-Roll Two:
-4
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4
-4
-4
-1
-2
-2
-
-Roll Three:
-4
-4
-4
-0
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-6
-2
-6
-{Player:=Computer 2, 1=3, 2=2, 3=12, 4=8, 5=, 6=, Bonus=-, Upper Total=25, =, 3 of a kind=6, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=119, Grand Total=144}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-3
-3
-5
-5
-5
-
-Roll Two:
-3 of a kind
-5
-5
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-3 of a kind
-5
-5
-5
-5
-3
-
-Roll Three:
-3 of a kind
-5
-5
-5
-5
-0
-
-Roll Three after randoms:
-3 of a kind
-5
-5
-5
-5
-3
-{Player:=Computer 1, 1=0, 2=2, 3=9, 4=, 5=10, 6=24, Bonus=-, Upper Total=45, =, 3 of a kind=23, 4 of a kind=23, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=11, Lower Total=152, Grand Total=197}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-6
-2
-2
-6
-
-Roll Two:
-6
-6
-6
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-6
-6
-6
-5
-6
-4
-
-Roll Three:
-6
-6
-6
-6
-0
-0
-
-Roll Three after randoms:
-6
-6
-6
-6
-4
-3
-{Player:=Computer 2, 1=3, 2=2, 3=12, 4=8, 5=, 6=18, Bonus=-, Upper Total=43, =, 3 of a kind=6, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=119, Grand Total=162}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-1
-2
-4
-2
-2
-
-Roll Two:
-4
-4
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 4
-straightType: 7
-4
-4
-3
-6
-4
-4
-
-Roll Three:
-4
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-4
-6
-{Player:=Computer 1, 1=0, 2=2, 3=9, 4=16, 5=10, 6=24, Bonus=-, Upper Total=61, =, 3 of a kind=23, 4 of a kind=23, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=11, Lower Total=152, Grand Total=213}
-
-*****Not Over b/c Yahtzee *****
-
-Roll One:
-3
-5
-2
-3
-5
-
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-5
-5
-5
-4
-6
-5
-
-Roll Three:
-5
-5
-5
-5
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-5
-2
-5
-{Player:=Computer 2, 1=3, 2=2, 3=12, 4=8, 5=20, 6=18, Bonus=35, Upper Total=98, =, 3 of a kind=6, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=12, Lower Total=119, Grand Total=217}
-
-*****Not Over b/c Yahtzee *****
-
-Roll One:
-2
-3
-5
-2
-5
-
-Roll Two:
-Other
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 7
-Other
-4
-3
-2
-6
-5
-
-Roll Three:
-Other
-4
-0
-0
-0
-0
-
-Roll Three after randoms:
-Other
-4
-5
-2
-4
-2
-{Player:=Computer 1, 1=0, 2=2, 3=9, 4=16, 5=10, 6=24, Bonus=-, Upper Total=61, =, 3 of a kind=23, 4 of a kind=23, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=11, Lower Total=152, Grand Total=213}
-
-Roll One:
-1
-2
-1
-5
-1
-
-Roll Two:
-Other
-0
-0
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 5
-straightType: 7
-Other
-2
-3
-5
-5
-3
-
-Roll Three:
-Other
-2
-0
-0
-0
-0
-
-Roll Three after randoms:
-Other
-2
-1
-2
-5
-3
-{Player:=Computer 2, 1=3, 2=2, 3=12, 4=8, 5=20, 6=18, Bonus=35, Upper Total=63, =, 3 of a kind=6, 4 of a kind=6, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=12, Lower Total=119, Grand Total=182}
-Game is over
-Need to start new game
-
-Roll One:
-2
-3
-3
-3
-4
-
-Roll Two:
-3
-3
-3
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-3
-3
-3
-3
-3
-2
-
-Roll Three:
-3
-3
-3
-3
-3
-0
-
-Roll Three after randoms:
-3
-3
-3
-3
-3
-1
-{Player:=Computer 1, 1=, 2=, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=12, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=12}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-2
-6
-3
-5
-1
-
-Roll Two:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 5
-Large Straight
-1
-2
-3
-2
-2
-
-Roll Three:
-Large Straight
-1
-2
-3
-0
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-5
-5
-{Player:=Computer 2, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=1}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-6
-2
-1
-2
-
-Roll Two:
-2
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 5
-2
-2
-2
-6
-3
-1
-
-Roll Three:
-2
-2
-2
-0
-0
-0
-
-Roll Three after randoms:
-2
-2
-2
-1
-5
-6
-{Player:=Computer 1, 1=, 2=4, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=16, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=16}
-
-*****Not Over b/c 1 *****
-
-Roll One:
-4
-5
-5
-2
-3
 
 Roll Two:
 Large Straight
@@ -7007,7 +1010,7 @@ Large Straight
 3
 4
 5
-1
+5
 
 Roll Three:
 Large Straight
@@ -7015,7 +1018,7 @@ Large Straight
 3
 4
 5
-1
+0
 
 Roll Three after randoms:
 Large Straight
@@ -7023,105 +1026,17 @@ Large Straight
 3
 4
 5
-1
-{Player:=Computer 2, 1=1, 2=, 3=, 4=, 5=, 6=, Bonus=-, Upper Total=1, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=41}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-1
-4
-2
-5
-1
-
-Roll Two:
-1
-1
-1
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 3
-1
-1
-1
-2
-1
-1
-
-Roll Three:
-1
-1
-1
-1
-1
-0
-
-Roll Three after randoms:
-1
-1
-1
-1
-1
-4
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=, 5=, 6=, Bonus=-, Upper Total=20, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=20}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-5
-5
-2
-6
 3
+{Player:=Computer 1, 1=3, 2=0, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=22, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=, Yahtzee=0, Chance=21, Lower Total=73, Grand Total=94}
 
-Roll Two:
-5
-5
-5
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 3
-5
-5
-5
-2
-1
-1
-
-Roll Three:
-5
-5
-5
-0
-0
-0
-
-Roll Three after randoms:
-5
-5
-5
-6
-5
-6
-{Player:=Computer 2, 1=1, 2=, 3=, 4=, 5=15, 6=, Bonus=-, Upper Total=16, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=40, Yahtzee=, Chance=, Lower Total=40, Grand Total=56}
-
-*****Not Over b/c 2 *****
+*****Not Over b/c 3 *****
 
 Roll One:
-2
-6
-3
 5
 6
+2
+6
+4
 
 Roll Two:
 6
@@ -7138,14 +1053,14 @@ straightType: 3
 6
 6
 5
-2
-5
+6
+3
 
 Roll Three:
 6
 6
 6
-0
+6
 0
 0
 
@@ -7153,237 +1068,155 @@ Roll Three after randoms:
 6
 6
 6
-3
-3
-6
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=, 5=, 6=18, Bonus=-, Upper Total=38, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=, Lower Total=0, Grand Total=38}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-3
-1
-3
-5
-
-Roll Two:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-Small Straight
-3
-4
-5
-3
-4
-
-Roll Three:
-Small Straight
-3
-4
-5
-0
-0
-
-Roll Three after randoms:
-Small Straight
-3
-4
-5
-2
-1
-{Player:=Computer 2, 1=1, 2=, 3=, 4=, 5=15, 6=, Bonus=-, Upper Total=16, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=86}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-2
-5
-2
-1
-4
-
-Roll Two:
-4 of a kind
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 7
-4 of a kind
-2
-2
-5
-5
-2
-
-Roll Three:
-4 of a kind
-2
-2
-2
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-2
-2
-2
-1
-5
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=, 5=, 6=18, Bonus=-, Upper Total=38, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=12, Lower Total=12, Grand Total=50}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-4
-2
-4
-4
-6
-
-Roll Two:
-4
-4
-4
-4
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 7
-4
-4
-4
-4
-5
-1
-
-Roll Three:
-4
-4
-4
-4
-0
-0
-
-Roll Three after randoms:
-4
-4
-4
-4
-6
-1
-{Player:=Computer 2, 1=1, 2=, 3=, 4=12, 5=15, 6=, Bonus=-, Upper Total=28, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=98}
-
-*****Not Over b/c 2 *****
-
-Roll One:
-5
-2
-4
-4
-6
-
-Roll Two:
-Large Straight
-4
-5
-6
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-Large Straight
-4
-5
 6
 6
-2
-
-Roll Three:
-Large Straight
-4
-5
 6
-2
-0
 
-Roll Three after randoms:
-Large Straight
-4
-5
-6
-2
-1
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=, 5=, 6=18, Bonus=-, Upper Total=38, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=12, Lower Total=12, Grand Total=50}
-
-*****Not Over b/c 4 *****
-
-Roll One:
-2
-2
-5
-2
-5
-
-Roll Two:
-2
-2
-2
-2
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 2
-straightType: 8
-2
-2
-2
-2
-4
-2
-
-Roll Three:
-2
-2
-2
-2
-2
-0
-
-Roll Three after randoms:
-2
-2
-2
-2
-2
-6
-{Player:=Computer 2, 1=1, 2=8, 3=, 4=12, 5=15, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=, Lower Total=70, Grand Total=106}
+extra is now: 2
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=12, 5=, 6=30, Bonus=-, Upper Total=45, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=332, Grand Total=377}
 
 *****Not Over b/c 3 *****
 
 Roll One:
 4
 2
+5
 1
+6
+
+Roll Two:
+Large Straight
+4
+5
+6
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 2
+straightType: 8
+Large Straight
+4
+5
+6
+2
+3
+
+Roll Three:
+Large Straight
+4
+5
+6
+2
+3
+
+Roll Three after randoms:
+Large Straight
+4
+5
+6
+2
+3
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=23, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=17, Lower Total=111, Grand Total=134}
+
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+3 of a kind
+{Player:=Alex, 1=1, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=35, Upper Total=67, =, 3 of a kind=0, 4 of a kind=, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=117}
+finishedPlayers is 0
+
+Roll One:
+2
+2
+4
+2
+3
+
+Roll Two:
+Large Straight
+2
+3
+4
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 2
+straightType: 6
+Large Straight
+2
+3
+4
+6
+6
+
+Roll Three:
+Large Straight
+2
+3
+4
+0
+0
+
+Roll Three after randoms:
+Large Straight
+2
+3
+4
+5
+3
+{Player:=Computer 1, 1=3, 2=0, 3=, 4=, 5=, 6=18, Bonus=-, Upper Total=21, =, 3 of a kind=22, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=, Yahtzee=0, Chance=21, Lower Total=73, Grand Total=94}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+1
+5
+2
+3
+1
+
+Roll Two:
+4 of a kind
+1
+1
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 3
+straightType: 6
+4 of a kind
+1
+1
+2
+2
+5
+
+Roll Three:
+4 of a kind
+1
+1
+0
+0
+0
+
+Roll Three after randoms:
+4 of a kind
+1
+1
+6
+6
+4
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=12, 5=, 6=30, Bonus=-, Upper Total=45, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=332, Grand Total=377}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+4
+3
+3
 4
 4
 
@@ -7397,20 +1230,20 @@ Roll Two:
 
 Roll Two before secondRoll():
 Empty slots: 2
-straightType: 8
+straightType: 6
 4
 4
 4
 4
-4
-2
+3
+5
 
 Roll Three:
 4
 4
 4
 4
-4
+0
 0
 
 Roll Three after randoms:
@@ -7419,281 +1252,21 @@ Roll Three after randoms:
 4
 4
 4
-3
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=, Chance=12, Lower Total=12, Grand Total=66}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-5
 6
-1
-4
-4
-
-Roll Two:
-4 of a kind
-4
-4
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 8
-4 of a kind
-4
-4
-5
-5
-5
-
-Roll Three:
-4 of a kind
-4
-4
-0
-0
-0
-
-Roll Three after randoms:
-4 of a kind
-4
-4
-1
-3
-4
-{Player:=Computer 2, 1=1, 2=8, 3=, 4=12, 5=15, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=16, Lower Total=86, Grand Total=122}
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=16, 5=, 6=18, Bonus=-, Upper Total=39, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=17, Lower Total=111, Grand Total=150}
 
 *****Not Over b/c 3 *****
+finishedPlayers is 0
+4 of a kind
+{Player:=Alex, 1=1, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=35, Upper Total=67, =, 3 of a kind=0, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=117}
+finishedPlayers is 0
 
 Roll One:
-2
-5
-3
 6
-3
-
-Roll Two:
-3 of a kind
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 8
-3 of a kind
-3
-3
-6
-4
-5
-
-Roll Three:
-3 of a kind
-3
-3
-0
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-3
-3
-6
-5
 1
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=, Large Straight=, Yahtzee=0, Chance=12, Lower Total=12, Grand Total=66}
-
-*****Not Over b/c 5 *****
-
-Roll One:
+1
 2
 6
-3
-2
-3
-
-Roll Two:
-Full House
-2
-2
-3
-3
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 8
-Full House
-2
-2
-3
-3
-5
-
-Roll Three:
-Full House
-2
-2
-3
-3
-0
-
-Roll Three after randoms:
-Full House
-2
-2
-3
-3
-5
-{Player:=Computer 2, 1=1, 2=8, 3=, 4=12, 5=15, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=16, Lower Total=86, Grand Total=122}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-3
-1
-2
-4
-3
-
-Roll Two:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 2
-Large Straight
-1
-2
-3
-4
-3
-
-Roll Three:
-Large Straight
-1
-2
-3
-4
-0
-
-Roll Three after randoms:
-Large Straight
-1
-2
-3
-4
-3
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=, Yahtzee=0, Chance=12, Lower Total=12, Grand Total=66}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-2
-1
-2
-4
-5
-
-Roll Two:
-3 of a kind
-2
-2
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 2
-3 of a kind
-2
-2
-5
-2
-6
-
-Roll Three:
-3 of a kind
-2
-2
-2
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-2
-2
-2
-1
-5
-{Player:=Computer 2, 1=1, 2=8, 3=, 4=12, 5=15, 6=, Bonus=-, Upper Total=36, =, 3 of a kind=12, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=16, Lower Total=98, Grand Total=134}
-
-*****Not Over b/c 3 *****
-
-Roll One:
-3
-5
-5
-3
-6
-
-Roll Two:
-3 of a kind
-3
-3
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 2
-3 of a kind
-3
-3
-5
-3
-2
-
-Roll Three:
-3 of a kind
-3
-3
-3
-0
-0
-
-Roll Three after randoms:
-3 of a kind
-3
-3
-3
-5
-6
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=20, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=, Yahtzee=0, Chance=12, Lower Total=32, Grand Total=86}
-
-*****Not Over b/c 5 *****
-
-Roll One:
-4
-5
-2
-5
-1
 
 Roll Two:
 3
@@ -7705,17 +1278,17 @@ Roll Two:
 
 Roll Two before secondRoll():
 Empty slots: 5
-straightType: 2
+straightType: 6
 3
-4
-2
-6
-4
 1
+1
+2
+2
+3
 
 Roll Three:
 3
-0
+3
 0
 0
 0
@@ -7723,24 +1296,204 @@ Roll Three:
 
 Roll Three after randoms:
 3
-4
-1
-1
-2
 3
-{Player:=Computer 2, 1=1, 2=8, 3=3, 4=12, 5=15, 6=, Bonus=-, Upper Total=39, =, 3 of a kind=12, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=16, Lower Total=98, Grand Total=137}
+1
+3
+3
+6
+{Player:=Computer 1, 1=3, 2=0, 3=9, 4=, 5=, 6=18, Bonus=-, Upper Total=30, =, 3 of a kind=22, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=, Yahtzee=0, Chance=21, Lower Total=73, Grand Total=103}
 
-*****Not Over b/c 6 *****
+*****Not Over b/c 4 *****
 
 Roll One:
-5
-2
-6
+1
 4
+4
+3
 2
 
 Roll Two:
-Large Straight
+3 of a kind
+4
+4
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 3
+straightType: 6
+3 of a kind
+4
+4
+4
+3
+6
+
+Roll Three:
+3 of a kind
+4
+4
+4
+0
+0
+
+Roll Three after randoms:
+3 of a kind
+4
+4
+4
+2
+4
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=12, 5=, 6=30, Bonus=-, Upper Total=45, =, 3 of a kind=18, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=350, Grand Total=395}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+6
+3
+6
+5
+5
+
+Roll Two:
+5
+5
+5
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 3
+straightType: 6
+5
+5
+5
+3
+5
+3
+
+Roll Three:
+5
+5
+5
+5
+0
+0
+
+Roll Three after randoms:
+5
+5
+5
+5
+6
+4
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=16, 5=15, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=, Large Straight=40, Yahtzee=, Chance=17, Lower Total=111, Grand Total=165}
+
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+Full House
+{Player:=Alex, 1=1, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=35, Upper Total=67, =, 3 of a kind=0, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=, Yahtzee=, Chance=20, Lower Total=50, Grand Total=117}
+finishedPlayers is 0
+
+Roll One:
+1
+1
+3
+3
+6
+
+Roll Two:
+4
+0
+0
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 5
+straightType: 6
+4
+4
+6
+2
+5
+2
+
+Roll Three:
+4
+4
+0
+0
+0
+0
+
+Roll Three after randoms:
+4
+4
+2
+2
+3
+3
+{Player:=Computer 1, 1=3, 2=0, 3=9, 4=4, 5=, 6=18, Bonus=-, Upper Total=34, =, 3 of a kind=22, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=, Yahtzee=0, Chance=21, Lower Total=73, Grand Total=107}
+
+*****Not Over b/c 5 *****
+
+Roll One:
+4
+6
+1
+5
+1
+
+Roll Two:
+5
+5
+0
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 4
+straightType: 6
+5
+5
+6
+5
+5
+6
+
+Roll Three:
+5
+5
+5
+5
+0
+0
+
+Roll Three after randoms:
+5
+5
+5
+5
+2
+4
+{Player:=Computer 2, 1=3, 2=0, 3=, 4=12, 5=15, 6=30, Bonus=-, Upper Total=60, =, 3 of a kind=18, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=350, Grand Total=410}
+
+*****Not Over b/c 3 *****
+
+Roll One:
+5
+6
+5
+4
+5
+
+Roll Two:
+Small Straight
 4
 5
 6
@@ -7750,126 +1503,265 @@ Large Straight
 Roll Two before secondRoll():
 Empty slots: 2
 straightType: 8
-Large Straight
+Small Straight
 4
 5
 6
-6
-6
+3
+2
 
 Roll Three:
-Large Straight
+Small Straight
 4
 5
 6
-0
+3
 0
 
 Roll Three after randoms:
-Large Straight
+Small Straight
 4
 5
 6
-1
-6
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=5, 6=18, Bonus=-, Upper Total=59, =, 3 of a kind=20, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=, Yahtzee=0, Chance=12, Lower Total=32, Grand Total=91}
+3
+3
+{Player:=Computer 3, 1=3, 2=2, 3=, 4=16, 5=15, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=17, Lower Total=141, Grand Total=195}
 
-*****Not Over b/c Small Straight *****
+*****Not Over b/c 3 *****
+finishedPlayers is 0
+Large Straight
+{Player:=Alex, 1=1, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=35, Upper Total=67, =, 3 of a kind=0, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=0, Yahtzee=, Chance=20, Lower Total=50, Grand Total=117}
+finishedPlayers is 0
 
 Roll One:
-2
+4
+5
+4
+4
 1
-3
-6
-6
 
 Roll Two:
-6
-6
-6
+5
+5
+0
 0
 0
 0
 
 Roll Two before secondRoll():
-Empty slots: 3
+Empty slots: 4
 straightType: 8
-6
-6
-6
+5
+5
+5
 2
-2
-4
+1
+3
 
 Roll Three:
-6
-6
-6
+5
+5
+5
 0
 0
 0
 
 Roll Three after randoms:
-6
-6
-6
-6
 5
+5
+5
+5
+4
 1
-{Player:=Computer 2, 1=1, 2=8, 3=3, 4=12, 5=15, 6=18, Bonus=-, Upper Total=57, =, 3 of a kind=12, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=, Chance=16, Lower Total=98, Grand Total=155}
+{Player:=Computer 1, 1=3, 2=0, 3=9, 4=4, 5=15, 6=18, Bonus=-, Upper Total=49, =, 3 of a kind=22, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=, Yahtzee=0, Chance=21, Lower Total=73, Grand Total=122}
+
+*****Not Over b/c Large Straight *****
+
+Roll One:
+4
+1
+1
+1
+3
+
+Roll Two:
+3
+3
+0
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 4
+straightType: 8
+3
+3
+4
+5
+2
+3
+
+Roll Three:
+3
+3
+3
+0
+0
+0
+
+Roll Three after randoms:
+3
+3
+3
+5
+3
+2
+{Player:=Computer 2, 1=3, 2=0, 3=9, 4=12, 5=15, 6=30, Bonus=35, Upper Total=104, =, 3 of a kind=18, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=350, Grand Total=454}
 
 *****Not Over b/c Full House *****
 
 Roll One:
-3
 2
-1
 4
 5
+6
+4
 
 Roll Two:
-Large Straight
-1
-2
 3
-4
-5
+0
+0
+0
+0
+0
 
 Roll Two before secondRoll():
-Empty slots: 0
-straightType: 0
-Large Straight
-1
-2
+Empty slots: 5
+straightType: 8
 3
 4
+6
+6
+1
+4
+
+Roll Three:
+3
+0
+0
+0
+0
+0
+
+Roll Three after randoms:
+3
+5
+1
+2
+6
+6
+{Player:=Computer 3, 1=3, 2=2, 3=0, 4=16, 5=15, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=, Chance=17, Lower Total=141, Grand Total=195}
+
+*****Not Over b/c Yahtzee *****
+finishedPlayers is 0
+Yahtzee
+{Player:=Alex, 1=1, 2=4, 3=9, 4=20, 5=15, 6=18, Bonus=35, Upper Total=67, =, 3 of a kind=0, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=0, Yahtzee=0, Chance=20, Lower Total=50, Grand Total=117}
+Should have returned TRUE Human
+finishedPlayers is 1
+
+Roll One:
+2
+5
+2
+3
+2
+
+Roll Two:
+Other
+0
+0
+0
+0
+0
+
+Roll Two before secondRoll():
+Empty slots: 5
+straightType: 8
+Other
+1
+3
+3
+5
+2
+
+Roll Three:
+Other
+1
+0
+0
+0
+0
+
+Roll Three after randoms:
+Other
+1
+5
+1
+2
+6
+{Player:=Computer 1, 1=3, 2=0, 3=9, 4=4, 5=15, 6=18, Bonus=-, Upper Total=49, =, 3 of a kind=22, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=0, Yahtzee=0, Chance=21, Lower Total=73, Grand Total=122}
+Should have returned TRUE Computer
+
+Roll One:
+2
+1
+2
+1
+4
+
+Roll Two:
+Full House
+1
+1
+2
+2
+0
+
+Roll Two before secondRoll():
+Empty slots: 1
+straightType: 8
+Full House
+1
+1
+2
+2
 5
 
 Roll Three:
-Large Straight
+Full House
+1
 1
 2
-3
-4
-5
+2
+0
 
 Roll Three after randoms:
-Large Straight
+Full House
+1
 1
 2
-3
-4
+2
 5
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=5, 6=18, Bonus=-, Upper Total=59, =, 3 of a kind=20, 4 of a kind=0, Full House=0, Small Straight=, Large Straight=40, Yahtzee=0, Chance=12, Lower Total=72, Grand Total=131}
-
-*****Not Over b/c Small Straight *****
+{Player:=Computer 2, 1=3, 2=0, 3=9, 4=12, 5=15, 6=30, Bonus=35, Upper Total=69, =, 3 of a kind=18, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=40, Yahtzee=50, Chance=12, Lower Total=350, Grand Total=419}
+Should have returned TRUE Computer
 
 Roll One:
+2
 6
-3
 1
 2
-3
+4
 
 Roll Two:
 Other
@@ -7881,99 +1773,13 @@ Other
 
 Roll Two before secondRoll():
 Empty slots: 4
-straightType: 0
+straightType: 8
 Other
 6
-2
-2
-2
-3
-
-Roll Three:
-Other
-6
-0
-0
-0
-0
-
-Roll Three after randoms:
-Other
-6
-5
-3
-6
-6
-{Player:=Computer 2, 1=1, 2=8, 3=3, 4=12, 5=15, 6=18, Bonus=-, Upper Total=57, =, 3 of a kind=12, 4 of a kind=0, Full House=, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=16, Lower Total=98, Grand Total=155}
-
-*****Not Over b/c Full House *****
-
-Roll One:
-3
-2
-5
-3
-4
-
-Roll Two:
-Small Straight
-2
-3
-4
-5
-0
-
-Roll Two before secondRoll():
-Empty slots: 1
-straightType: 3
-Small Straight
-2
-3
-4
-5
 1
-
-Roll Three:
-Small Straight
-2
-3
 4
-5
+6
 1
-
-Roll Three after randoms:
-Small Straight
-2
-3
-4
-5
-1
-{Player:=Computer 1, 1=4, 2=4, 3=12, 4=16, 5=5, 6=18, Bonus=-, Upper Total=59, =, 3 of a kind=20, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=12, Lower Total=102, Grand Total=161}
-
-Roll One:
-6
-6
-2
-4
-5
-
-Roll Two:
-Other
-6
-6
-0
-0
-0
-
-Roll Two before secondRoll():
-Empty slots: 3
-straightType: 3
-Other
-6
-6
-3
-3
-4
 
 Roll Three:
 Other
@@ -7987,9 +1793,11 @@ Roll Three after randoms:
 Other
 6
 6
-6
-6
-3
-{Player:=Computer 2, 1=1, 2=8, 3=3, 4=12, 5=15, 6=18, Bonus=-, Upper Total=57, =, 3 of a kind=12, 4 of a kind=0, Full House=0, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=16, Lower Total=98, Grand Total=155}
-Game is over
+5
+2
+5
+{Player:=Computer 3, 1=3, 2=2, 3=0, 4=16, 5=15, 6=18, Bonus=-, Upper Total=54, =, 3 of a kind=29, 4 of a kind=0, Full House=25, Small Straight=30, Large Straight=40, Yahtzee=0, Chance=17, Lower Total=141, Grand Total=195}
+Should have returned TRUE Computer
+game should have started over
+Game is finished
 Need to start new game

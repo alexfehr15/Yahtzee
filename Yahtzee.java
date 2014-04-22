@@ -45,7 +45,7 @@ class Yahtzee extends JPanel
 	private static JLabel [] currentDie = new JLabel[5];
 	private GridBagLayout scoreCardLayout;
 	private static Map< JLabel, JLabel > mainScoreMap;
-	private static final int NUMPLAYERS = 2;
+	private static int NUMPLAYERS = -1;
 	private static final int ROLLSPERTURN = 3;
 	private static int numRolls = 0;
 	private static int currentRoll = 0;
@@ -57,7 +57,7 @@ class Yahtzee extends JPanel
 	private static int dieAvailable = 5;
 	private static int heldDieAvailable = 0;
 	private static int [] scoreDie = new int[5];
-	private static Player[] participants = new Player[NUMPLAYERS];
+	private static Player[] participants;
 	private static JButton rollButton;
 	private static int numHumans;
 
@@ -457,19 +457,45 @@ class Yahtzee extends JPanel
 						currentIndex = (currentIndex + 1) % NUMPLAYERS;
 					}
 
-					//must be human turn again so update labels to them
-					participants[currentIndex].updateLabels(mainScoreMap);
-
-					//***just added this***
-					//set already filled in slots to not be enabled
-					for (JLabel key : mainScoreMap.keySet())
+					//check if game is now over
+					if (gameOver())
 					{
-						//add mouseListener when appropriate
-						if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
-							if (mainScoreMap.get(key).getText() != "")
-								mainScoreMap.get(key).setEnabled(true);
-							else
-								mainScoreMap.get(key).setEnabled(false);
+						//declare winner or whatever (show first player)
+						participants[0].updateLabels(mainScoreMap);
+
+						//change text of rollButton to "New Game"
+						rollButton.setText("New Game");
+
+						//testing
+						System.out.println("Game is finished");
+
+						//****just addded*******
+						for (JLabel key : mainScoreMap.keySet())
+						{
+							//add mouseListener when appropriate
+							if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+								if (mainScoreMap.get(key).getText() != "")
+									mainScoreMap.get(key).setEnabled(true);
+								else
+									mainScoreMap.get(key).setEnabled(false);
+						}
+					}
+					else
+					{
+						//must be human turn again so update labels to them
+						participants[currentIndex].updateLabels(mainScoreMap);
+
+						//***just added this***
+						//set already filled in slots to not be enabled
+						for (JLabel key : mainScoreMap.keySet())
+						{
+							//add mouseListener when appropriate
+							if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+								if (mainScoreMap.get(key).getText() != "")
+									mainScoreMap.get(key).setEnabled(true);
+								else
+									mainScoreMap.get(key).setEnabled(false);
+						}
 					}
 				}
 			}
@@ -702,9 +728,15 @@ class Yahtzee extends JPanel
 	public static boolean gameOver()
 	{
 		if (finishedPlayers == NUMPLAYERS)
+		{
+			System.out.println("game should have started over");
 			return true;
+		}
 		else
+		{
+			System.out.println("finishedPlayers is " + finishedPlayers);
 			return false;
+		}
 	}
 
 	public static void main(String args[])
@@ -728,6 +760,18 @@ class Yahtzee extends JPanel
 		bar.add(fileMenu);
 		bar.add(optionsMenu);
 		bar.add(helpMenu);
+
+		//find out how many players in general (max of 4)
+		String numPlayers = JOptionPane.showInputDialog("How many players (max " + 4 + "): ");
+		NUMPLAYERS = Integer.parseInt(numPlayers);
+		while (NUMPLAYERS > 4 || NUMPLAYERS < 0)
+		{
+			numPlayers = JOptionPane.showInputDialog("How many players (max " + 4 + "): ");
+			NUMPLAYERS = Integer.parseInt(numPlayers);
+		}
+
+		//create empty heterogeneous list
+		participants = new Player[NUMPLAYERS];
 
 		//create Yahtzee JPanel and add to JFrame
 		Yahtzee yahtzeeJPanel = new Yahtzee();

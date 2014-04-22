@@ -167,6 +167,7 @@ class Computer implements Player
 			}
 		}
 		++done;
+		System.out.println("Should have returned TRUE Computer");
 		return true;
 	}
 
@@ -443,6 +444,22 @@ class Computer implements Player
 
 			scoreMap.put(name, Integer.toString(answer));
 		}
+		else if (scoreMap.get("3 of a kind") == "")
+		{
+			for (int i : counter)
+				if (i > 2)
+					zero = false;	
+
+			if (!zero)
+			{
+				for (int i : die)
+					answer += i;
+
+				scoreMap.put("3 of a kind", Integer.toString(answer));
+			}
+			else
+				delegateZero(die, name);
+		}
 		else
 		{
 			delegateZero(die, name);
@@ -511,6 +528,20 @@ class Computer implements Player
 
 		if (answer == 40)
 			scoreMap.put(name, Integer.toString(answer));
+		else if (scoreMap.get("Small Straight") == "")
+		{
+			if (counter[0] == 1 && counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1)
+				answer = 30;
+			else if (counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1)
+				answer = 30;
+			else if (counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
+				answer = 30;
+
+			if (answer == 30)
+				scoreMap.put("Small Straight", Integer.toString(answer));
+			else
+				delegateZero(die, name);	
+		}
 		else
 			delegateZero(die, name);
 	}
