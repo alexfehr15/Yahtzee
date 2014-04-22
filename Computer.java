@@ -8,6 +8,7 @@ class Computer implements Player
 	private int done = 0;
 	private String name;
 	private int playerNumber;
+	private int extra = 0;
 	private Map< String, String > scoreMap;
 	private static int rand;
 	private static Integer straightType = new Integer(-1);
@@ -137,6 +138,7 @@ class Computer implements Player
 			else if (scoreMap.get(key) != "" && (key == "3 of a kind" || key == "4 of a kind" || key == "Full House" || key == "Small Straight" || key == "Large Straight" || key == "Yahtzee" || key == "Chance"))
 				lowerTotal += Integer.parseInt(scoreMap.get(key));
 		}
+		lowerTotal += extra * 100;
 		grandTotal = upperTotal + lowerTotal;
 		scoreMap.put("Upper Total", Integer.toString(upperTotal));
 		scoreMap.put("Lower Total", Integer.toString(lowerTotal));
@@ -174,6 +176,16 @@ class Computer implements Player
 		//check if have yahtzee and it is available
 		if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") == "")
 			scoreMap.put("Yahtzee", Integer.toString(50));
+		//check for second yahtzee
+		else if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") != "")
+		{
+			++extra;
+
+			//testing
+			System.out.println("\nextra is now: " + extra);
+
+			secondYahtzee(rollThree, name);
+		}
 		//check whatever other options it could be
 		else if (name == "1")
 			one(rollThree, name);
@@ -199,6 +211,130 @@ class Computer implements Player
 			largeStraight(rollThree, name);
 		else if (name == "Other")
 			other(rollThree, name);
+	}
+
+	public void delegateZero(int [] die, String name)
+	{
+		int score = 0;
+
+		//calculate frequency of each dice
+		int [] counter = new int[6];
+		for (int i : die)
+			++counter[i - 1];
+
+		if (scoreMap.get("1") == "")
+		{
+			name = "1";
+			score = counter[0] * 1;
+		}
+		else if (scoreMap.get("Chance") == "")
+		{
+			name = "Chance";
+			for (int i : die)
+				score += i;
+		}
+		else if (scoreMap.get("2") == "")
+		{
+			name = "2";
+			score = counter[1] * 2;
+		}
+		else if (scoreMap.get("4 of a kind") == "")
+		{
+			name = "4 of a kind";
+		}
+		else if (scoreMap.get("Yahtzee") == "")
+		{
+			name = "Yahtzee";
+		}
+		else if (scoreMap.get("Full House") == "")
+		{
+			name = "Full House";
+		}
+		else if (scoreMap.get("3 of a kind") == "")
+		{
+			name = "3 of a kind";
+		}
+		else if (scoreMap.get("3") == "")
+		{
+			name = "3";
+			score = counter[2] * 3;
+		}
+		else if (scoreMap.get("4") == "")
+		{
+			name = "4";
+			score = counter[3] * 4;
+		}
+		else if (scoreMap.get("5") == "")
+		{
+			name = "5";
+			score = counter[4] * 5;
+		}
+		else if (scoreMap.get("6") == "")
+		{
+			name = "6";
+			score = counter[5] * 6;
+		}
+		else if (scoreMap.get("Large Straight") == "")
+		{
+			name = "Large Straight";
+		}
+		else if (scoreMap.get("Small Straight") == "")
+		{
+			name = "Small Straight";
+		}
+
+		//fill in score
+		scoreMap.put(name, Integer.toString(score));
+	}
+
+	public void secondYahtzee(int [] die, String name)
+	{
+		int score = 0;
+		int type = die[0];
+		if (scoreMap.get(Integer.toString(type)) == "")
+		{
+			score = 5 * type;
+			name = Integer.toString(type);
+		}
+		else if (scoreMap.get("Large Straight") == "")
+		{
+			score = 40;
+			name = "Large Straight";
+		}
+		else if (scoreMap.get("Small Straight") == "")
+		{
+			score = 30;
+			name = "Small Straight";
+		}
+		else if (scoreMap.get("Full House") == "")
+		{
+			score = 25;
+			name = "Full House";
+		}
+		else if (scoreMap.get("4 of a kind") == "")
+		{
+			score = type * 5;
+			name = "4 of a kind";
+		}
+		else if (scoreMap.get("3 of a kind") == "")
+		{
+			score = type * 5;
+			name = "3 of a kind";
+		}
+		else
+		{
+			for (String key : scoreMap.keySet())
+			{
+				if (key != "Bonus" && key != "" && scoreMap.get(key) == "")
+				{
+					score = type * 5;
+					name = key;
+				}
+			}
+		}
+
+		//fill in score
+		scoreMap.put(name, Integer.toString(score));
 	}
 
 	public boolean yahtzeeBool(int [] die, String name)
@@ -278,9 +414,16 @@ class Computer implements Player
 			if (i > 2)
 				zero = false;
 		if (!zero)
+		{
 			for (int i : die)
 				answer += i;
-		scoreMap.put(name, Integer.toString(answer));
+
+			scoreMap.put(name, Integer.toString(answer));
+		}
+		else
+		{
+			delegateZero(die, name);
+		}
 	}
 
 	public void fourOfAKind(int [] die, String name)
@@ -294,9 +437,16 @@ class Computer implements Player
 			if (i > 3)
 				zero = false;
 		if (!zero)
+		{
 			for (int i : die)
 				answer += i;
-		scoreMap.put(name, Integer.toString(answer));
+
+			scoreMap.put(name, Integer.toString(answer));
+		}
+		else
+		{
+			delegateZero(die, name);
+		}
 	}
 
 	public void fullHouse(int [] die, String name)
@@ -318,8 +468,15 @@ class Computer implements Player
 			}
 		}
 		if (zero == 2)
+		{
 			answer = 25;
-		scoreMap.put(name, Integer.toString(answer));
+
+			scoreMap.put(name, Integer.toString(answer));
+		}
+		else
+		{
+			delegateZero(die, name);
+		}
 	}
 
 	public void smallStraight(int [] die, String name)
@@ -334,7 +491,11 @@ class Computer implements Player
 			answer = 30;
 		else if (counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
 			answer = 30;
-		scoreMap.put(name, Integer.toString(answer));
+
+		if (answer == 30)
+			scoreMap.put(name, Integer.toString(answer));
+		else
+			delegateZero(die, name);
 	}
 
 	public void largeStraight(int [] die, String name)
@@ -347,7 +508,11 @@ class Computer implements Player
 			answer = 40;
 		else if (counter[1] >= 1 && counter[2] >= 1 && counter[3] >= 1 && counter[4] >= 1 && counter[5] >= 1)
 			answer = 40;
-		scoreMap.put(name, Integer.toString(answer));
+
+		if (answer == 40)
+			scoreMap.put(name, Integer.toString(answer));
+		else
+			delegateZero(die, name);
 	}
 
 	public void yahtzee(int [] die, String name)
@@ -372,11 +537,16 @@ class Computer implements Player
 
 	public void other(int [] die, String name)
 	{
-		for (String key : scoreMap.keySet())
+		int answer = 0;
+		if (scoreMap.get("Chance") == "")
 		{
-			if (key != "Bonus" && key != "" && scoreMap.get(key) == "")
-				scoreMap.put(key, "0");
+			name = "Chance";
+			for (int i : die)
+				answer += i;
+			scoreMap.put(name, Integer.toString(answer));
 		}
+		else
+			delegateZero(die, name);
 	}
 
 	//evaluate what die to keep and place into rollThree
@@ -605,8 +775,10 @@ class Computer implements Player
 	public String twoOther(int emptySlots)
 	{
 		int indexOn = 0;
+		int targetNum = rollTwo[0];
 		for (int i = 0; i < 5; ++i)
-			rollThree[i] = rollTwo[i];
+			if (rollTwo[i] == targetNum)
+				rollThree[indexOn++] = targetNum;
 		return "Other";
 	}
 
@@ -619,7 +791,7 @@ class Computer implements Player
 		for (int i : rollOne)
 			++counter[i - 1];
 
-		//check first for 4 or 5 of any digit
+		//check first for 3 or more of same digit (and blank)
 		for (int i = 0; i < 6; ++i)
 		{
 			if (counter[i] >= 3 && scoreMap.get(scoreLabels[i + 1]) == "")
@@ -746,12 +918,12 @@ class Computer implements Player
 			}
 		}
 
-		//check which dice has the highest frequency
+		//check which dice has the highest frequency and has 
 		int highest = counter[0];
 		int highestIndex = 0;
 		for (int i = 1; i < 6; ++i)
 		{
-			if (counter[i] > highest)
+			if (counter[i] > highest && (scoreMap.get(Integer.toString(i + 1)) == "" || scoreMap.get("4 of a kind") == "" || scoreMap.get("3 of a kind") == ""))
 			{
 				highest = counter[i];
 				highestIndex = i;
@@ -787,11 +959,12 @@ class Computer implements Player
 				rollTwo[indexOn++] = highestIndex + 1;
 			return "3 of a kind";
 		}
-
-		//if all else fails
-		for (int i = 0; i < 5; ++i)
-			rollTwo[i] = rollOne[i];
-		return "Other";
+		else
+		{
+			for (int i = 0; i < highest; ++i)
+				rollTwo[indexOn++] = highestIndex + 1;
+			return "Other";
+		}
 	}	
 
 	public String getName()
@@ -830,6 +1003,7 @@ class Computer implements Player
 
 		//reset other variables
 		done = 0;
+		extra = 0;
 	}
 
 	public void updateLabels(Map < JLabel, JLabel > yahtzeeMap)

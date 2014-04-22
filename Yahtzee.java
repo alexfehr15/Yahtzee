@@ -190,6 +190,17 @@ class Yahtzee extends JPanel
 			rollButton.setText("New Game");
 			for (Player player : participants)
 				PlayerScore.updateLabels(player);
+
+			//*****just added this******
+			for (JLabel key : mainScoreMap.keySet())
+			{
+				//add mouseListener when appropriate
+				if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+					if (mainScoreMap.get(key).getText() != "")
+						mainScoreMap.get(key).setEnabled(true);
+					else
+						mainScoreMap.get(key).setEnabled(false);
+			}
 		}
 	}
 
@@ -396,6 +407,17 @@ class Yahtzee extends JPanel
 
 					//testing
 					System.out.println("Game is finished");
+
+					//****just addded*******
+					for (JLabel key : mainScoreMap.keySet())
+					{
+						//add mouseListener when appropriate
+						if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+							if (mainScoreMap.get(key).getText() != "")
+								mainScoreMap.get(key).setEnabled(true);
+							else
+								mainScoreMap.get(key).setEnabled(false);
+					}
 				}
 				//if computer player, call takeTurn, otherwise human rolls
 				else if (participants[currentIndex] instanceof Human)
@@ -777,6 +799,17 @@ class Yahtzee extends JPanel
 			rollButton.setText("New Game");
 			for (Player player : participants)
 				PlayerScore.updateLabels(player);
+
+			//****just added this*****
+			for (JLabel key : mainScoreMap.keySet())
+			{
+				//add mouseListener when appropriate
+				if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
+					if (mainScoreMap.get(key).getText() != "")
+						mainScoreMap.get(key).setEnabled(true);
+					else
+						mainScoreMap.get(key).setEnabled(false);
+			}
 		}
 	}
 }
