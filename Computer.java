@@ -33,6 +33,11 @@ class Computer implements Player
 	private static Integer seven = new Integer(7);
 	private static Integer eight = new Integer(8);
 
+	public int getScore()
+	{
+		return Integer.parseInt(scoreMap.get("Grand Total"));
+	}
+
 	//constructor with name and playerNumber parameters
 	public Computer(String n, int p)
 	{

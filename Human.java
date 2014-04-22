@@ -18,6 +18,12 @@ class Human implements Player
 									"Yahtzee", "Chance", "Lower Total",
 									"Grand Total"};
 
+	public int getScore()
+	{
+		return Integer.parseInt(scoreMap.get("Grand Total"));
+	}
+
+
 	//constructor with name and playerNumber parameters
 	public Human(String n, int p)
 	{

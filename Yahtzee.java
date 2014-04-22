@@ -201,6 +201,8 @@ class Yahtzee extends JPanel
 					else
 						mainScoreMap.get(key).setEnabled(false);
 			}
+
+			declareWinner();
 		}
 	}
 
@@ -418,6 +420,8 @@ class Yahtzee extends JPanel
 							else
 								mainScoreMap.get(key).setEnabled(false);
 					}
+
+					declareWinner();
 				}
 				//if computer player, call takeTurn, otherwise human rolls
 				else if (participants[currentIndex] instanceof Human)
@@ -479,6 +483,8 @@ class Yahtzee extends JPanel
 								else
 									mainScoreMap.get(key).setEnabled(false);
 						}
+
+						declareWinner();
 					}
 					else
 					{
@@ -695,9 +701,9 @@ class Yahtzee extends JPanel
 		}
 	}
 
-	static class PlayerScore extends JPanel
+	static class PlayerScore extends JPanel implements MouseListener
 	{
-		private static JLabel [] labels = new JLabel[4];
+		private static JLabel [] labels = new JLabel[NUMPLAYERS];
 
 		public PlayerScore()
 		{
@@ -714,6 +720,7 @@ class Yahtzee extends JPanel
 			{
 				labels[i] = new JLabel("Player " + (i + 1) + ":");
 				labels[i].setHorizontalAlignment(JLabel.CENTER);
+				labels[i].addMouseListener(this);
 				this.add(labels[i]);
 			}
 		}
@@ -721,6 +728,41 @@ class Yahtzee extends JPanel
 		public static void updateLabels(Player player)
 		{
 			labels[player.getPlayer()].setText(player.getText());
+		}
+
+		//handle when a dice is clicked in roll results area
+		public void mouseClicked(MouseEvent e)
+		{
+			//change score card to reflect player choice
+			if (rollButton.getText() == "New Game")
+			{
+				//only allowed when game is over
+				for (int i = 0; i < NUMPLAYERS; ++i)
+					if (labels[i] == e.getSource())
+					{
+						participants[i].updateLabels(mainScoreMap);
+					}
+			}
+		}
+
+		public void mousePressed(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseReleased(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseEntered(MouseEvent e)
+		{
+			//todo
+		}
+
+		public void mouseExited(MouseEvent e)
+		{
+			//todo
 		}
 	}
 
@@ -739,6 +781,22 @@ class Yahtzee extends JPanel
 		}
 	}
 
+	public static void declareWinner()
+	{
+		int highScore = 0;
+		String winner = "NA";
+
+		for (Player player : participants)
+		{
+			if (player.getScore() > highScore)
+			{
+				highScore = player.getScore();
+				winner = player.getName();
+			}
+		}
+		JOptionPane.showMessageDialog(null, "Congratulations " + winner + ", you have won with a score of " + highScore + "!");
+	}
+
 	public static void main(String args[])
 	{
 		//create frame for the main Yahtzee JPanel
@@ -747,24 +805,34 @@ class Yahtzee extends JPanel
 
 		//set up File menu
 		JMenu fileMenu = new JMenu("File");
-
-		//set up Options menu
-		JMenu optionsMenu = new JMenu("Options");
+		JMenuItem newGameMenu = new JMenuItem("New Game");
 
 		//set up Help menu
 		JMenu helpMenu = new JMenu("Help");
 
+		//add action listener
+		newGameMenu.addActionListener(
+			new ActionListener()
+			{
+				public void actionPerformed(ActionEvent e)
+				{
+					Yahtzee.restartApp();
+					System.out.println("New game started from menu");
+				}
+			}
+		);
+
 		//set up menu bar at top
 		JMenuBar bar = new JMenuBar();
 		frame.setJMenuBar(bar);
+		fileMenu.add(newGameMenu);
 		bar.add(fileMenu);
-		bar.add(optionsMenu);
 		bar.add(helpMenu);
 
 		//find out how many players in general (max of 4)
 		String numPlayers = JOptionPane.showInputDialog("How many players (max " + 4 + "): ");
 		NUMPLAYERS = Integer.parseInt(numPlayers);
-		while (NUMPLAYERS > 4 || NUMPLAYERS < 0)
+		while (NUMPLAYERS > 4 || NUMPLAYERS < 1)
 		{
 			numPlayers = JOptionPane.showInputDialog("How many players (max " + 4 + "): ");
 			NUMPLAYERS = Integer.parseInt(numPlayers);
@@ -854,6 +922,8 @@ class Yahtzee extends JPanel
 					else
 						mainScoreMap.get(key).setEnabled(false);
 			}
+
+			declareWinner();
 		}
 	}
 }

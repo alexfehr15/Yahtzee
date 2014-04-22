@@ -4,12 +4,10 @@ import javax.swing.JLabel;
 
 /*
 todo:
-.add new game feature to menu
 .make everything look nicer
 .put in help page (how to play and typical yahtzee directions)
 .make console output nicer to show computer thinking
 .make executable jar file and turn in
-.on click event for player scores at bottom to show in score card for player clicked
 .could look for full house on 3 of a kind/4 of a kind
 */
 
@@ -31,4 +29,6 @@ interface Player
 	public int getDone();
 
 	public void reset(Map < JLabel, JLabel > yahtzeeMap);
+
+	public int getScore();
 }
