@@ -21,6 +21,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import javax.swing.JEditorPane;
+import javax.swing.JScrollPane;
+import java.io.File;
+import java.io.IOException;
 
 //display main GUI elements
 class Yahtzee extends JPanel
@@ -809,6 +813,36 @@ class Yahtzee extends JPanel
 
 		//set up Help menu
 		JMenu helpMenu = new JMenu("Help");
+		JMenuItem rulesMenu = new JMenuItem("Rules");
+
+		//add action listener
+		rulesMenu.addActionListener(
+			new ActionListener()
+			{
+				public void actionPerformed(ActionEvent e)
+				{
+					//set up helpFrame to hold JEditPane for help page
+					JFrame helpFrame = new JFrame("Rules OverView");
+
+					try
+					{
+						JEditorPane editorpane= new JEditorPane("http://en.wikipedia.org/wiki/Yahtzee#Rules_overview");
+				       	JScrollPane editorScrollPane = new JScrollPane(editorpane);
+				       	editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+				       	editorpane.setEditable(false);
+						helpFrame.setSize(800, 600);
+						helpFrame.setLocationRelativeTo(null);
+						helpFrame.setResizable(false);
+						helpFrame.add(editorScrollPane);
+						helpFrame.setVisible(true);
+ 					} 
+ 					catch (IOException er) 
+ 					{
+      					System.err.println("Unable to load: " + er);
+    				}
+				}
+			}
+		);
 
 		//add action listener
 		newGameMenu.addActionListener(
@@ -826,6 +860,7 @@ class Yahtzee extends JPanel
 		JMenuBar bar = new JMenuBar();
 		frame.setJMenuBar(bar);
 		fileMenu.add(newGameMenu);
+		helpMenu.add(rulesMenu);
 		bar.add(fileMenu);
 		bar.add(helpMenu);
 

@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 /*
 todo:
 .make everything look nicer
-.put in help page (how to play and typical yahtzee directions)
+.put in help page (how to play on interface)
 .make console output nicer to show computer thinking
 .make executable jar file and turn in
 .could look for full house on 3 of a kind/4 of a kind
