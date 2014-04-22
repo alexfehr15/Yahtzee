@@ -7,6 +7,7 @@ import java.util.Random;
 class Human implements Player
 {
 	private String name;
+	private boolean bonus = false;
 	private int done = 0;
 	private int extra = 0;
 	private int playerNumber;
@@ -108,6 +109,16 @@ class Human implements Player
 				upperTotal += Integer.parseInt(scoreMap.get(key));
 			else if (scoreMap.get(key) != "" && (key == "3 of a kind" || key == "4 of a kind" || key == "Full House" || key == "Small Straight" || key == "Large Straight" || key == "Yahtzee" || key == "Chance"))
 				lowerTotal += Integer.parseInt(scoreMap.get(key));
+		}
+		//if upper section completely filled in, compute whether got bonus
+		if (scoreMap.get("1") != "" && scoreMap.get("2") != "" && scoreMap.get("3") != "" && scoreMap.get("4") != "" && scoreMap.get("5") != "" && scoreMap.get("6") != "" && upperTotal >= 63)
+		{
+			bonus = true;
+		}
+		if (bonus)
+		{
+			scoreMap.put("Bonus", "35");
+			upperTotal += 35;
 		}
 		lowerTotal += extra * 100;
 		grandTotal = upperTotal + lowerTotal;
@@ -359,5 +370,6 @@ class Human implements Player
 		//reset other variables
 		done = 0;
 		extra = 0;
+		bonus = false;
 	}
 }

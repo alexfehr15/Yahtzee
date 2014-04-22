@@ -9,6 +9,7 @@ class Computer implements Player
 	private String name;
 	private int playerNumber;
 	private int extra = 0;
+	private boolean bonus = false;
 	private Map< String, String > scoreMap;
 	private static int rand;
 	private static Integer straightType = new Integer(-1);
@@ -143,21 +144,21 @@ class Computer implements Player
 			else if (scoreMap.get(key) != "" && (key == "3 of a kind" || key == "4 of a kind" || key == "Full House" || key == "Small Straight" || key == "Large Straight" || key == "Yahtzee" || key == "Chance"))
 				lowerTotal += Integer.parseInt(scoreMap.get(key));
 		}
+		//if upper section completely filled in, compute whether got bonus
+		if (scoreMap.get("1") != "" && scoreMap.get("2") != "" && scoreMap.get("3") != "" && scoreMap.get("4") != "" && scoreMap.get("5") != "" && scoreMap.get("6") != "" && upperTotal >= 63)
+		{
+			bonus = true;
+		}
+		if (bonus)
+		{
+			scoreMap.put("Bonus", "35");
+			upperTotal += 35;
+		}
 		lowerTotal += extra * 100;
 		grandTotal = upperTotal + lowerTotal;
 		scoreMap.put("Upper Total", Integer.toString(upperTotal));
 		scoreMap.put("Lower Total", Integer.toString(lowerTotal));
 		scoreMap.put("Grand Total", Integer.toString(grandTotal));
-
-		//if upper section completely filled in, compute whether got bonus
-		if (scoreMap.get("1") != "" && scoreMap.get("2") != "" && scoreMap.get("3") != "" && scoreMap.get("4") != "" && scoreMap.get("5") != "" && scoreMap.get("6") != "" && scoreMap.get("Bonus") == "-" && upperTotal >= 63)
-		{
-			scoreMap.put("Bonus", "35");
-			upperTotal += 35;
-			grandTotal = lowerTotal + upperTotal;
-			scoreMap.put("Upper Total", Integer.toString(upperTotal));
-			scoreMap.put("Grand Total", Integer.toString(grandTotal));
-		}
 
 		//testing
 		System.out.println(scoreMap);
@@ -1040,6 +1041,7 @@ class Computer implements Player
 		//reset other variables
 		done = 0;
 		extra = 0;
+		bonus = false;
 	}
 
 	public void updateLabels(Map < JLabel, JLabel > yahtzeeMap)

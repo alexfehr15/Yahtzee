@@ -162,6 +162,7 @@ class Yahtzee extends JPanel
 		currentIndex = 0;
 		participants[currentIndex].updateLabels(mainScoreMap);
 		rollButton.setText("Roll");
+		currentRoll = 0;
 
 		//reset certain variables
 		finishedPlayers = 0;
@@ -173,6 +174,15 @@ class Yahtzee extends JPanel
 			if (key.getText() != "Player:" && key.getText() != "" && key.getText() != "Bonus" && key.getText() != "Upper Total" && key.getText() != "Lower Total" && key.getText() != "Grand Total")
 					mainScoreMap.get(key).setEnabled(false);
 		}
+
+		//just added
+		//reset held die back to empty
+		for (JLabel i : heldDie)
+			i.setIcon(emptyImage);
+		//reset roll area die back to empty
+		for (int i = 0; i < currentDie.length; ++i)
+			currentDie[i].setIcon(emptyImage);
+		setRollLabel(currentRoll);
 
 		//need to check if only computers*****************
 		if (numHumans == 0)
