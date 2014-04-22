@@ -64,6 +64,7 @@ class Yahtzee extends JPanel
 	private static Player[] participants;
 	private static JButton rollButton;
 	private static int numHumans;
+	private final static String interfaceTutorial = "<html><h2>How to Play</h2><p>Simply click the roll button to begin playing. Click any dice that you would like to keep for the next roll. This will place the dice at the top of the screen. To return a dice back to the main roll area so that it will be rolled again, click it and it will return. When you are satisfied with your roll (or you have rolled three times), simply click a cell in the score card on the right that you would like to use for that turn. When the game is finished and the button says New Game, you may click player names at the bottom of the screen to view their score card summary. To begin a new game, simply click the New Game button or go to File->New Game.</p><h3>Enjoy!</h3></html>";
 
 	public Yahtzee()
 	{
@@ -813,7 +814,8 @@ class Yahtzee extends JPanel
 
 		//set up Help menu
 		JMenu helpMenu = new JMenu("Help");
-		JMenuItem rulesMenu = new JMenuItem("Rules");
+		JMenuItem rulesMenu = new JMenuItem("Yahtzee Rules");
+		JMenuItem interfaceMenu = new JMenuItem("Yahtzee Interface Tutorial");
 
 		//add action listener
 		rulesMenu.addActionListener(
@@ -821,11 +823,10 @@ class Yahtzee extends JPanel
 			{
 				public void actionPerformed(ActionEvent e)
 				{
-					//set up helpFrame to hold JEditPane for help page
-					JFrame helpFrame = new JFrame("Rules OverView");
-
 					try
 					{
+						//set up helpFrame to hold JEditPane for help page
+						JFrame helpFrame = new JFrame("Yahtzee Rules OverView");
 						JEditorPane editorpane= new JEditorPane("http://en.wikipedia.org/wiki/Yahtzee#Rules_overview");
 				       	JScrollPane editorScrollPane = new JScrollPane(editorpane);
 				       	editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -856,11 +857,33 @@ class Yahtzee extends JPanel
 			}
 		);
 
+		//add action listener
+		interfaceMenu.addActionListener(
+			new ActionListener()
+			{
+				public void actionPerformed(ActionEvent e)
+				{
+					//set up interfaceFrame to hold JEditPane for help page
+					JFrame interfaceFrame = new JFrame("Yahtzee Rules OverView");
+					JEditorPane editorPane2= new JEditorPane("text/html", interfaceTutorial);
+			       	JScrollPane editorScrollPane2 = new JScrollPane(editorPane2);
+			       	editorScrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+			       	editorPane2.setEditable(false);
+					interfaceFrame.setSize(800, 600);
+					interfaceFrame.setLocationRelativeTo(null);
+					interfaceFrame.setResizable(false);
+					interfaceFrame.add(editorScrollPane2);
+					interfaceFrame.setVisible(true);
+				}
+			}
+		);
+
 		//set up menu bar at top
 		JMenuBar bar = new JMenuBar();
 		frame.setJMenuBar(bar);
 		fileMenu.add(newGameMenu);
 		helpMenu.add(rulesMenu);
+		helpMenu.add(interfaceMenu);
 		bar.add(fileMenu);
 		bar.add(helpMenu);
 
