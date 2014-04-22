@@ -137,7 +137,7 @@ class Human implements Player
 			}
 		}
 		++done;
-		System.out.println("Should have returned TRUE Human");
+		//System.out.println("Should have returned TRUE Human");
 		return true;
 	}
 

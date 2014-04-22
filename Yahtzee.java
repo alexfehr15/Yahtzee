@@ -64,13 +64,13 @@ class Yahtzee extends JPanel
 	private static Player[] participants;
 	private static JButton rollButton;
 	private static int numHumans;
-	private final static String interfaceTutorial = "<html><h2>How to Play</h2><p>Simply click the roll button to begin playing. Click any dice that you would like to keep for the next roll. This will place the dice at the top of the screen. To return a dice back to the main roll area so that it will be rolled again, click it and it will return. When you are satisfied with your roll (or you have rolled three times), simply click a cell in the score card on the right that you would like to use for that turn. When the game is finished and the button says New Game, you may click player names at the bottom of the screen to view their score card summary. To begin a new game, simply click the New Game button or go to File->New Game.</p><h3>Enjoy!</h3></html>";
+	private final static String interfaceTutorial = "<html><h2>How to Play</h2><p>Simply click the roll button to begin playing. Click any die that you would like to keep for the next roll. This will place the die at the top of the screen. To return a die back to the main roll area so that it will be rolled again, click it and it will return to the middle of the screen. When you are satisfied with your roll (or you have rolled three times), simply click a cell in the score card on the right that you would like to use for that turn. When the game is finished and the button in the middle of the screen says New Game, you may click player names at the bottom of the screen to view their score card summary. To begin a new game, simply click the New Game button (after a game has been fully completed) or go to File -> New Game. If you would like to review the rules of Yahtzee in general, go to Help -> Yahtzee Rules (Wikipedia).</p><h3>Enjoy!</h3></html>";
 
 	public Yahtzee()
 	{
-		//call superclass's constructor and set background to white
+		//call superclass's constructor and set background to LIGHT_GRAY
 		super();
-		this.setBackground(Color.WHITE);
+		this.setBackground(Color.LIGHT_GRAY);
 
 		//set up the mainLayout for the Yahtzee JPanel
 		mainLayout = new GridBagLayout();
@@ -188,7 +188,7 @@ class Yahtzee extends JPanel
 			}
 
 			//testing
-			System.out.println("Game is over");
+			//System.out.println("Game is over");
 
 			//update all labels when finished
 			participants[currentIndex].updateLabels(mainScoreMap);
@@ -238,9 +238,9 @@ class Yahtzee extends JPanel
 	{
 		public HeldDice()
 		{
-			//call superclass's constructor and set background to white
+			//call superclass's constructor and set background to LIGHT_GRAY
 			super();
-			this.setBackground(Color.RED);
+			this.setBackground(Color.LIGHT_GRAY);
 
 			//fill with empty images to begin with
 			for (int i = 0; i < 5; ++i)
@@ -296,9 +296,9 @@ class Yahtzee extends JPanel
 
 		public ScoreCard()
 		{
-			//call superclass's constructor and set background to white
+			//call superclass's constructor and set background to LIGHT_GRAY
 			super();
-			this.setBackground(Color.WHITE);
+			this.setBackground(Color.LIGHT_GRAY);
 
 			//set layout
 			scoreCardLayout = new GridBagLayout();
@@ -371,7 +371,7 @@ class Yahtzee extends JPanel
 						scoreDie[placeCounter++] = getDiceNum((ImageIcon) currentDie[i].getIcon());
 				}
 
-				System.out.println(((JLabel) e.getSource()).getName());
+				//System.out.println(((JLabel) e.getSource()).getName());
 
 				//call human function for participants
 				if (participants[currentIndex].takeTurn(scoreDie, ((JLabel) e.getSource()).getName(), mainScoreMap) && participants[currentIndex].getDone() == 1)
@@ -413,7 +413,7 @@ class Yahtzee extends JPanel
 					rollButton.setText("New Game");
 
 					//testing
-					System.out.println("Game is finished");
+					//System.out.println("Game is finished");
 
 					//****just addded*******
 					for (JLabel key : mainScoreMap.keySet())
@@ -476,7 +476,7 @@ class Yahtzee extends JPanel
 						rollButton.setText("New Game");
 
 						//testing
-						System.out.println("Game is finished");
+						//System.out.println("Game is finished");
 
 						//****just addded*******
 						for (JLabel key : mainScoreMap.keySet())
@@ -544,9 +544,9 @@ class Yahtzee extends JPanel
 
 		public RollResults()
 		{
-			//call superclass's constructor and set background to white
+			//call superclass's constructor and set background to LIGHT_GRAY
 			super();
-			this.setBackground(Color.GREEN);	
+			this.setBackground(Color.LIGHT_GRAY);	
 
 			//set layout
 			rollResultsLayout = new GridBagLayout();
@@ -627,7 +627,7 @@ class Yahtzee extends JPanel
 		public void mouseClicked(MouseEvent e)
 		{
 			//testing
-			System.out.println("Pressed a button");
+			//System.out.println("Pressed a button");
 
 			//set held dice image to be whatever was clicked, increase counter
 			for (int i = 0; i < 5; ++i)
@@ -700,7 +700,7 @@ class Yahtzee extends JPanel
 				{
 					//start a new game
 					Yahtzee.restartApp();
-					System.out.println("Need to start new game");
+					//System.out.println("Need to start new game");
 				}
 			}
 		}
@@ -712,9 +712,9 @@ class Yahtzee extends JPanel
 
 		public PlayerScore()
 		{
-			//call superclass's constructor and set background to white
+			//call superclass's constructor and set background to LIGHT_GRAY
 			super();
-			this.setBackground(Color.YELLOW);
+			this.setBackground(Color.GRAY);
 
 			//set layout
 			playerScoreLayout = new GridLayout(0, NUMPLAYERS);
@@ -776,12 +776,12 @@ class Yahtzee extends JPanel
 	{
 		if (finishedPlayers == NUMPLAYERS)
 		{
-			System.out.println("game should have started over");
+			//System.out.println("game should have started over");
 			return true;
 		}
 		else
 		{
-			System.out.println("finishedPlayers is " + finishedPlayers);
+			//System.out.println("finishedPlayers is " + finishedPlayers);
 			return false;
 		}
 	}
@@ -814,8 +814,8 @@ class Yahtzee extends JPanel
 
 		//set up Help menu
 		JMenu helpMenu = new JMenu("Help");
-		JMenuItem rulesMenu = new JMenuItem("Yahtzee Rules");
-		JMenuItem interfaceMenu = new JMenuItem("Yahtzee Interface Tutorial");
+		JMenuItem rulesMenu = new JMenuItem("Yahtzee Rules (Wikipedia)");
+		JMenuItem interfaceMenu = new JMenuItem("Yahtzee Interface Explanation");
 
 		//add action listener
 		rulesMenu.addActionListener(
@@ -826,7 +826,7 @@ class Yahtzee extends JPanel
 					try
 					{
 						//set up helpFrame to hold JEditPane for help page
-						JFrame helpFrame = new JFrame("Yahtzee Rules OverView");
+						JFrame helpFrame = new JFrame("Yahtzee Rules OverView (requires internet connection)");
 						JEditorPane editorpane= new JEditorPane("http://en.wikipedia.org/wiki/Yahtzee#Rules_overview");
 				       	JScrollPane editorScrollPane = new JScrollPane(editorpane);
 				       	editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -852,7 +852,7 @@ class Yahtzee extends JPanel
 				public void actionPerformed(ActionEvent e)
 				{
 					Yahtzee.restartApp();
-					System.out.println("New game started from menu");
+					//System.out.println("New game started from menu");
 				}
 			}
 		);
@@ -962,7 +962,7 @@ class Yahtzee extends JPanel
 			}
 
 			//testing
-			System.out.println("Game is over");
+			//System.out.println("Game is over");
 
 			//update all labels when finished
 			participants[currentIndex].updateLabels(mainScoreMap);

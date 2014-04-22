@@ -167,12 +167,12 @@ class Computer implements Player
 		{
 			if (scoreMap.get(key) == "" && key != "" && key != "Bonus")
 			{
-				System.out.println("\n*****Not Over b/c " + key + " *****");
+				//System.out.println("\n*****Not Over b/c " + key + " *****");
 				return false;
 			}
 		}
 		++done;
-		System.out.println("Should have returned TRUE Computer");
+		//System.out.println("Should have returned TRUE Computer");
 		return true;
 	}
 
@@ -188,7 +188,7 @@ class Computer implements Player
 			++extra;
 
 			//testing
-			System.out.println("\nextra is now: " + extra);
+			//System.out.println("\nextra is now: " + extra);
 
 			secondYahtzee(rollThree, name);
 		}
