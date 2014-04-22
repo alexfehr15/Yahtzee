@@ -183,6 +183,7 @@ class Yahtzee extends JPanel
 		for (int i = 0; i < currentDie.length; ++i)
 			currentDie[i].setIcon(emptyImage);
 		setRollLabel(currentRoll);
+		rollButton.setEnabled(true);
 
 		//need to check if only computers*****************
 		if (numHumans == 0)

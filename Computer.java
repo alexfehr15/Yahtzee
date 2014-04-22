@@ -184,12 +184,12 @@ class Computer implements Player
 		if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") == "")
 			scoreMap.put("Yahtzee", Integer.toString(50));
 		//check for second yahtzee
-		else if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") != "")
+		else if (yahtzeeBool(rollThree, name) && scoreMap.get("Yahtzee") == "50")
 		{
 			++extra;
 
 			//testing
-			//System.out.println("\nextra is now: " + extra);
+			System.out.println("\nextra is now: " + extra);
 
 			secondYahtzee(rollThree, name);
 		}
@@ -1056,11 +1056,5 @@ class Computer implements Player
 	public String getText()
 	{
 		return getName() + ": " + scoreMap.get("Grand Total");
-	}
-
-	//testing
-	public static void main(String [] args)
-	{
-		Computer test = new Computer("Alex", 1);
 	}
 }

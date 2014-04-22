@@ -68,7 +68,7 @@ class Human implements Player
 		System.out.println('\n');*/
 
 		//see if have bonus for extra yahtzee
-		if (yahtzeeBool(die, name) && scoreMap.get("Yahtzee") != "")
+		if (yahtzeeBool(die, name) && scoreMap.get("Yahtzee") == "50")
 			++extra;
 
 		//find out which score item is desired by user
