@@ -68,6 +68,7 @@ class Yahtzee extends JPanel
 
 	public Yahtzee()
 	{
+                // This is a test comment
 		//call superclass's constructor and set background to LIGHT_GRAY
 		super();
 		this.setBackground(Color.LIGHT_GRAY);
